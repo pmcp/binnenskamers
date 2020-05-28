@@ -2,62 +2,51 @@
   <div>
     <div class="container" @mouseleave="setActive(null)">
       <div class="img">
-        <img :src="image" :alt="activeRoom.img.alt" />
+        <img :src="image" :alt="activeLocation.img.alt" />
       </div>
       <div class="grid">
         <div
-          v-for="(item, key) in itemsOfRoom"
-          :key="key"
-          :style="{gridArea: item.gridPos}"
+          v-for="(room, id) in activeLocation.rooms"
+          :key="id"
+          :style="{gridArea: room.gridPos, backgroundColor:activeLocation.color}"
           class="grid__item"
-          :class="[{'grid__item--hover': (activeLink  !== null && key === activeLink)}]"
-          @click="goTo(`location/${key}`)"
-          @mouseover="setActive(key)"
-          @mouseleave="setActive(null)"
+          @click="goTo(`location/${id}`)"
+          @mouseover="setActive(id)"
         >
-          <orb :id="key" />
         </div>
       </div>
     </div>
     <div class="legend__columns">
       <div>
-        <h2>Links</h2>
-        <div v-for="(l, key) in itemsOfRoom" :key="key" class="link" :class="[{'link--active' : (activeLink  !== null && key === activeLink), 'link--nonActive': activeLink === null}]">
-          <a :href="l.link" target="_blank" @mouseover="setActive(key)" @mouseleave="setActive(null)">{{ l.descr }}</a>
+        <h2>Lokalen</h2>
+        <div v-for="(i, key) in activeLocation.rooms" :key="key" class="room" :class="[{'room--active' : (activeRoom  !== null && key === activeRoom), 'room--nonActive': activeRoom === null}]">
+          {{ i.name }}
         </div>
       </div>
+
+      <!-- <div>
+        <h2>Academie</h2>
+        <div v-for="(i, key) in activeAcademy" :key="`activeItems_${key}`">
+          {{ i.year }} {{ i.cours }}
+        </div>
+      </div> -->
     </div>
   </div>
 </template>
 
 <script>
 import { locations, items } from "~/static/data.json";
-import orb from "~/components/Orb";
 export default {
   props: {
     location: {
       type: String,
       default: "1"
     },
-    room: {
-      type: String,
-      default: "1"
-    },
-  },
-  components: {
-    orb,
   },
   computed: {
     image () {
       if (!this.activeLocation) return;
-      return require(`../assets/images/${this.activeRoom.img.base}`)
-    },
-    itemsOfRoom(){
-      return this.items.filter(i => i.location === this.room)
-    },
-    
-    activeRoom(){
-      return this.locations[this.location].rooms[this.room]
+      return require(`../assets/images/${this.activeLocation.img.base}`)
     },
     activeLocation(){
       return this.locations[this.location]
@@ -68,13 +57,13 @@ export default {
   },
   data() {
     return {
-      activeLink: null
+      activeRoom: null
     }
   },
   methods: {
     setActive(id) {
-      if(id === this.activeLink) return;
-      this.activeLink = id;
+      if(id === this.activeRoom) return;
+      this.activeRoom = id;
     },
     goTo(path) {
       this.$router.push({
@@ -123,9 +112,8 @@ export default {
   
   
   &__item {
-    position: relative;
-    // opacity: 0;
-    &--hover {
+    opacity: 0;
+    &:hover {
       opacity: 1;
     }
   }
@@ -137,7 +125,7 @@ export default {
   width: 100%;
 }
 
-.link {
+.room {
   opacity: .2;
   
   &--active {

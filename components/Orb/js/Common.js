@@ -33,9 +33,6 @@ class Common{
       
       // calculate mouse position in normalized device coordinates
       // (-1 to +1) for both components
-      // TODO: Fix this, seems like i'm not getting the right coordinates
-
-      
       this.mouse.x = ( event.clientX / this.size.windowW ) * 2 - 1;
       this.mouse.y = - ( event.clientY / this.size.windowH ) * 2 + 1;
       // console.log(this.mouse.x, this.mouse.y)      
@@ -99,19 +96,7 @@ class Common{
         // Raycaster for mouse over and clicks
         this.raycaster = new THREE.Raycaster();
         this.mouse = new THREE.Vector2();
-        
-        // update the picking ray with the camera and mouse position
-        
-	      // // calculate objects intersecting the picking ray
-        // let intersects = this.raycaster.intersectObjects( this.scene.children );
-        // // console.log("intersected", intersects)
 
-        // for ( var i = 0; i < intersects.length; i++ ) {
-        //   intersects[ i ].object.material.color.set( 0xff0000 );
-        // }
-
-
-        
         this.renderer = new THREE.WebGLRenderer({
             canvas: $canvas,
             alpha:true
@@ -133,18 +118,18 @@ class Common{
     }
 
     setSize(){
-      console.log('setSize')
-      const canvas = document.getElementById("blobs");
+      console.log(this.canvas.offsetWidth)
+      // console.log(this.canvas.offsetWidth)
       this.size = {
-        windowW: canvas.offsetWidth,
-        windowH: canvas.offsetHeight
+        windowW: this.canvas.offsetWidth,
+        windowH: this.canvas.offsetHeight
       }
       
     }
 
     
     resize(){
-      console.log('resize')
+      
       this.setSize();
       this.camera.aspect = this.size.windowW / this.size.windowH;
       this.camera.updateProjectionMatrix();

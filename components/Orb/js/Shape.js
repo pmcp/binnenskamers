@@ -131,9 +131,8 @@ export default class Shape{
     }
     resize(orb, end){
       TWEEN.removeAll();
-      console.log('resizing with tween')
-      var start = 1
-      var finish = 20
+      var start = 200
+      var finish = 1
       var current	= { x: start };
 
       orb.mat.uniforms['size'].value = 10
@@ -142,7 +141,7 @@ export default class Shape{
       tweenHead.easing(TWEEN.Easing.Elastic.InOut)
       
       tweenHead.onUpdate(function(){
-        console.log('here', current.x)
+        // console.log('here', current.x)
         orb.mat.uniforms['size'].value = current.x;
       });
     

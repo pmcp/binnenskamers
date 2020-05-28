@@ -3,7 +3,7 @@
     <img src="~assets/images/inkom.png" />
     <div class="grid">
       <div class="link" @click="goTo('/about')"></div>
-      <!-- <Orb /> -->
+  
     </div>
   </div>
 </template>

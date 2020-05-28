@@ -8,6 +8,7 @@ export default class ArtworkGL{
     }
 
     init(){
+      console.log(this.props)
         Common.init(this.props.$canvas);
         this.shape = new Shape();
         window.addEventListener("resize", this.resize.bind(this));

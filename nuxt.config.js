@@ -59,5 +59,8 @@ export default {
       '/contact',
       '404'
     ]
-  }
+  },
+  css: [
+    '~/assets/main.css'
+  ]
 }

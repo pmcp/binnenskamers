@@ -38,7 +38,8 @@ class Common{
 
         this.renderer.setPixelRatio(window.devicePixelRatio);
         
-        this.renderer.setClearColor(0xEAF2F5);
+        // this.renderer.setClearColor(0xEAF2F5);
+        this.renderer.setClearColor( 0x000000, 0 ); // the default
         this.renderer.setSize(this.size.windowW, this.size.windowH);
 
         this.clock = new THREE.Clock();

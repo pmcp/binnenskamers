@@ -1,18 +1,18 @@
 <template>
   <div>
-    <Artwork />
+    <!-- <Orb /> -->
     <nuxt />
     <Nav />
   </div>
 </template>
 
 <script>
-import Artwork from "~/components/Artwork";
+// import Orb from "~/components/Orb";
 import Nav from "~/components/Nav";
 
 export default {
   components: {
-    Artwork,
+    // Orb,
     Nav
   }
 }

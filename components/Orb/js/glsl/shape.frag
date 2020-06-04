@@ -6,6 +6,7 @@ varying float qnoise;
   uniform float rcolor;
   uniform float gcolor;
   uniform float bcolor;
+  uniform float opacity;
   
   void main() {
     float r, g, b;
@@ -20,5 +21,5 @@ varying float qnoise;
       b = cos(bcolor);
     }
     
-    gl_FragColor = vec4(r, g, b, 1.0);
+    gl_FragColor = vec4(r, g, b, opacity);
   }

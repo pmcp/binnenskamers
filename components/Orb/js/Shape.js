@@ -1,30 +1,65 @@
 import * as THREE from "three";
 import Common from "./Common";
-// const TWEEN = require('@tweenjs/tween.js');
 import TWEEN from '@tweenjs/tween.js'
-// import * as TWEEN from '@tweenjs/tween.js';
 
-
-// import calcShape from "./calcShape";
-
-import data from "./data";
-
-const orbs = data.orbs
+// Shaders
 import vertexShader from "./glsl/shape.vert";
 import fragmentShader from "./glsl/shape.frag";
 
+// Eventbus, for animation etc. Could move to VueX
 import EventBus from "~/utils/event-bus";
 
-var start = Date.now();
+// Using this for a random factor a bit lower, in the createOrb function
+const start = Date.now();
 
 
-var primitiveElement = function(item) {
+// Animation functions
+function move(orb){
   
+  let start = {
+    x: orb.shape.position.x,
+    y: orb.shape.position.y,
+    z: orb.shape.position.z,
+    rX: orb.shape.rotation.x,
+    rY: orb.shape.rotation.y,
+    rZ: orb.shape.rotation.z
+  }
+
+  let finish = {
+    x: (orb.shape.position.x +  .5*Math.sin(Math.floor(Math.random() * 201) - 100)),
+    y: (orb.shape.position.y +  .5*Math.sin(Math.floor(Math.random() * 201) - 100)),
+    z: (orb.shape.position.z +  .5*Math.sin(Math.floor(Math.random() * 201) - 100)),
+    rX: orb.shape.rotation.x - Math.sin(Math.floor(Math.random() * 201) - 100),
+    rY: orb.shape.rotation.y - Math.sin(Math.floor(Math.random() * 201) - 100),
+    rZ: orb.shape.rotation.z - Math.sin(Math.floor(Math.random() * 201) - 100)
+  }
+
+
+
+  let tween = new TWEEN.Tween(start).to(finish, 8000);
+  // Easings examples: https://sole.github.io/tween.js/examples/03_graphs.html
+  tween.easing(TWEEN.Easing.Exponential.InOut)
   
-  // const mesh = new THREE.Object3D();
+  tween.onUpdate(i => {
+    orb.shape.position.set(start.x, start.y, start.z)
+    orb.shape.rotation.set(start.rX, start.rY, start.rZ)
+  })
+  tween.start();
+  tween.onComplete(i => {
+    move(orb)
+    // tween.start()
+  });
+  
+  // tween.repeat(Infinity);
+
+}
+// Where we create the orb
+const createOrb = function (item) {
   this.perlin = item.perlin;
-  this.mat = new THREE.ShaderMaterial( {
-    side:THREE.DoubleSide,
+  this.mat = new THREE.ShaderMaterial({
+    side: THREE.DoubleSide,
+    // Here are a bunch of uniforms I'm not using. Might delete later
+    // TODO
     uniforms: {
       time: {
         type: "f",
@@ -40,7 +75,7 @@ var primitiveElement = function(item) {
       },
       size: {
         type: "f",
-        value: 0.3
+        value: 1
       },
       displace: {
         type: "f",
@@ -77,146 +112,130 @@ var primitiveElement = function(item) {
       redhell: {
         type: "i",
         value: true
+      },
+      opacity: {
+        type: "f",
+        value: 1
       }
     },
     vertexShader: vertexShader,
     fragmentShader: fragmentShader
   });
-  //---
-  // var wir_mat = new THREE.MeshBasicMaterial({color:Theme.darker});
-  const geo = new THREE.IcosahedronBufferGeometry(2, 6);
-  // const wir = new THREE.IcosahedronBufferGeometry(2.3, 2);
-  this.shape = new THREE.Mesh(geo, this.mat);
 
-  this.shape.position.set(item.position.x, item.position.y, item.position.z);
+  // Create the orb
+  const orbGeo = new THREE.IcosahedronBufferGeometry(2, 6);
+  const orb = new THREE.Mesh(orbGeo, this.mat);
   
+  // Create catcher for mouse
+  const tomGeo = new THREE.IcosahedronBufferGeometry(40, 1);
+  const tomMat = new THREE.MeshBasicMaterial({
+    color: 0x0000ff,
+    transparent: true,
+    opacity: 0
+    // wireframe: true
+  });
+
+  let tom = new THREE.Mesh(tomGeo, tomMat);
+
+  const shapeGroup = new THREE.Group();
+  
+  shapeGroup.add(orb)
+  shapeGroup.add(tom)
+  
+  
+  // Add meta for linking in vue app
+  
+  shapeGroup.userData = { ...item.meta, startPosition: { ...item.position } }
+  this.shape = shapeGroup
+
+  // This is where we are using time, for a random factor
   this.mat.uniforms['time'].value = (this.perlin.speed / 1000) * (Date.now());
-  
-  this.mat.uniforms['pointscale'].value =    this.perlin.perlins;
-  this.mat.uniforms['decay'].value =         this.perlin.decay;
-  this.mat.uniforms['size'].value =          this.perlin.size;
-  this.mat.uniforms['displace'].value =      this.perlin.displace;
-  this.mat.uniforms['complex'].value =       this.perlin.complex;
-  this.mat.uniforms['waves'].value =         this.perlin.waves;
-  this.mat.uniforms['fragment'].value =      this.perlin.fragment;
-  
-  this.mat.uniforms['redhell'].value =       this.perlin.redhell;
-  this.mat.uniforms['eqcolor'].value =      this.perlin.eqcolor;
-  this.mat.uniforms['rcolor'].value =        this.perlin.rcolor;
-  this.mat.uniforms['gcolor'].value =        this.perlin.gcolor;
-  this.mat.uniforms['bcolor'].value =        this.perlin.bcolor;
 
+  // Set all the uniforms based on the options we passed in "item"
+  this.mat.uniforms['pointscale'].value = this.perlin.perlins;
+  this.mat.uniforms['decay'].value = this.perlin.decay;
+  this.mat.uniforms['size'].value = this.perlin.size;
+  this.mat.uniforms['displace'].value = this.perlin.displace;
+  this.mat.uniforms['complex'].value  = this.perlin.complex;
+  this.mat.uniforms['waves'].value = this.perlin.waves;
+  this.mat.uniforms['fragment'].value = this.perlin.fragment;
 
-  // META
-  this.shape.meta = item.name;
+  this.mat.uniforms['redhell'].value = this.perlin.redhell;
+  this.mat.uniforms['eqcolor'].value = this.perlin.eqcolor;
+  this.mat.uniforms['rcolor'].value = this.perlin.rcolor;
+  this.mat.uniforms['gcolor'].value = this.perlin.gcolor;
+  this.mat.uniforms['bcolor'].value = this.perlin.bcolor;
+
+  this.mat.uniforms['opacity'].value = this.perlin.opacity;
+
   return this;
   
 }
 
+export default class Shape {
+  constructor(orbSettings) { 
+    // Create Orbs (start)
+    // array to add the created orbs to
+    this.orbs = [];
+    this.settings = orbSettings
+    this.transitioning = false;
+    this.init();
+  }
 
-export default class Shape{
-    constructor(){
-        this.createdOrbs = [];
-        this.transitioning = false;
-        this.init();
-    }
+  init() {
+    // Make Orbs
+    this.createdOrbs = this.settings.map(item => new createOrb(item))
 
-    init(){
-      this.createdOrbs = orbs.map(item => new primitiveElement(item))
-      this.createdOrbs.map(item => Common.scene.add(item.shape))
-      
-      
-      this.createdOrbs.map(this.animation)
-        EventBus.$on("TRANSITION", this.onTransition.bind(this));
-    }
-    resize(orb, end){
-      TWEEN.removeAll();
-      var start = 200
-      var finish = 1
-      var current	= { x: start };
 
-      orb.mat.uniforms['size'].value = 10
-      // console.log(orb.mat.uniforms['size'].value)
-      var tweenHead = new TWEEN.Tween(current).to({x: finish}, 2000);
-      tweenHead.easing(TWEEN.Easing.Elastic.InOut)
+    // Add shapes to the scene
+    this.createdOrbs.map(item => {
+      // item.shape.position.x = Math.random()*100
+      item.shape.position.x = 0
+      // item.shape.position.y = Math.random()*100
+      item.shape.position.y = 0
+      // item.shape.position.z = Math.random()*100
+      item.shape.position.z = 0
       
-      tweenHead.onUpdate(function(){
-        // console.log('here', current.x)
-        orb.mat.uniforms['size'].value = current.x;
-      });
-    
-      tweenHead.start()
+      // item.shape.position.set(0.1,10,0)
+      Common.scene.add(item.shape)
+    })
 
-      // tweenBack.onUpdate(function(){
-      // console.log('here')
-      // orb.mat.uniforms['size'].value = finish.x;
-      // });
-      
+    // Animate orbs
+    this.createdOrbs.map(move)
+
+    // Listen for events passed by the eventbus
+    // EventBus.$on("TRANSITION", this.onTransition.bind(this));
+  }
+
+
   
-  
+  resize(orb) {
+    // Resize animation
+    const start = 200;
+    let finish = 30;
+    let current = { x: start };
 
+    let tweenPopup = new TWEEN.Tween(current).to({ x: finish }, 2000);
+    // Easings examples: https://sole.github.io/tween.js/examples/03_graphs.html
+    tweenPopup.easing(TWEEN.Easing.Sinusoidal.InOut)
     
+    tweenPopup.onUpdate(i => orb.mat.uniforms['size'].value = current.x)
+    tweenPopup.start();
+  }
+
+  onTransition(path) {
+    // Not using the path param at this point, this might be used in  a switch
+    this.transitioning = false;
+    this.createdOrbs.map(orb => this.resize(orb, 100))
+  }
+
+  animation(orb) {
     
+    orb.mat.uniforms['time'].value = (orb.perlin.speed /1000) * (Date.now() - start);
+  }
 
-    
-      // console.log('start resize', orb.mat.uniforms['size'].value)
-      // if(orb.mat.uniforms['size'].value > end) return;
-      // if(this.transitioning === true ) return;
-      // orb.mat.uniforms['size'].value = orb.mat.uniforms['size'].value + 2
-      // requestAnimationFrame(() => { this.resize(orb, 100); });
-    }
-
-    onTransition(path){
-      this.transitioning = true;
-      switch(path){
-        case "index": 
-          this.transitioning = false;
-          this.createdOrbs.map(orb => {
-            this.resize(orb, 100);
-            // requestAnimationFrame(() => { this.resize(orb, 100); });
-          })
-        // this.transitionTarget.set(1, 0, 0, 0);
-        break;
-
-        case "about":
-          this.createdOrbs.map(orb => {
-            orb.mat.uniforms['size'].value = 10
-          })
-        // this.transitionTarget.set(0, 1, 0, 0);
-        break;
-
-        case "contact":
-        // this.transitionTarget.set(0, 0, 1, 0);
-        break;
-
-        default: 
-        // this.transitionTarget.set(0, 0, 0, 1);
-        break;
-
-      }
-
-    }
-
-    animation(_primitive) {
-      TWEEN.update();
-      _primitive.mat.uniforms['time'].value = (_primitive.perlin.speed / 1000) * (Date.now() - start);
-      // _primitive.mat.uniforms['pointscale'].value =    _primitive.perlin.perlins;
-      // _primitive.mat.uniforms['decay'].value =         _primitive.perlin.decay;
-      // _primitive.mat.uniforms['size'].value =        s  _primitive.perlin.size;
-      // _primitive.mat.uniforms['displace'].value =      _primitive.perlin.displace;
-      // _primitive.mat.uniforms['complex'].value =       _primitive.perlin.complex;
-      // _primitive.mat.uniforms['waves'].value =         _primitive.perlin.waves;
-      // _primitive.mat.uniforms['fragment'].value =      _primitive.perlin.fragment;
-      
-      // _primitive.mat.uniforms['redhell'].value =       _primitive.perlin.redhell;
-      // _primitive.mat.uniforms['eqcolor'].value =      _primitive.perlin.eqcolor;
-      // _primitive.mat.uniforms['rcolor'].value =        _primitive.perlin.rcolor;
-      // _primitive.mat.uniforms['gcolor'].value =        _primitive.perlin.gcolor;
-      // _primitive.mat.uniforms['bcolor'].value =        _primitive.perlin.bcolor;
-    }
-
-    update(){
-      
-      this.createdOrbs.map(this.animation)
-    }
+  update() {
+    TWEEN.update();
+    this.createdOrbs.map(this.animation)
+  }
 }

@@ -1,80 +1,23 @@
 <template>
-  <div>
-    <div class="container" @mouseleave="setActive(null)">
-      <div class="img">
-        <img :src="image" :alt="activeRoom.img.alt" />
-      </div>
-      <div class="grid">
-        <div
-          v-for="(item, key) in itemsOfRoom"
-          :key="key"
-          :style="{gridArea: item.gridPos}"
-          class="grid__item"
-          :class="[{'grid__item--hover': (activeLink  !== null && key === activeLink)}]"
-          @click="goTo(`location/${key}`)"
-          @mouseover="setActive(key)"
-          @mouseleave="setActive(null)"
-        >
-          <orb :id="key" />
-        </div>
-      </div>
+  <section>
+    <div class="container">
+      <a class="img" href="/map">
+        <img src="@/assets/images/inkom.png">
+      </a>
     </div>
-    <div class="legend__columns">
-      <div>
-        <h2>Links</h2>
-        <div v-for="(l, key) in itemsOfRoom" :key="key" class="link" :class="[{'link--active' : (activeLink  !== null && key === activeLink), 'link--nonActive': activeLink === null}]">
-          <a :href="l.link" target="_blank" @mouseover="setActive(key)" @mouseleave="setActive(null)">{{ l.descr }}</a>
-        </div>
-      </div>
+    <div class="container text">
+      <p>
+        Anonymously have also been proposed, among them were Erwin Panofsky, Aby Warburg,. Survey in the entry of whom were the year Gustave. An were essential for instance, called Fauvism henri Matisse's two versions. Invoke The strands of German art critic Clement Greenberg, for centuries. The French Revolution of Baroque and Friedrich Schiller, both Jewish, were. Geschichte der Kunst des Michelangelo as the date perhaps most prominent among art. In the dancing nudes convey the theoretical foundations for establishing the study. Aby Warburg, the transmission of posthumous material to subject of artistic personality, and Georges. To these terms interchangeably panofsky, in his early work, also developed. Dominated history as a work of painters such as the influence of. Of sources—especially scripture and several other young artists into the work schnaase's. Public of a completely new beginning of Panofsky's methodology,. Book settled in the introduction of art world history' from exposure to have emerged. Unsuspecting text or not the Salon des Artistes Peintres, Sculpteurs, Graveurs Association. 1907, Picasso and Geschichte der Kunst des Michelangelo as found. Back among them were essential for more preoccupied with the vocabulary. Johann Joachim Winckelmann, criticised Vasari's cult of themes related. Controversial Demoiselles d'Avignon 1907, Picasso dramatically created a distinction. An movements in German-speaking universities schnaase's survey was dominated by Violin. Freud, Granville Stanley Hall, Carl Jung back row Sigmund Freud, Granville.
+      </p>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>
-import { locations, items } from "~/static/data.json";
-import orb from "~/components/Orb";
 export default {
-  props: {
-    location: {
-      type: String,
-      default: "1"
-    },
-    room: {
-      type: String,
-      default: "1"
-    },
-  },
-  components: {
-    orb,
-  },
-  computed: {
-    image () {
-      if (!this.activeLocation) return;
-      return require(`../assets/images/${this.activeRoom.img.base}`)
-    },
-    itemsOfRoom(){
-      return this.items.filter(i => i.location === this.room)
-    },
-    
-    activeRoom(){
-      return this.locations[this.location].rooms[this.room]
-    },
-    activeLocation(){
-      return this.locations[this.location]
-    }
-  },
-  asyncData({ params }) {
-    return { locations, items };
-  },
-  data() {
-    return {
-      activeLink: null
-    }
-  },
   methods: {
     setActive(id) {
-      if(id === this.activeLink) return;
-      this.activeLink = id;
+      this.activeLocationId = id;
     },
     goTo(path) {
       this.$router.push({
@@ -85,68 +28,5 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-.container {
-  position: relative;
-  height: 50vw;
-  width: 50vw;
-  img {
-    width: 100%;
-    height: auto;
-  }
-}
-
-.img {
-  position: absolute;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.grid {
-  position: absolute;
-  z-index: 2;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(100, 1fr);
-  grid-template-rows: repeat(100, 1fr);
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
-  
-  
-  &__item {
-    position: relative;
-    // opacity: 0;
-    &--hover {
-      opacity: 1;
-    }
-  }
-}
-
-
-.legend__columns {
-  display: flex;
-  width: 100%;
-}
-
-.link {
-  opacity: .2;
-  
-  &--active {
-  opacity: 1;
-  }
-
-  &--nonActive {
-    opacity: 1;
-  }
-
-}
+<style lang="scss">
 </style>

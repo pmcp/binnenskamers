@@ -8,9 +8,11 @@ export default class OrbGL{
   }
 
   init(props){
-    Common.init();
-    // Create the orb 
-    this.shape = new Shape(props.orbSettings);
+    Common.init()
+    // Create the orb
+    console.log([props])
+    this.shape = new Shape(props);
+    
     // Start rendering. This is a recurring function (requestAnimationFrame)
     this.render();
   }

@@ -23,7 +23,7 @@ export default {
     },
     settings: {
         type: Array,
-        default: () => ([])
+        default: () => ({})
     }
   },
   mounted() {
@@ -35,15 +35,15 @@ export default {
         orbSettings: this.settings
       });
 
-    EventBus.$emit("TRANSITION", this.$route.name);
+    // EventBus.$emit("TRANSITION", this.$route.name);
 
-    EventBus.$on("MOUSEOVER", data => {});
+    // EventBus.$on("MOUSEOVER", data => {});
   },
 
   watch: {
-    "$route.name": function(_new, _old) {
-      EventBus.$emit("TRANSITION", _new);
-    }
+    // "$route.name": function(_new, _old) {
+      // EventBus.$emit("TRANSITION", _new);
+    // }
   },
   destroyed() {},
   methods: {}

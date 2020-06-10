@@ -2,46 +2,33 @@
   <div>
     <div
       class="container"
-      @mouseleave="setActive(null)"
     >
-      <div class="img" v-if="activeRoom">
-        <img
-          :src="image"
-          :alt="activeRoom.img.alt"
-        />
-      </div>
-      <div class="grid">
-        
+      <div class="map" :class="cursorClass" @mouseleave="setActive(null)">
         <orbs v-if="orbSettings" :settings="orbSettings" />
-        <div
-          v-for="(item, key) in itemsOfRoom"
-          :key="key"
-          :style="{gridArea: item.gridPos}"
-          class="grid__item"
-          :class="[{'grid__item--hover': (activeLink  !== null && key === activeLink)}]"
-          @click="goTo(`location/${key}`)"
-          @mouseover="setActive(key)"
-          @mouseleave="setActive(null)"
-        >
-
+        <div class="map__img" v-if="activeRoom">
+          <img
+            :src="image"
+            :alt="activeRoom.img.alt"
+          />
         </div>
       </div>
-    </div>
-    <div class="legend__columns">
-      <div>
-        <h2>Links</h2>
-        <div
-          v-for="(l, key) in itemsOfRoom"
-          :key="key"
-          class="link"
-          :class="[{'link--active' : (activeLink  !== null && key === activeLink), 'link--nonActive': activeLink === null}]"
-        >
-          <a
-            :href="l.link"
-            target="_blank"
-            @mouseover="setActive(key)"
-            @mouseleave="setActive(null)"
-          >{{ l.descr }}</a>
+      <div class="links">
+        <div>
+          <h2>Links</h2>
+          <div
+            v-for="(l, key) in itemsOfRoom"
+            :key="key"
+            
+          >
+            <a
+              :href="l.link"
+              target="_blank"
+              class="link"
+              :class="[{'link--active' : (activeLink  !== null && key === activeLink), 'link--nonActive': activeLink === null}]"
+              @mouseover="setActive(key)"
+              @mouseleave="setActive(null)"
+            >{{ l.year }} {{l.course }}: {{ l.descr }}</a>
+          </div>
         </div>
       </div>
     </div>
@@ -50,6 +37,7 @@
 
 <script>
 import { locations, items, orbTypes } from "~/static/data.json";
+import EventBus from "~/utils/event-bus";
 import orbs from "~/components/Orb";
 export default {
   components: {
@@ -58,15 +46,18 @@ export default {
   computed: {
     image() {
       if (!this.activeLocation) return;
-      return require(`@/assets/images/${this.activeRoom.img.base}`);
+      return require(`@/assets/squares/${this.activeRoom.img.base}`);
     },
     itemsOfRoom() {
       if(!this.location) return null;
-      
-      return this.items.filter(i => i.room === this.room);
+      const filteredLinks = this.items.filter(i => i.room === this.room);
+
+      return filteredLinks.sort((a, b) => a.year - b.year);
+
     },
 
     activeRoom() {
+      console.log(this.location, this.room)
       if(!this.location || !this.room) return null;
       return this.locations[this.location].rooms[this.room];
     },
@@ -76,10 +67,16 @@ export default {
     },
     orbSettings(){
       if(!this.itemsOfRoom) return null;  
-      let settings = this.itemsOfRoom.map(i => {
+      let settings = this.itemsOfRoom.map((i, index) => {
+        const orbMeta = {
+          location: i.location,
+          room: i.room,
+          index: index,
+          type: 'link'
+        }
         const orbType = orbTypes[i.orb.type]
         const orbTypeOverride = {...orbType, ...i.orb.overrides}
-        return { perlin: orbTypeOverride, position: i.orb.position}
+        return { perlin: orbTypeOverride, position: i.orb.position, meta: orbMeta}
       })
       return settings;
     }
@@ -92,61 +89,47 @@ export default {
     return {
       room: null,
       location: null,
-      activeLink: null
+      activeLink: null,
+      cursorClass:null
     };
   },
 
   methods: {
     setActive(id) {
       if (id === this.activeLink) return;
+       if(id === null) {
+        EventBus.$emit("DEACTIVATEORB", { room: null, link: id });
+        return;
+      }
+      if(id === this.activeLink) return;
+      EventBus.$emit("ACTIVATEORB", { room: null, link: id });
       this.activeLink = id;
     }
   },
   mounted () {
     this.room = this.$route.params.id
     this.location = this.$route.params.location
+    // This event is coming from the threejs instance, when hovering over on an orb.
+    EventBus.$on("MOUSEOVERORB", data => {
+      // add a class so the cursor changes into a pointer
+      if(data !== null) {
+        this.cursorClass = 'cursor'
+        this.setActive(data.index)
+      } else {
+        this.cursorClass = null
+        this.setActive(null)
+      }
+      
+    });
+    // This event is coming from the threejs instance, when clicked on an orb. When clicked -> go to page
+    EventBus.$on("MOUSEDOWNONORB", data => {
+      if(data.type === 'room') return;
+      console.log('link', data.type)
+       window.open(
+        this.items[data.index].link,
+        '_blank' // <- This is what makes it open in a new window.
+      );
+    });
   },
 };
 </script>
-
-<style lang="scss" scoped>
-
-.grid {
-  position: absolute;
-  z-index: 2;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(100, 1fr);
-  grid-template-rows: repeat(100, 1fr);
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
-
-  &__item {
-    position: relative;
-    // opacity: 0;
-    &--hover {
-      opacity: 1;
-    }
-  }
-}
-
-.legend__columns {
-  display: flex;
-  width: 100%;
-}
-
-.link {
-  opacity: 0.2;
-
-  &--active {
-    opacity: 1;
-  }
-
-  &--nonActive {
-    opacity: 1;
-  }
-}
-</style>

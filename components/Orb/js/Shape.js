@@ -6,12 +6,8 @@ import TWEEN from '@tweenjs/tween.js'
 import vertexShader from "./glsl/shape.vert";
 import fragmentShader from "./glsl/shape.frag";
 
-// Eventbus, for animation etc. Could move to VueX
-import EventBus from "~/utils/event-bus";
-
 // Using this for a random factor a bit lower, in the createOrb function
 const start = Date.now();
-
 
 // Animation functions
 function move(orb){
@@ -26,28 +22,30 @@ function move(orb){
   }
 
   let finish = {
-    x: (orb.shape.position.x +  .5*Math.sin(Math.floor(Math.random() * 201) - 100)),
-    y: (orb.shape.position.y +  .5*Math.sin(Math.floor(Math.random() * 201) - 100)),
-    z: (orb.shape.position.z +  .5*Math.sin(Math.floor(Math.random() * 201) - 100)),
+    x: (orb.shape.position.x + -20*Math.sin(Math.floor(Math.random() * 201) - 10)),
+    y: (orb.shape.position.y + 20*Math.sin(Math.floor(Math.random() * 201) - 100)),
+    // z: (orb.shape.position.z + 1*Math.sin(Math.floor(Math.random() * 201) - 100)),
     rX: orb.shape.rotation.x - Math.sin(Math.floor(Math.random() * 201) - 100),
     rY: orb.shape.rotation.y - Math.sin(Math.floor(Math.random() * 201) - 100),
-    rZ: orb.shape.rotation.z - Math.sin(Math.floor(Math.random() * 201) - 100)
+    // rZ: orb.shape.rotation.z - Math.sin(Math.floor(Math.random() * 201) - 100)
   }
 
+  const max = 5000;
+  const min = 3000;
+  const speed = Math.floor(Math.random() * (max - min + 1) + min);
 
-
-  let tween = new TWEEN.Tween(start).to(finish, 8000);
+  let tween = new TWEEN.Tween(start).to(finish, speed);
   // Easings examples: https://sole.github.io/tween.js/examples/03_graphs.html
   tween.easing(TWEEN.Easing.Exponential.InOut)
   
   tween.onUpdate(i => {
-    orb.shape.position.set(start.x, start.y, start.z)
-    orb.shape.rotation.set(start.rX, start.rY, start.rZ)
+    orb.shape.position.set(start.x, start.y, -100)
+    orb.shape.rotation.set(start.rX, start.rY, -100)
   })
   tween.start();
   tween.onComplete(i => {
     move(orb)
-    // tween.start()
+    tween.start()
   });
   
   // tween.repeat(Infinity);
@@ -58,8 +56,7 @@ const createOrb = function (item) {
   this.perlin = item.perlin;
   this.mat = new THREE.ShaderMaterial({
     side: THREE.DoubleSide,
-    // Here are a bunch of uniforms I'm not using. Might delete later
-    // TODO
+    // TODO: Here are a bunch of uniforms I'm not using. Might delete later
     uniforms: {
       time: {
         type: "f",
@@ -124,28 +121,32 @@ const createOrb = function (item) {
 
   // Create the orb
   const orbGeo = new THREE.IcosahedronBufferGeometry(2, 6);
+  
   const orb = new THREE.Mesh(orbGeo, this.mat);
   
   // Create catcher for mouse
-  const tomGeo = new THREE.IcosahedronBufferGeometry(40, 1);
+  const scaleTom = orbGeo.parameters.radius*3/item.perlin.size
+  const tomGeo = new THREE.IcosahedronBufferGeometry(scaleTom, 1);
   const tomMat = new THREE.MeshBasicMaterial({
     color: 0x0000ff,
     transparent: true,
-    opacity: 0
-    // wireframe: true
+    opacity: 0,
+    wireframe: true
   });
 
-  let tom = new THREE.Mesh(tomGeo, tomMat);
+  // console.log(tomGeo)
 
-  const shapeGroup = new THREE.Group();
-  
+  let tom = new THREE.Mesh(tomGeo, tomMat);
+  // tom.position.z = -10
+  // orb.geometry.computeFaceNormals()
+  const shapeGroup = new THREE.Object3D();
   shapeGroup.add(orb)
   shapeGroup.add(tom)
   
   
-  // Add meta for linking in vue app
-  
+  // Add meta for linking in vue apps
   shapeGroup.userData = { ...item.meta, startPosition: { ...item.position } }
+  orb.userData = { ...item.meta, startPosition: { ...item.position }, originalSettings: { ...item.perlin } }
   this.shape = shapeGroup
 
   // This is where we are using time, for a random factor
@@ -168,16 +169,20 @@ const createOrb = function (item) {
 
   this.mat.uniforms['opacity'].value = this.perlin.opacity;
 
+  // Creating a specific array for checking intersects
+  Common.objectsToCheckIntersects.push(tom)
   return this;
   
 }
 
 export default class Shape {
   constructor(orbSettings) { 
+    
     // Create Orbs (start)
     // array to add the created orbs to
     this.orbs = [];
-    this.settings = orbSettings
+    
+    this.settings = orbSettings.orbSettings
     this.transitioning = false;
     this.init();
   }
@@ -185,26 +190,14 @@ export default class Shape {
   init() {
     // Make Orbs
     this.createdOrbs = this.settings.map(item => new createOrb(item))
-
-
     // Add shapes to the scene
     this.createdOrbs.map(item => {
-      // item.shape.position.x = Math.random()*100
-      item.shape.position.x = 0
-      // item.shape.position.y = Math.random()*100
-      item.shape.position.y = 0
-      // item.shape.position.z = Math.random()*100
-      item.shape.position.z = 0
-      
-      // item.shape.position.set(0.1,10,0)
-      Common.scene.add(item.shape)
+      const size = Common.size.width
+      item.shape.position.x = size * item.shape.userData.startPosition.x
+      item.shape.position.y = size * item.shape.userData.startPosition.y
+      Common.scene.add(item.shape) 
     })
-
-    // Animate orbs
     this.createdOrbs.map(move)
-
-    // Listen for events passed by the eventbus
-    // EventBus.$on("TRANSITION", this.onTransition.bind(this));
   }
 
 

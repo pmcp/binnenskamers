@@ -1,34 +1,68 @@
 {
   "orbTypes": {
     "1": {
+      "speed": 0.2,
+      "size": 0.001,
+      "perlins": 1.0,
+      "decay": 1.2,
+      "displace": 1,
+      "complex": 10.5,
+      "waves": 10.7,
+      "eqcolor": 100.0,
+      "rcolor": 1.2,
+      "gcolor": 1.5,
+      "bcolor": 0.5,
+      "fragment": true,
+      "points": false,
+      "redhell": false,
+      "opacity": 0.7
+    },
+    "2": {
       "speed": 0.1,
-      "size": 10,
+      "size": 0.001,
       "perlins": 1.0,
       "decay": 0.2,
       "displace": 2.0,
       "complex": 1.5,
       "waves": 30.7,
       "eqcolor": 10.0,
-      "rcolor": 1.2,
+      "rcolor": 0.2,
       "gcolor": 1.5,
       "bcolor": 1.5,
       "fragment": true,
       "points": false,
       "redhell": true,
-      "opacity": 1
+      "opacity": 0.7
+    },
+    "3": {
+      "speed": 0.2,
+      "size": 0.001,
+      "perlins": 1.0,
+      "decay": 1.2,
+      "displace": 0,
+      "complex": 10.5,
+      "waves": 10.7,
+      "eqcolor": 100.0,
+      "rcolor": 0.2,
+      "gcolor": 0.5,
+      "bcolor": 10.5,
+      "fragment": true,
+      "points": false,
+      "redhell": true,
+      "opacity": 0.7
     },
     "blueWatermark": {
       "speed": 0.1,
       "size": 0.1,
       "perlins": 1.0,
       "decay": 0.2,
-      "displace": 0.4,
-      "complex": 0,
+      "displace": 1.4,
+      "complex": 2,
       "waves": 30.7,
-      "eqcolor": 10.0,
+      "eqcolor": 0.0,
       "rcolor": 1.2,
       "gcolor": 1.5,
-      "bcolor": 0.2,
+      "bcolor": 1.2,
       "fragment": true,
       "points": false,
       "redhell": true,
@@ -36,110 +70,1283 @@
     }
   },
   "locations": {
-    "1": {
+    "v": {
       "name": "V",
       "gridPos": "7 / 67 / 40 / 83",
-      "color": "#AB4932",
+      "color": "#C44630",
       "img": {
-        "base": "location_v.jpg",
+        "base": "img21.png",
         "alt": "Artistic drawing of block V, made by Chiara Lammens"
       },
       "rooms": {
-        "1": {
-          "name": "T301 Zeefdruk",
-          "gridPos": "50 / 50 / 60 / 60",
-          "location": "1",
+        "v203": {
+          "name": "v203",
+          "location": "v",
           "img": {
-            "base": "location_v.jpg",
-            "alt": "Artistic drawing of block V, made by Chiara Lammens"
-          },
-          "orb": {
-            "type": "1",
-            "overrides": {
-              "size": 0.9
-            },
-            "position": {
-              "x": 100,
-              "y": 100,
-              "z": 0
-            }
-          }
-        },       
-        "2": {
-          "name": "T301 Zeefdruk",
-          "gridPos": "50 / 50 / 60 / 60",
-          "location": "1",
-          "img": {
-            "base": "location_v.jpg",
-            "alt": "Artistic drawing of block V, made by Chiara Lammens"
+            "base": "img17.png",
+            "alt": ""
           },
           "orb": {
             "type": "blueWatermark",
             "overrides": {
-              "size": 0.1
+              "size": 0.06
             },
             "position": {
-              "x": 0,
-              "y": 0,
-              "z": 0
+              "x": -0.5,
+              "y": 0
+            }
+          }
+        },
+        "v403": {
+          "name": "v403",
+          "location": "v",
+          "img": {
+            "base": "img23.png",
+            "alt": ""
+          },
+          "orb": {
+            "type": "blueWatermark",
+            "overrides": {
+              "size": 0.06
+            },
+            "position": {
+              "x": -0.5,
+              "y": 0
+            }
+          }
+        },
+        "v401": {
+          "name": "v401",
+          "location": "v",
+          "img": {
+            "base": "img23.png",
+            "alt": ""
+          },
+          "orb": {
+            "type": "blueWatermark",
+            "overrides": {
+              "size": 0.06
+            },
+            "position": {
+              "x": -0.5,
+              "y": 0
+            }
+          }
+        },
+        "grafiek": {
+          "name": "Grafiek",
+          "location": "v",
+          "img": {
+            "base": "img11.png",
+            "alt": ""
+          },
+          "orb": {
+            "type": "blueWatermark",
+            "overrides": {
+              "size": 0.06
+            },
+            "position": {
+              "x": -0.5,
+              "y": 0
             }
           }
         }
       }
     },
-    "2": {
-      "name": "A",
-      "gridPos": "80 / 80 / 90 / 90",
-      "color": "#000",
+    "at": {
+      "name": "A-T",
+      "gridPos": "16 / 20 / 50 / 40",
+      "color": "#FA6800",
+      "img": {
+        "base": "img13.png",
+        "alt": "Artistic drawing of block A-T, made by Chiara Lammens"
+      },
+      "rooms": {
+        "a302": {
+          "name": "A302",
+          "location": "at",
+          "img": {
+            "base": "img4.png",
+            "alt": ""
+          },
+          "orb": {
+            "type": "blueWatermark",
+            "overrides": {
+              "size": 0.06
+            },
+            "position": {
+              "x": -0.5,
+              "y": 0
+            }
+          }
+        },
+        "a203": {
+          "name": "A203",
+          "location": "at",
+          "img": {
+            "base": "img2.png",
+            "alt": ""
+          },
+          "orb": {
+            "type": "blueWatermark",
+            "overrides": {
+              "size": 0.06
+            },
+            "position": {
+              "x": -0.5,
+              "y": 0
+            }
+          }
+        },
+        "a204": {
+          "name": "A204",
+          "location": "at",
+          "img": {
+            "base": "img3.png",
+            "alt": ""
+          },
+          "orb": {
+            "type": "blueWatermark",
+            "overrides": {
+              "size": 0.06
+            },
+            "position": {
+              "x": -0.5,
+              "y": 0
+            }
+          }
+        },
+        "t302": {
+          "name": "T302",
+          "location": "at",
+          "img": {
+            "base": "img17.png",
+            "alt": ""
+          },
+          "orb": {
+            "type": "blueWatermark",
+            "overrides": {
+              "size": 0.06
+            },
+            "position": {
+              "x": -0.5,
+              "y": 0
+            }
+          }
+        },
+        "t303": {
+          "name": "T303",
+          "location": "at",
+          "img": {
+            "base": "img18.png",
+            "alt": ""
+          },
+          "orb": {
+            "type": "blueWatermark",
+            "overrides": {
+              "size": 0.06
+            },
+            "position": {
+              "x": -0.5,
+              "y": 0
+            }
+          }
+        },
+        "t303": {
+          "name": "T303",
+          "location": "at",
+          "img": {
+            "base": "img18.png",
+            "alt": ""
+          },
+          "orb": {
+            "type": "blueWatermark",
+            "overrides": {
+              "size": 0.06
+            },
+            "position": {
+              "x": -0.5,
+              "y": 0
+            }
+          }
+        }
+      }
+    },
+    "h": {
+      "name": "H",
+      "gridPos": "33 / 42 / 56 / 65",
+      "color": "#B84FF0",
       "img": "",
       "rooms": {
-        "1": {
-          "name": "asdf",
-          "gridPos": "80 / 80 / 90 / 90",
-          "location": "1"
+        "h302": {
+          "name": "H302",
+          "location": "h",
+          "img": {
+            "base": "img25.png",
+            "alt": ""
+          },
+          "orb": {
+            "type": "blueWatermark",
+            "overrides": {
+              "size": 0.06
+            },
+            "position": {
+              "x": -0.5,
+              "y": 0
+            }
+          }
+        },
+        "h301": {
+          "name": "H301",
+          "location": "h",
+          "img": {
+            "base": "img24.png",
+            "alt": ""
+          },
+          "orb": {
+            "type": "blueWatermark",
+            "overrides": {
+              "size": 0.06
+            },
+            "position": {
+              "x": -0.5,
+              "y": 0
+            }
+          }
+        },
+        "h202": {
+          "name": "H202",
+          "location": "h",
+          "img": {
+            "base": "img6.png",
+            "alt": ""
+          },
+          "orb": {
+            "type": "blueWatermark",
+            "overrides": {
+              "size": 0.06
+            },
+            "position": {
+              "x": -0.5,
+              "y": 0
+            }
+          }
+        },
+        "leraarskamer": {
+          "name": "leraarskamer",
+          "location": "h",
+          "img": {
+            "base": "img15.png",
+            "alt": ""
+          },
+          "orb": {
+            "type": "blueWatermark",
+            "overrides": {
+              "size": 0.06
+            },
+            "position": {
+              "x": -0.5,
+              "y": 0
+            }
+          }
+        }
+      }
+    },
+    "g": {
+      "name": "G",
+      "gridPos": "68 / 46 / 94 / 69",
+      "color": "#B84FF0",
+      "img": "img14.png",
+      "rooms": {
+        "g102": {
+          "name": "G102",
+          "location": "g",
+          "img": {
+            "base": "img8.png",
+            "alt": ""
+          },
+          "orb": {
+            "type": "blueWatermark",
+            "overrides": {
+              "size": 0.06
+            },
+            "position": {
+              "x": -0.5,
+              "y": 0
+            }
+          }
+        },
+        "secretariaat": {
+          "name": "Secretariaat102",
+          "location": "g",
+          "img": {
+            "base": "img16.png",
+            "alt": ""
+          },
+          "orb": {
+            "type": "blueWatermark",
+            "overrides": {
+              "size": 0.06
+            },
+            "position": {
+              "x": -0.5,
+              "y": 0
+            }
+          }
         }
       }
     }
   },
   "items": [
     {
-      "year": "5",
-      "division": "Opleiding",
-      "course": "Artistieke Opleiding",
-      "link": "https://www.instagram.com/explore/tags/5ao6micromacro/?hl=nl",
-      "descr": "Instagram MicroMacro",
-      "location": "1",
-      "room": "1",
-      "gridPos": "70 / 70 / 90 / 90",
+      "year": "1",
+      "division": "",
+      "course": "Eerste Humaniora",
+      "link": "https://sintlukasbxl-eerstegraad.tumblr.com/",
+      "descr": "Tumblr pagina",
+      "location": "at",
+      "room": "a203",
       "orb": {
         "type": "1",
-        "overrides": {},
+        "overrides": {
+          "size": 0.1
+        },
         "position": {
-          "x": 1.9,
-          "y": 1.8,
-          "z": 1
+          "x": -0.42874999999999996,
+          "y": -0.5
+        }
+      }
+    },
+    {
+      "year": "2",
+      "division": "",
+      "course": "Artistieke Vorming",
+      "link": "https://sintlukasbxl-eerstegraad.tumblr.com/",
+      "descr": "Tumblr pagina",
+      "location": "at",
+      "room": "a203",
+      "orb": {
+        "type": "1",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x": -0.42874999999999996,
+          "y": -0.5
+        }
+      }
+    },
+    {
+      "year": "3",
+      "division": "Vorming",
+      "course": "Audiovisuele Vorming",
+      "link": "https://padlet.com/4vorming/2sx51umefb53tcia",
+      "descr": "",
+      "location": "at",
+      "room": "t302",
+      "orb": {
+        "type": "1",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x": -0.42874999999999996,
+          "y": -0.5
+        }
+      }
+    },
+    {
+      "year": "4",
+      "division": "Vorming",
+      "course": "Audiovisuele Vorming",
+      "link": "https://padlet.com/4vorming/2sx51umefb53tcia",
+      "descr": "",
+      "location": "at",
+      "room": "t303",
+      "orb": {
+        "type": "1",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x": -0.42874999999999996,
+          "y": -0.5
         }
       }
     },
     {
       "year": "5",
-      "division": "Opleiding",
-      "course": "Artistieke Opleiding",
-      "link": "https://www.instagram.com/explore/tags/5ao6micromacro/?hl=nl",
-      "descr": "Instagram MicroMacro",
-      "location": "1",
-      "room": "1",
-      "gridPos": "20 / 20 / 30 / 30",
+      "division": "Kunsten",
+      "course": "Vrije Beeldende Kunst",
+      "link": "https://sintlukas.blogspot.com/",
+      "descr": "TEKENblog VBK",
+      "location": "at",
+      "room": "a302",
       "orb": {
         "type": "1",
-        "overrides": {},
+        "overrides": {
+          "size": 0.1
+        },
         "position": {
-          "x": 0.9,
-          "y": 0.8,
-          "z": 1
+          "x": -0.42874999999999996,
+          "y": -0.5
         }
       }
-    }
+    },
+    {
+      "year": "5",
+      "division": "Vorming",
+      "course": "Audiovisuele Vorming",
+      "link": "http://www.vimeo.com/derdegraadavv",
+      "descr": "Vimeo-account van de derde graad AVV, met een selectie van het filmwerk gemaakt in het schooljaar 2019 - 2020",
+      "location": "at",
+      "room": "t302",
+      "orb": {
+        "type": "1",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x": -0.42874999999999996,
+          "y": -0.5
+        }
+      }
+    },
+    {
+      "year": "5",
+      "division": "Vorming",
+      "course": "Audiovisuele Vorming",
+      "link": "https://audiovisuelevorming.hotglue.me",
+      "descr": "Portaalsite die toegang biedt tot het werk van 5AVV en 6AVV (jaarwerk en GIP)",
+      "location": "at",
+      "room": "t303",
+      "orb": {
+        "type": "1",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x": -0.42874999999999996,
+          "y": -0.5
+        }
+      }
+    },
+    {
+      "year": "6",
+      "division": "Kunsten",
+      "course": "Vrije Beeldende Kunst",
+      "link": "https://sintlukas.blogspot.com/",
+      "descr": "TEKENblog VBK",
+      "location": "at",
+      "room": "a302",
+      "orb": {
+        "type": "1",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x": -0.42874999999999996,
+          "y": -0.5
+        }
+      }
+    },
+    {
+      "year": "3",
+      "division": "Kunsten",
+      "course": "Beeldende & Architecturale Kunsten",
+      "link": "http://users.telenet.be/bram.ollieuz/3bak/3BAK.html",
+      "descr": "Filmpjes met werken van 3BAK",
+      "location": "at",
+      "room": "h302",
+      "orb": {
+        "type": "1",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x": -0.42874999999999996,
+          "y": -0.5
+        }
+      }
+    },
+    {
+      "year": "4",
+      "division": "Kunsten",
+      "course": "Beeldende & Architecturale Kunsten",
+      "link": "https://www.youtube.com/watch?v=oCMoeTDcfiU",
+      "descr": "Youtube film compilatie van photoshop animaties",
+      "location": "at",
+      "room": "h302",
+      "orb": {
+        "type": "1",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x": -0.42874999999999996,
+          "y": -0.5
+        }
+      }
+    },
+    {
+      "year": "6",
+      "division": "Vorming",
+      "course": "Audiovisuele Vorming",
+      "link": "http://www.vimeo.com/derdegraadavv",
+      "descr": "Vimeo-account van de derde graad AVV, met een selectie van het filmwerk gemaakt in het schooljaar 2019 - 2020",
+      "location": "at",
+      "room": "t302",
+      "orb": {
+        "type": "1",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x": -0.42874999999999996,
+          "y": -0.5
+        }
+      }
+    },
+    {
+      "year": "3",
+      "division": "Opleiding",
+      "course": "Artistieke Opleiding",
+      "link": "http://artistiekeopleiding.blogspot.com/",
+      "descr": "Blog tweede graad AO",
+      "location": "v",
+      "room": "v203",
+      "orb": {
+        "type": "1",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x": -0.42874999999999996,
+          "y": -0.5
+        }
+      }
+    },
+    {
+      "year": "3",
+      "division": "Vorming",
+      "course": "Beeldende & Architecturale Vorming",
+      "link": "https://sintlukasbxl-bav.tumblr.com/",
+      "descr": "",
+      "location": "v",
+      "room": "v403",
+      "orb": {
+        "type": "1",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x": 0.38675003051757817,
+          "y": 0.30000000000000004
+        }
+      }
+    },
+    {
+      "year": "4",
+      "division": "Opleiding",
+      "course": "Artistieke opleiding",
+      "link": "http://artistiekeopleiding.blogspot.com/",
+      "descr": "blog tweede graad AO",
+      "location": "v",
+      "room": "v203",
+      "orb": {
+        "type": "1",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x": -0.42874999999999996,
+          "y": -0.5
+        }
+      }
+    },
+    {
+      "year": "4",
+      "division": "Opleiding",
+      "course": "Artistieke opleiding",
+      "link": "https://www.instagram.com/explore/tags/warybabstract/",
+      "descr": "Instagram Who's afraid of red yellow and blue",
+      "location": "v",
+      "room": "v203",
+      "orb": {
+        "type": "1",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x": -0.42874999999999996,
+          "y": -0.5
+        }
+      }
+    },
+    {
+      "year": "4",
+      "division": "Opleiding",
+      "course": "Artistieke opleiding",
+      "link": "https://www.instagram.com/explore/tags/waryb/",
+      "descr": "Instagram Who's afraid of red yellow and blue",
+      "location": "v",
+      "room": "v203",
+      "orb": {
+        "type": "1",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x": -0.42874999999999996,
+          "y": -0.5
+        }
+      }
+    },
+    {
+      "year": "4",
+      "division": "Vorming",
+      "course": "Beeldende & Architecturale vorming",
+      "link": "https://sintlukasbxl-bav.tumblr.com/",
+      "descr": "Instagram Who's afraid of red yellow and blue",
+      "location": "v",
+      "room": "v403",
+      "orb": {
+        "type": "1",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x": -0.5057499694824219,
+          "y": 0.10750000000000004
+        }
+      }
+    },
+    {
+      "year": "5",
+      "division": "Kunsten",
+      "course": "Toegepaste Beeldende Kunst",
+      "link": "https://sintlukasbxl-tbk.tumblr.com/",
+      "descr": "Tumblr pagina",
+      "location": "v",
+      "room": "grafiek",
+      "orb": {
+        "type": "1",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x": -0.42874999999999996,
+          "y": -0.5
+        }
+      }
+    },
+    {
+      "year": "5",
+      "division": "Kunsten",
+      "course": "Architecturale & Binnenhuiskunst",
+      "link": "https://padlet.com/tomjanssens/SintLukasABK",
+      "descr": "",
+      "location": "v",
+      "room": "v403",
+      "orb": {
+        "type": "1",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x": 0.31425003051757816,
+          "y": -0.22999999999999998
+        }
+      }
+    },
+    {
+      "year": "5",
+      "division": "Kunsten",
+      "course": "Architecturale & Binnenhuiskunst",
+      "link": "https://www.instagram.com/explore/tags/5ao6micromacro/?hl=nl",
+      "descr": "Instagram MicroMacro",
+      "location": "v",
+      "room": "v203",
+      "orb": {
+        "type": "1",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x": -0.42874999999999996,
+          "y": -0.5
+        }
+      }
+    },
+    {
+      "year": "5",
+      "division": "Kunsten",
+      "course": "Architecturale & Binnenhuiskunst",
+      "link": "https://www.instagram.com/3de_graad_ao/",
+      "descr": "instagramaccount met selectie werk gemaakt door 5 en 6 ao",
+      "location": "v",
+      "room": "v203",
+      "orb": {
+        "type": "1",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x": -0.42874999999999996,
+          "y": -0.5
+        }
+      }
+    },
+    {
+      "year": "5",
+      "division": "Vorming",
+      "course": "Architecturale Vorming",
+      "link": "https://www.tumblr.com/blog/sintlukas-bxl-av",
+      "descr": "",
+      "location": "v",
+      "room": "v403",
+      "orb": {
+        "type": "1",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x": -0.22324996948242193,
+          "y": 0.3425
+        }
+      }
+    },
+    {
+      "year": "6",
+      "division": "Kunsten",
+      "course": "Toegepaste Beeldende Kunst",
+      "link": "https://sintlukasbxl-tbk.tumblr.com/",
+      "descr": "Tumblr pagina",
+      "location": "v",
+      "room": "grafiek",
+      "orb": {
+        "type": "1",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x": -0.42874999999999996,
+          "y": -0.5
+        }
+      }
+    },
+    {
+      "year": "6",
+      "division": "Kunsten",
+      "course": "Architecturale & Binnenhuiskunst",
+      "link": "https://padlet.com/tomjanssens/SintLukasABK",
+      "descr": "",
+      "location": "v",
+      "room": "v403",
+      "orb": {
+        "type": "1",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x": -0.42874999999999996,
+          "y": -0.5
+        }
+      }
+    },
+    {
+      "year": "6",
+      "division": "Opleiding",
+      "course": "Artistieke Opleiding",
+      "link": "https://www.instagram.com/3de_graad_ao/",
+      "descr": "Instagramaccount met selectie werk gemaakt door 5 en 6 ao",
+      "location": "v",
+      "room": "v203",
+      "orb": {
+        "type": "1",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x": -0.42874999999999996,
+          "y": -0.5
+        }
+      }
+    },
+    {
+      "year": "6",
+      "division": "Opleiding",
+      "course": "Artistieke Opleiding",
+      "link": "https://www.instagram.com/3de_graad_ao/",
+      "descr": "Instagramaccount met selectie werk gemaakt door 5 en 6 ao",
+      "location": "v",
+      "room": "v203",
+      "orb": {
+        "type": "1",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x": -0.42874999999999996,
+          "y": -0.5
+        }
+      }
+    },
+    {
+      "year": "6",
+      "division": "Opleiding",
+      "course": "Artistieke Opleiding",
+      "link": "https://sintlukasbxl-5ao6.tumblr.com",
+      "descr": "tumblr pagina voor 5 en 6ao",
+      "location": "v",
+      "room": "v203",
+      "orb": {
+        "type": "1",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x": -0.42874999999999996,
+          "y": -0.5
+        }
+      }
+    },
+    {
+      "year": "6",
+      "division": "Opleiding",
+      "course": "Artistieke Opleiding",
+      "link": "https://sintlukasbxl-5ao6.tumblr.com",
+      "descr": "tumbl 5 en 6ao (we hebben vernomen dat instagram vastloopt als je niet inlogt, vandaar dat we toch maar een tumblr hebben aangemaakt)",
+      "location": "v",
+      "room": "v203",
+      "orb": {
+        "type": "1",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x": -0.42874999999999996,
+          "y": -0.5
+        }
+      }
+    },
+    {
+      "year": "6",
+      "division": "Opleiding",
+      "course": "Artistieke Opleiding",
+      "link": "https://audiovisuelevorming.hotglue.me/",
+      "descr": "Portaalsite die toegang biedt tot het werk van 5AVV en 6AVV (jaarwerk en GIP)",
+      "location": "at",
+      "room": "v303",
+      "orb": {
+        "type": "1",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x": -0.42874999999999996,
+          "y": -0.5
+        }
+      }
+    },
+    {
+      "year": "6",
+      "division": "Vorming",
+      "course": "Architecturale Vorming",
+      "link": "https://www.tumblr.com/blog/sintlukas-bxl-av",
+      "descr": "",
+      "location": "at",
+      "room": "t401",
+      "orb": {
+        "type": "1",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x": -0.42874999999999996,
+          "y": -0.5
+        }
+      }
+    },
+    {
+      "year": "atelier kinderen",
+      "division": "academie",
+      "course": "",
+      "link": "https://padlet.com/m_lefever/lbv7hmlo8f7i?utm_campaign=transactional&utm_content=padlet_url&utm_medium=email&utm_source=started_a_padlet",
+      "descr": "Atelier kinderen: Padlet Toon je Gezichtje - Academie Groenstraat ( Hoofdschool)",
+      "location": "g",
+      "room": "g102",
+      "orb": {
+        "type": "1",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x": -0.42874999999999996,
+          "y": -0.5
+        }
+      }
+    },
+    {
+      "year": "atelier kinderen",
+      "division": "academie",
+      "course": "",
+      "link": "https://padlet.com/luciasaura/s2f93v1lx1fn1n9s",
+      "descr": "Champagnat",
+      "location": "g",
+      "room": "g102",
+      "orb": {
+        "type": "1",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x": -0.42874999999999996,
+          "y": -0.5
+        }
+      }
+    },
+    {
+      "year": "atelier kinderen",
+      "division": "academie",
+      "course": "",
+      "link": "https://padlet.com/raisavdm/xcrzjimrp3d2xwc0",
+      "descr": "Atelier kinderen in Sint-Joost",
+      "location": "g",
+      "room": "g102",
+      "orb": {
+        "type": "1",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x": -0.42874999999999996,
+          "y": -0.5
+        }
+      }
+    },
+    {
+      "year": "atelier jongeren",
+      "division": "academie",
+      "course": "",
+      "link": "https://padlet.com/tvsintlukas/Bookmarks",
+      "descr": "Padlet jongeren Groenstraat",
+      "location": "v",
+      "room": "grafiek",
+      "orb": {
+        "type": "1",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x": -0.42874999999999996,
+          "y": -0.5
+        }
+      }
+    },
+    {
+      "year": "atelier volwassenen",
+      "division": "academie",
+      "course": "fotokunst",
+      "link": "https://atelierfotokunst.wordpress.com",
+      "descr": "",
+      "location": "t",
+      "room": "t302",
+      "orb": {
+        "type": "1",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x": -0.42874999999999996,
+          "y": -0.5
+        }
+      }
+    },
+    {
+      "year": "atelier volwassenen",
+      "division": "academie",
+      "course": "schilderkunst",
+      "link": "https://padlet.com/jonasdelaey/fb0mwx1bm8l3irce",
+      "descr": "Padlet Schilderkunst",
+      "location": "h",
+      "room": "h301",
+      "orb": {
+        "type": "1",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x": -0.42874999999999996,
+          "y": -0.5
+        }
+      }
+    },
+    {
+      "year": "atelier volwassenen",
+      "division": "academie",
+      "course": "interieurontwerp",
+      "link": "https://padlet.com/tomjanssens/interieurontwerp",
+      "descr": "Padlet Interieurontwerp",
+      "location": "v",
+      "room": "v403",
+      "orb": {
+        "type": "1",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x": -0.42874999999999996,
+          "y": -0.5
+        }
+      }
+    },
+    {
+      "year": "atelier volwassenen",
+      "division": "academie",
+      "course": "grafisch ontwerp & illustratie",
+      "link": "https://padlet.com/deboeck_anne/SLA_GrafischOntwerpIllustratie",
+      "descr": "Padlet Grafisch ontwerp en Illustratie",
+      "location": "at",
+      "room": "t303",
+      "orb": {
+        "type": "1",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x": -0.42874999999999996,
+          "y": -0.5
+        }
+      }
+    },
+    {
+      "year": "atelier volwassenen",
+      "division": "academie",
+      "course": "kunstbeschouwing",
+      "link": "https://www.youtube.com/watch?v=Kf8EzRobak0&feature=youtu.be",
+      "descr": "voorbeeldles kunstbeschouwing",
+      "location": "h",
+      "room": "h202",
+      "orb": {
+        "type": "1",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x": -0.42874999999999996,
+          "y": -0.5
+        }
+      }
+    },
+    {
+      "year": "atelier volwassenen",
+      "division": "academie",
+      "course": "modeltekenen",
+      "link": "https://padlet.com/chiara_lammens/wacgangj32l7",
+      "descr": "voorbeeldles kunstbeschouwing",
+      "location": "at",
+      "room": "a302",
+      "orb": {
+        "type": "1",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x": -0.42874999999999996,
+          "y": -0.5
+        }
+      }
+    },
+    {
+      "year": "atelier volwassenen",
+      "division": "academie",
+      "course": "tekenkunst",
+      "link": "https://padlet.com/chiara_lammens/wacgangj32l7",
+      "descr": "Padlet waarneming/model",
+      "location": "at",
+      "room": "a302",
+      "orb": {
+        "type": "1",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x": -0.42874999999999996,
+          "y": -0.5
+        }
+      }
+    },
+    {
+      "year": "atelier volwassenen",
+      "division": "academie",
+      "course": "tekenkunst",
+      "link": "https://padlet.com/chiara_lammens/sf78uxa5q3349oil",
+      "descr": "tekenkunst",
+      "location": "at",
+      "room": "a302",
+      "orb": {
+        "type": "1",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x": -0.42874999999999996,
+          "y": -0.5
+        }
+      }
+    },
+    {
+      "year": "kunstkuur",
+      "division": "academie",
+      "course": "Sint-Albert",
+      "link": "https://padlet.com/ellenjanssens/1heuhcn6hx5t",
+      "descr": "Kunstkuur Sint - Albert : Padlet Kunstketten",
+      "location": "g",
+      "room": "secretariaat",
+      "orb": {
+        "type": "1",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x": -0.42874999999999996,
+          "y": -0.5
+        }
+      }
+    },
+    {
+      "year": "Leerkrachten eigen website",
+      "division": "academie",
+      "course": "kinderatelier & tekenkunst",
+      "link": "https://chiaralammens.tumblr.com/",
+      "descr": "Tumblr Chiara Lammens",
+      "location": "h",
+      "room": "leraarskamer",
+      "orb": {
+        "type": "3",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x": -0.42874999999999996,
+          "y": -0.5
+        }
+      }
+    },
+    {
+      "year": "Leerkrachten eigen website",
+      "division": "academie",
+      "course": "schilderkunst",
+      "link": "https://www.pieterdeclercq.net/",
+      "descr": "Website Pieter De Clercq",
+      "location": "h",
+      "room": "leraarskamer",
+      "orb": {
+        "type": "3",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x":-0.6025, "y":-0.2849999999999999
+        }
+      }
+    },
+    {
+      "year": "Leerkrachten eigen website",
+      "division": "academie",
+      "course": "grafisch ontwerp & illustratie",
+      "link": "https://annedeboeck.be/",
+      "descr": "Website Anne De Boeck",
+      "location": "h",
+      "room": "leraarskamer",
+      "orb": {
+        "type": "3",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x":0.72, "y":0.24250000000000005
+        }
+      }
+    },
+    {
+      "year": "Leerkrachten eigen website",
+      "division": "academie",
+      "course": "zeefdruk",
+      "link": "https://www.bartvanoverberghe.be",
+      "descr": "Website Bart Van Overberghe",
+      "location": "h",
+      "room": "leraarskamer",
+      "orb": {
+        "type": "3",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x":-0.022499999999999964, "y":-0.39250000000000007
+        }
+      }
+    },
+    {
+      "year": "Leerkrachten eigen website",
+      "division": "academie",
+      "course": "interieurontwerp",
+      "link": "https://www.tomjanssens.com",
+      "descr": "Website Tom Janssens",
+      "location": "h",
+      "room": "leraarskamer",
+      "orb": {
+        "type": "3",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x":-0.4225, "y":0.01749999999999996
+        }
+      }
+    },
+    {
+      "year": "Leerkrachten eigen website",
+      "division": "academie",
+      "course": "grafiek & atelier jongeren",
+      "link": "https://toonverbraeken.tumblr.com/",
+      "descr": "Tumblr Toon Verbraeken",
+      "location": "h",
+      "room": "leraarskamer",
+      "orb": {
+        "type": "3",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x":0.26750000000000007, "y":0
+        }
+      }
+    },
+    {
+      "year": "Leerkrachten eigen website",
+      "division": "academie",
+      "course": "kinderatelier, fotokunst",
+      "link": "https://raisavandamme.com/ ",
+      "descr": "website Raisa Vandamme",
+      "location": "h",
+      "room": "leraarskamer",
+      "orb": {
+        "type": "3",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x":-0.015000000000000013, "y":0.275
+        }
+      }
+    }          
+  
+
+  
+
+
   ],
   "photos": [
     {
@@ -147,4 +1354,3 @@
     }
   ]
 }
-

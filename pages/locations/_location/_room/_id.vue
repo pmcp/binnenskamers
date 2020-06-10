@@ -14,7 +14,7 @@
       </div>
       <div class="links">
         <div>
-          <h2>Links</h2>
+          <!-- <h2>Links</h2> -->
           <div
             v-for="(l, key) in itemsOfRoom"
             :key="key"
@@ -32,6 +32,7 @@
         </div>
       </div>
     </div>
+    <iframe :src="activeLink" style="width:100%;height:100vh;"></iframe>
   </div>
 </template>
 
@@ -90,7 +91,8 @@ export default {
       room: null,
       location: null,
       activeLink: null,
-      cursorClass:null
+      cursorClass:null,
+      activeLink: null
     };
   },
 
@@ -124,11 +126,11 @@ export default {
     // This event is coming from the threejs instance, when clicked on an orb. When clicked -> go to page
     EventBus.$on("MOUSEDOWNONORB", data => {
       if(data.type === 'room') return;
-      console.log('link', data.type)
-       window.open(
-        this.items[data.index].link,
-        '_blank' // <- This is what makes it open in a new window.
-      );
+      this.activeLink = this.items[data.index].link;
+      //  window.open(
+      //   this.items[data.index].link,
+      //   '_blank' // <- This is what makes it open in a new window.
+      // );
     });
   },
 };

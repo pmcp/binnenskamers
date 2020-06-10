@@ -14,7 +14,7 @@
             <a
               v-for="(i, key) in activeLocation.rooms"
               :key="`activeItems_${key}`"
-              :href="`locations/${i.location}/rooms/${key}`"
+              :href="`/locations/${i.location}/rooms/${key}`"
               class="link"
               :class="[{'link--active' : (activeRoom  !== null && key === activeRoom), 'link--nonActive': activeRoom === null}]"
               @mouseover="setActive(key)"
@@ -28,7 +28,7 @@
             <a
               v-for="(i, key) in activeCourses"
               :key="`activeItems_${key}`"
-              :href="`locations/${i.location}/rooms/${i.room}`"
+              :href="`${i.location}/rooms/${i.room}`"
               class="link"
               :class="[{'link--active' : (activeRoom  !== null && i.room === activeRoom), 'link--nonActive': activeRoom === null}]"
               @mouseover="setActive(i.room)"
@@ -80,7 +80,7 @@ export default {
     },
     image () {
       if (!this.activeLocation) return;
-      return require(`@/assets/squares/${this.activeLocation.img.base}`)
+      return require(`@/assets/squares/${this.activeLocation.img}`)
     },
     activeLocation(){
       if  (!this.location) return;

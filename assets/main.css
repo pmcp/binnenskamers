@@ -1649,7 +1649,24 @@ body {
 
 /* Links */
 .links {
-  /* padding-top: 5rem; */
+  padding-top: 4rem;;
+  width:800px;
+  height: 800px;
+}
+.links a {
+  /* color: rgb(0.65,0.80,0.68) */
+}
+
+/* Breadcrumbs */
+.breadcrumbs {
+  padding-top: 4rem;
+  width:800px;
+  
+}
+
+.breadcrumbs a {
+  color: unset
+  
 }
 
 /* Blob canvas */

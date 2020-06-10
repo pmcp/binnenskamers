@@ -193,7 +193,8 @@ void main() {
   vUv = uv;
 
   noise = (2.0 *  - waves) * turbulence( decay * abs(normal + time));
-  qnoise = (0.3 *  - eqcolor) * turbulence( decay * abs(normal + time));
+  // qnoise = (0.3 *  - eqcolor) * turbulence( decay * abs(normal + time));
+  qnoise = (-1.3) * turbulence( decay * abs(normal + time));
   float b = pnoise( complex * (position) + vec3( (decay * 2.0) * time ), vec3( 100.0 ) );
   
   displacement = - atan(noise) + tan(b * displace);

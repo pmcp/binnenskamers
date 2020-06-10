@@ -64,10 +64,11 @@ class Common {
 
     
     EventBus.$on("DEACTIVATEORB", data => {  
+      console.log('deactivate')
       this.hoverStatus = 'NOHOVER'
       if(this.activeOrb === null) return;
       this.onHover(this.activeOrb)
-      this.activeOrb = null;
+      // this.activeOrb = null;
     });
 
 
@@ -214,6 +215,7 @@ class Common {
   onHover(orb){
     let start = {}
     let finish = {}
+    console.log(orb)
     if(this.hoverStatus === 'HOVERING') {
       start.opacity = orb.material.uniforms.opacity.value,
       finish.opacity = orb.material.uniforms.opacity.value * 1.4,
@@ -243,7 +245,11 @@ class Common {
     })
     tween.start();
     // tween.onStart(i => {})
-    // tween.onComplete(i => {});
+    tween.onComplete(i => {
+      if(this.hoverStatus === 'NOHOVER') {
+        this.activeOrb = null;
+      }
+    });
   }
 
   setMouseCoordinates = function(mousePosX, mousePosY){

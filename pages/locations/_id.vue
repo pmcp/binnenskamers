@@ -1,5 +1,8 @@
 <template>
   <div class="container">
+    <div class="breadcrumbs" v-if="activeLocation">
+      <a href="/map">Plattegrond</a> - Blok {{ activeLocation.name }}
+    </div>
     <div class="map" :class="cursorClass" @mouseleave="setActive(null)" v-if="activeLocation">
       <orbs v-if="orbSettings" :settings="orbSettings" />
       <div class="map__img" >
@@ -10,9 +13,8 @@
       <div v-if="activeLocation">
         <div class="legend__columns">
           <div v-if="activeLocation.rooms">
-            <h2>Lokalen</h2>
-            <a
-              v-for="(i, key) in activeLocation.rooms"
+            Lokalen: <a
+              v-for="(i, key, index) in activeLocation.rooms"
               :key="`activeItems_${key}`"
               :href="`/locations/${i.location}/rooms/${key}`"
               class="link"
@@ -20,29 +22,27 @@
               @mouseover="setActive(key)"
               @mouseleave="setActive(null)"
             >
-              {{ i.name }}      
+              {{ i.name }}    <span v-if="index < (Object.keys(activeLocation.rooms).length-1)">-</span>  
             </a>
           </div>
           <div>
-            <h2>Richtingen</h2>
-            <a
-              v-for="(i, key) in activeCourses"
+            Richtingen: <a
+              v-for="(i, key, index) in activeCourses"
               :key="`activeItems_${key}`"
               :href="`${i.location}/rooms/${i.room}`"
               class="link"
               :class="[{'link--active' : (activeRoom  !== null && i.room === activeRoom), 'link--nonActive': activeRoom === null}]"
               @mouseover="setActive(i.room)"
               @mouseleave="setActive(null)"
-            > {{ i.name }} ({{ i.total }})
+            > {{ i.name }}  {{ activeCourses.length}} <span v-if="index < (Object.keys(activeCourses).length-1)">-</span>
               
             </a>
           </div>
-          <!-- <div>
-            <h2>Academie</h2>
-            <div v-for="(i, key) in activeAcademy" :key="`activeItems_${key}`">
-              {{ i.year }} {{ i.cours }}
-            </div>
-          </div> -->
+        <div v-if="activeAcademy">
+         Academie: <a v-for="(i, key) in activeAcademy" :key="`activeItems_${key}`" :href="`locations/${i.location}/rooms/${i.room}`">
+            {{ i.year }} {{ i.course }}  <span v-if="key < Object.keys(activeAcademy).length-1">-</span>
+          </a>
+        </div>
         </div>
       </div>
     </div>
@@ -80,7 +80,8 @@ export default {
     },
     image () {
       if (!this.activeLocation) return;
-      return require(`@/assets/squares/${this.activeLocation.img}`)
+      
+      return require(`@/assets/squares/${this.activeLocation.img.base}`)
     },
     activeLocation(){
       if  (!this.location) return;
@@ -107,6 +108,13 @@ export default {
           return acc
         }, {},
       );
+    },
+    activeAcademy() {
+      if (this.activeItems === null) return null;
+      if (this.activeItems.length  < 1) return null;
+      const academyItems = this.activeItems.filter(i => i.division === 'academie')
+      console.log(academyItems)
+      return academyItems;
     }
   },
   asyncData({ params }) {

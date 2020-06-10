@@ -1,11 +1,12 @@
 {
-  "name": "threejs-nuxt-sample",
+  "name": "binnenskamers",
   "version": "1.0.0",
-  "description": "My geometric Nuxt.js project",
-  "author": "Misaki",
+  "description": "Sint Lukas Expo",
+  "author": "Maarten Lauwaert",
   "private": true,
   "scripts": {
     "dev": "nuxt",
+    "serve": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate"

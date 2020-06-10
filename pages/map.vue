@@ -29,32 +29,29 @@
 
       <div class="legend__columns">
         <div v-if="activeRooms">
-          <h2>Lokalen</h2>
-          <a
-            v-for="(i, key) in activeRooms"
+          Lokalen: <a
+            v-for="(i, key, index) in activeRooms"
             :key="`activeItems_${key}`"
             :href="`locations/${i.location}/rooms/${key}`"
           >
-            {{ i.name }}      
+            {{ i.name }} <span v-if="index < (Object.keys(activeRooms).length-1)">-</span>
           </a>
         </div>
-        <div v-if="activeCourses">
-          <h2>Richtingen</h2>
-          
-          <a
-            v-for="(i, key) in activeCourses"
+        <div v-if="activeCourses">  
+          Richtingen: <a
+            v-for="(i, key, index) in activeCourses"
             :key="`activeItems_${key}`"
             :href="`locations/${i.location}/rooms/${i.room}`"
-          > {{ i.name }} ({{ i.total }})
+          > {{ i.name }} <span v-if="index < (Object.keys(activeCourses).length-1)">-</span>
+           <!-- ({{ i.total }}) -->
             
           </a>
         </div>
-        <!-- <div>
-          <h2>Academie</h2>
-          <div v-for="(i, key) in activeAcademy" :key="`activeItems_${key}`">
-            {{ i.year }} {{ i.cours }}
-          </div>
-        </div> -->
+        <div v-if="activeAcademy">
+         Academie: <a v-for="(i, key) in activeAcademy" :key="`activeItems_${key}`" :href="`locations/${i.location}/rooms/${i.room}`">
+            {{ i.year }} {{ i.course }} <span v-if="key < (activeAcademy.length-1)">-</span>
+          </a>
+        </div>
       </div>
     </div>
   </div>
@@ -67,6 +64,12 @@ export default {
     colorImage() {
       return require(`~/assets/squares/colors.png`)
     },
+    // allRooms(){
+    //   return this.location.reduce((acc, i) => {
+    //     roomsArray
+    //     acc = [...acc, i.rooms]
+    //   }, [])
+    // }
     activeRooms() {
       if (this.activeLocation === null || this.activeLocation === undefined)
         return null;
@@ -95,6 +98,13 @@ export default {
           return acc
         }, {},
       );
+    },
+    activeAcademy() {
+      if (this.activeItems === null) return null;
+      if (this.activeItems.length  < 1) return null;
+      const academyItems = this.activeItems.filter(i => i.division === 'academie')
+      console.log(academyItems)
+      return academyItems;
     },
 
     activeLocation() {

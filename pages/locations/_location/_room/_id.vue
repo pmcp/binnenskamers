@@ -23,6 +23,16 @@
           />
         </div>
       </div>
+
+      <div class="room__description" v-if="activeRoom && activeRoom.name == 'Secretariaat - Bureau Ellen'">
+        <br>INFO:
+          <br>°telefoon 02 217 77 00
+          <br>°mail : <a href="mailto:info@sintlukas.brussels">info@sintlukas.brussels</a>
+        <br>INSCHRIJVINGEN:
+        <br>°basisschool: <a href="http://www.sintlukasbasisschool.be/" target="_blank">sintlukasbasisschool.be</a>
+        <br>°humaniora: <a href="http://blog.sintlukaskunsthumaniora.be/" target="_blank">blog.sintlukaskunsthumaniora.be</a>
+        <br>°academie: <a href="https://sintlukasacademie.brussels/" target="_blank">sintlukasacademie.brussels</a>
+      </div>
       <div class="links">
         <a
           v-for="(l, key) in itemsOfRoom"

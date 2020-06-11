@@ -1329,24 +1329,6 @@
     {
       "year": "atelier volwassenen",
       "division": "academie",
-      "course": "modeltekenen",
-      "link": "https://padlet.com/chiara_lammens/wacgangj32l7",
-      "descr": "voorbeeldles kunstbeschouwing",
-      "location": "at",
-      "room": "a302",
-      "orb": {
-        "type": "academy",
-        "overrides": {
-          "size": 0.1
-        },
-        "position": {
-          "x":-0.27249999999999996, "y":0.5974166488647461
-        }
-      }
-    },
-    {
-      "year": "atelier volwassenen",
-      "division": "academie",
       "course": "tekenkunst",
       "link": "https://padlet.com/chiara_lammens/wacgangj32l7",
       "descr": "Padlet waarneming/model",

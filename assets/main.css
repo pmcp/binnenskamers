@@ -1594,35 +1594,8 @@ body {
 
 /* Legend */
 .legend {
-
-  position: relative;
-  z-index: 200;
-  max-width: 30vw;
-  display: flex;
-  width: 100%;
-  position: relative;
-  z-index: 5;
-
+  width: 800px;
 }
-@media (max-width: 640px){
-  .legend { 
-    margin-top: 100vw;
-    max-width: 80vw;
-  }
-}
-
-/* @media (min-width: 1130px){
-  .map {
-    margin-top: 800px;
-  }
-} */
-
-.legend > div {
-  margin: 2rem;
-  display: flex;
-  flex-direction: column;
-}
-
 
 .link {
   opacity: 0.2;

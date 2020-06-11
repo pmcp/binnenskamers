@@ -596,6 +596,8 @@
     {
       "year": "1",
       "division": "",
+      "cat": "secundary",
+      "type": "class",
       "course": "Eerste Humaniora",
       "link": "https://sintlukasbxl-eerstegraad.tumblr.com/",
       "descr": "Tumblr pagina",
@@ -614,6 +616,8 @@
     {
       "year": "2",
       "division": "",
+      "cat": "secundary",
+      "type": "class",
       "course": "Artistieke Vorming",
       "link": "https://sintlukasbxl-eerstegraad.tumblr.com/",
       "descr": "Tumblr pagina",
@@ -632,6 +636,8 @@
     {
       "year": "3",
       "division": "Vorming",
+      "cat": "secundary",
+      "type": "class",
       "course": "Audiovisuele Vorming",
       "link": "https://padlet.com/4vorming/2sx51umefb53tcia",
       "descr": "",
@@ -651,7 +657,9 @@
     {
       "year": "4",
       "division": "Vorming",
+      "type": "class",
       "course": "Audiovisuele Vorming",
+      "cat": "secundary",
       "link": "https://padlet.com/4vorming/2sx51umefb53tcia",
       "descr": "",
       "location": "at",
@@ -669,6 +677,8 @@
     {
       "year": "5",
       "division": "Kunsten",
+      "type": "class",
+      "cat": "secundary",
       "course": "Vrije Beeldende Kunst",
       "link": "https://sintlukas.blogspot.com/",
       "descr": "TEKENblog VBK",
@@ -687,6 +697,8 @@
     {
       "year": "5",
       "division": "Vorming",
+      "type": "class",
+      "cat": "secundary",
       "course": "Audiovisuele Vorming",
       "link": "http://www.vimeo.com/derdegraadavv",
       "descr": "Vimeo-account van de derde graad AVV, met een selectie van het filmwerk gemaakt in het schooljaar 2019 - 2020",
@@ -706,6 +718,8 @@
     {
       "year": "5",
       "division": "Vorming",
+      "type": "class",
+      "cat": "secundary",
       "course": "Audiovisuele Vorming",
       "link": "https://audiovisuelevorming.hotglue.me",
       "descr": "Portaalsite die toegang biedt tot het werk van 5AVV en 6AVV (jaarwerk en GIP)",
@@ -724,6 +738,8 @@
     {
       "year": "6",
       "division": "Kunsten",
+      "type": "class",
+      "cat": "secundary",
       "course": "Vrije Beeldende Kunst",
       "link": "https://sintlukas.blogspot.com/",
       "descr": "TEKENblog VBK",
@@ -743,6 +759,8 @@
     {
       "year": "3",
       "division": "Kunsten",
+      "type": "class",
+      "cat": "secundary",
       "course": "Beeldende & Architecturale Kunsten",
       "link": "http://users.telenet.be/bram.ollieuz/3bak/3BAK.html",
       "descr": "Filmpjes met werken van 3BAK",
@@ -761,6 +779,8 @@
     {
       "year": "4",
       "division": "Kunsten",
+      "type": "class",
+      "cat": "secundary",
       "course": "Beeldende & Architecturale Kunsten",
       "link": "https://www.youtube.com/watch?v=oCMoeTDcfiU",
       "descr": "Youtube film compilatie van photoshop animaties",
@@ -779,6 +799,8 @@
     {
       "year": "6",
       "division": "Vorming",
+      "type": "class",
+      "cat": "secundary",
       "course": "Audiovisuele Vorming",
       "link": "http://www.vimeo.com/derdegraadavv",
       "descr": "Vimeo-account van de derde graad AVV, met een selectie van het filmwerk gemaakt in het schooljaar 2019 - 2020",
@@ -798,6 +820,8 @@
     {
       "year": "3",
       "division": "Opleiding",
+      "type": "class",
+      "cat": "secundary",
       "course": "Artistieke Opleiding",
       "link": "http://artistiekeopleiding.blogspot.com/",
       "descr": "Blog tweede graad AO",
@@ -816,6 +840,8 @@
     {
       "year": "3",
       "division": "Vorming",
+      "type": "class",
+      "cat": "secundary",
       "course": "Beeldende & Architecturale Vorming",
       "link": "https://sintlukasbxl-bav.tumblr.com/",
       "descr": "",
@@ -835,6 +861,8 @@
     {
       "year": "4",
       "division": "Opleiding",
+      "type": "class",
+      "cat": "secundary",
       "course": "Artistieke opleiding",
       "link": "http://artistiekeopleiding.blogspot.com/",
       "descr": "blog tweede graad AO",
@@ -853,6 +881,8 @@
     {
       "year": "4",
       "division": "Opleiding",
+      "type": "class",
+      "cat": "secundary",
       "course": "Artistieke opleiding",
       "link": "https://www.instagram.com/explore/tags/warybabstract/",
       "descr": "Instagram Who's afraid of red yellow and blue",
@@ -871,6 +901,8 @@
     {
       "year": "4",
       "division": "Opleiding",
+      "type": "class",
+      "cat": "secundary",
       "course": "Artistieke opleiding",
       "link": "https://www.instagram.com/explore/tags/waryb/",
       "descr": "Instagram Who's afraid of red yellow and blue",
@@ -890,6 +922,8 @@
     {
       "year": "4",
       "division": "Vorming",
+      "type": "class",
+      "cat": "secundary",
       "course": "Beeldende & Architecturale vorming",
       "link": "https://sintlukasbxl-bav.tumblr.com/",
       "descr": "Instagram Who's afraid of red yellow and blue",
@@ -909,6 +943,8 @@
     {
       "year": "5",
       "division": "Kunsten",
+      "type": "class",
+      "cat": "secundary",
       "course": "Toegepaste Beeldende Kunst",
       "link": "https://sintlukasbxl-tbk.tumblr.com/",
       "descr": "Tumblr pagina",
@@ -927,6 +963,8 @@
     {
       "year": "5",
       "division": "Kunsten",
+      "type": "class",
+      "cat": "secundary",
       "course": "Architecturale & Binnenhuiskunst",
       "link": "https://padlet.com/tomjanssens/SintLukasABK",
       "descr": "",
@@ -946,6 +984,8 @@
     {
       "year": "5",
       "division": "Kunsten",
+      "type": "class",
+      "cat": "secundary",
       "course": "Architecturale & Binnenhuiskunst",
       "link": "https://www.instagram.com/explore/tags/5ao6micromacro/?hl=nl",
       "descr": "Instagram MicroMacro",
@@ -964,6 +1004,8 @@
     {
       "year": "5",
       "division": "Kunsten",
+      "type": "class",
+      "cat": "secundary",
       "course": "Architecturale & Binnenhuiskunst",
       "link": "https://www.instagram.com/3de_graad_ao/",
       "descr": "instagramaccount met selectie werk gemaakt door 5 en 6 ao",
@@ -982,6 +1024,8 @@
     {
       "year": "5",
       "division": "Vorming",
+      "type": "class",
+      "cat": "secundary",
       "course": "Architecturale Vorming",
       "link": "https://www.tumblr.com/blog/sintlukas-bxl-av",
       "descr": "",
@@ -1001,6 +1045,8 @@
     {
       "year": "6",
       "division": "Kunsten",
+      "type": "class",
+      "cat": "secundary",
       "course": "Toegepaste Beeldende Kunst",
       "link": "https://sintlukasbxl-tbk.tumblr.com/",
       "descr": "Tumblr pagina",
@@ -1019,6 +1065,8 @@
     {
       "year": "6",
       "division": "Kunsten",
+      "type": "class",
+      "cat": "secundary",
       "course": "Architecturale & Binnenhuiskunst",
       "link": "https://padlet.com/tomjanssens/SintLukasABK",
       "descr": "",
@@ -1038,6 +1086,8 @@
     {
       "year": "6",
       "division": "Opleiding",
+      "type": "class",
+      "cat": "secundary",
       "course": "Artistieke Opleiding",
       "link": "https://www.instagram.com/3de_graad_ao/",
       "descr": "Instagramaccount met selectie werk gemaakt door 5 en 6 ao",
@@ -1056,6 +1106,8 @@
     {
       "year": "6",
       "division": "Opleiding",
+      "type": "class",
+      "cat": "secundary",
       "course": "Artistieke Opleiding",
       "link": "https://www.instagram.com/3de_graad_ao/",
       "descr": "Instagramaccount met selectie werk gemaakt door 5 en 6 ao",
@@ -1074,6 +1126,8 @@
     {
       "year": "6",
       "division": "Opleiding",
+      "type": "class",
+      "cat": "secundary",
       "course": "Artistieke Opleiding",
       "link": "https://sintlukasbxl-5ao6.tumblr.com",
       "descr": "tumblr pagina voor 5 en 6ao",
@@ -1092,6 +1146,8 @@
     {
       "year": "6",
       "division": "Opleiding",
+      "type": "class",
+      "cat": "secundary",
       "course": "Artistieke Opleiding",
       "link": "https://sintlukasbxl-5ao6.tumblr.com",
       "descr": "tumbl 5 en 6ao (we hebben vernomen dat instagram vastloopt als je niet inlogt, vandaar dat we toch maar een tumblr hebben aangemaakt)",
@@ -1110,6 +1166,8 @@
     {
       "year": "6",
       "division": "Opleiding",
+      "type": "class",
+      "cat": "secundary",
       "course": "Artistieke Opleiding",
       "link": "https://audiovisuelevorming.hotglue.me/",
       "descr": "Portaalsite die toegang biedt tot het werk van 5AVV en 6AVV (jaarwerk en GIP)",
@@ -1129,6 +1187,8 @@
     {
       "year": "6",
       "division": "Vorming",
+      "type": "class",
+      "cat": "secundary",
       "course": "Architecturale Vorming",
       "link": "https://www.tumblr.com/blog/sintlukas-bxl-av",
       "descr": "",
@@ -1146,8 +1206,10 @@
       }
     },
     {
-      "year": "",
+      "year": "kinderen",
       "division": "academie",
+      "cat": "academy",
+      "type": "class",
       "course": "Atelier Kinderen",
       "link": "https://padlet.com/m_lefever/lbv7hmlo8f7i?utm_campaign=transactional&utm_content=padlet_url&utm_medium=email&utm_source=started_a_padlet",
       "descr": "Padlet Toon je Gezichtje",
@@ -1166,6 +1228,8 @@
     {
       "year": "",
       "division": "academie",
+      "cat": "academy",
+      "type": "general",
       "course": "",
       "link": "https://vimeo.com/user113739624",
       "descr": "Vimeo Academie",
@@ -1182,9 +1246,11 @@
       }
     },
     {
-      "year": "atelier kinderen (Champagnat)",
+      "year": "kinderen",
       "division": "academie",
-      "course": "",
+      "cat": "academy",
+      "type": "class",
+      "course": "Atelier Kinderen",
       "link": "https://padlet.com/luciasaura/s2f93v1lx1fn1n9s",
       "descr": "atelier kinderen (Champagnat)",
       "location": "g",
@@ -1200,9 +1266,11 @@
       }
     },
     {
-      "year": "atelier kinderen (Sint-Joost)",
+      "year": "kinderen",
       "division": "academie",
-      "course": "",
+      "cat": "academy",
+      "type": "class",
+      "course": "Atelier Kinderen",
       "link": "https://padlet.com/raisavdm/xcrzjimrp3d2xwc0",
       "descr": "Atelier kinderen (Sint-Joost)",
       "location": "g",
@@ -1218,9 +1286,11 @@
       }
     },
     {
-      "year": "atelier jongeren",
+      "year": "kinderen",
       "division": "academie",
-      "course": "",
+      "cat": "academy",
+      "type": "class",
+      "course": "Atelier Kinderen",
       "link": "https://padlet.com/tvsintlukas/Bookmarks",
       "descr": "Padlet jongeren Groenstraat",
       "location": "v",
@@ -1236,11 +1306,13 @@
       }
     },
     {
-      "year": "atelier volwassenen",
+      "year": "volwassenen",
       "division": "academie",
+      "cat": "academy",
+      "type": "class",
       "course": "fotokunst",
       "link": "https://atelierfotokunst.wordpress.com",
-      "descr": "",
+      "descr": "Atelier volwassenen",
       "location": "at",
       "room": "t302",
       "orb": {
@@ -1255,8 +1327,10 @@
       }
     },
     {
-      "year": "atelier volwassenen",
+      "year": "volwassenen",
       "division": "academie",
+      "cat": "academy",
+      "type": "class",
       "course": "schilderkunst",
       "link": "https://padlet.com/jonasdelaey/fb0mwx1bm8l3irce",
       "descr": "Padlet Schilderkunst",
@@ -1273,8 +1347,10 @@
       }
     },
     {
-      "year": "atelier volwassenen",
+      "year": "volwassenen",
       "division": "academie",
+      "cat": "academy",
+      "type": "class",
       "course": "interieurontwerp",
       "link": "https://padlet.com/tomjanssens/interieurontwerp",
       "descr": "Padlet Interieurontwerp",
@@ -1291,8 +1367,10 @@
       }
     },
     {
-      "year": "atelier volwassenen",
+      "year": "volwassenen",
       "division": "academie",
+      "cat": "academy",
+      "type": "class",
       "course": "grafisch ontwerp & illustratie",
       "link": "https://padlet.com/deboeck_anne/SLA_GrafischOntwerpIllustratie",
       "descr": "Padlet Grafisch ontwerp en Illustratie",
@@ -1309,8 +1387,10 @@
       }
     },
     {
-      "year": "atelier volwassenen",
+      "year": "volwassenen",
       "division": "academie",
+      "cat": "academy",
+      "type": "class",
       "course": "kunstbeschouwing",
       "link": "https://www.youtube.com/watch?v=Kf8EzRobak0&feature=youtu.be",
       "descr": "voorbeeldles kunstbeschouwing",
@@ -1327,8 +1407,10 @@
       }
     },
     {
-      "year": "atelier volwassenen",
+      "year": "volwassenen",
       "division": "academie",
+      "cat": "academy",
+      "type": "class",
       "course": "modeltekenen",
       "link": "https://padlet.com/chiara_lammens/wacgangj32l7",
       "descr": "Modeltekenen",
@@ -1345,8 +1427,10 @@
       }
     },
     {
-      "year": "atelier volwassenen",
+      "year": "volwassenen",
       "division": "academie",
+      "cat": "academy",
+      "type": "class",
       "course": "tekenkunst",
       "link": "https://padlet.com/chiara_lammens/wacgangj32l7",
       "descr": "Padlet waarneming/model",
@@ -1363,8 +1447,10 @@
       }
     },
     {
-      "year": "atelier volwassenen",
+      "year": "volwassenen",
       "division": "academie",
+      "cat": "academy",
+      "type": "class",
       "course": "tekenkunst",
       "link": "https://padlet.com/chiara_lammens/sf78uxa5q3349oil",
       "descr": "tekenkunst",
@@ -1381,8 +1467,10 @@
       }
     },
     {
-      "year": "kunstkuur",
+      "year": "kinderen",
       "division": "academie",
+      "cat": "academy",
+      "type": "kunstkuur",
       "course": "Kunstkuur Sint-Albert",
       "link": "https://padlet.com/ellenjanssens/1heuhcn6hx5t",
       "descr": "Kunstkuur Sint-Albert : Padlet Kunstketten",
@@ -1401,6 +1489,8 @@
     {
       "year": "",
       "division": "academie",
+      "cat": "academy",
+      "type": "general",
       "course": "",
       "link": "http://blog.sintlukaskunsthumaniora.be/",
       "descr": "Website Kunsthumaniora",
@@ -1419,7 +1509,9 @@
     {
       "year": "",
       "division": "academie",
+      "cat": "academy",
       "course": "",
+      "type": "general",
       "link": "https://sintlukasacademie.brussels/",
       "descr": "Website Academie",
       "location": "g",
@@ -1437,7 +1529,9 @@
     {
       "year": "",
       "division": "academie",
+      "cat": "academy",
       "course": "",
+      "type": "general",
       "link": "https://www.instagram.com/sintlukasacademie/",
       "descr": "Instagram Academie",
       "location": "g",
@@ -1455,7 +1549,9 @@
     {
       "year": "",
       "division": "academie",
+      "cat": "academy",
       "course": "",
+      "type": "general",
       "link": "https://www.facebook.com/Sint-Lukas-Academie-1478159235778473/",
       "descr": "Facebook Academie",
       "location": "g",
@@ -1473,7 +1569,9 @@
     {
       "year": "",
       "division": "",
+      "cat": "elementary",
       "course": "",
+      "type": "general",
       "link": "http://www.sintlukasbasisschool.be/",
       "descr": "Website Basisschool",
       "location": "g",
@@ -1489,8 +1587,10 @@
       }
     },
     {
-      "year": "Leerkrachten eigen website",
+      "year": "",
       "division": "academie",
+      "cat": "academy",
+      "type": "teacher",
       "course": "kinderatelier & tekenkunst",
       "link": "https://chiaralammens.tumblr.com/",
       "descr": "Tumblr Chiara Lammens",
@@ -1508,8 +1608,10 @@
       }
     },
     {
-      "year": "Leerkrachten eigen website",
+      "year": "",
       "division": "academie",
+      "cat": "academy",
+      "type": "teacher",
       "course": "schilderkunst",
       "link": "https://www.pieterdeclercq.net/",
       "descr": "Website Pieter De Clercq",
@@ -1526,8 +1628,10 @@
       }
     },
     {
-      "year": "Leerkrachten eigen website",
+      "year": "",
       "division": "academie",
+      "cat": "academy",
+      "type": "teacher",
       "course": "grafisch ontwerp & illustratie",
       "link": "https://annedeboeck.be/",
       "descr": "Website Anne De Boeck",
@@ -1544,8 +1648,10 @@
       }
     },
     {
-      "year": "Leerkrachten eigen website",
+      "year": "",
       "division": "academie",
+      "cat": "academy",
+      "type": "teacher",
       "course": "zeefdruk",
       "link": "https://www.bartvanoverberghe.be",
       "descr": "Website Bart Van Overberghe",
@@ -1562,8 +1668,10 @@
       }
     },
     {
-      "year": "Leerkrachten eigen website",
+      "year": "",
       "division": "academie",
+      "cat": "academy",
+      "type": "teacher",
       "course": "interieurontwerp",
       "link": "https://www.tomjanssens.com",
       "descr": "Website Tom Janssens",
@@ -1580,8 +1688,10 @@
       }
     },
     {
-      "year": "Leerkrachten eigen website",
+      "year": "",
       "division": "academie",
+      "cat": "academy",
+      "type": "teacher",
       "course": "grafiek & atelier jongeren",
       "link": "https://toonverbraeken.tumblr.com/",
       "descr": "Tumblr Toon Verbraeken",
@@ -1598,8 +1708,10 @@
       }
     },
     {
-      "year": "Leerkrachten eigen website",
+      "year": "",
       "division": "academie",
+      "cat": "academy",
+      "type": "teacher",
       "course": "kinderatelier, fotokunst",
       "link": "https://raisavandamme.com/",
       "descr": "website Raisa Vandamme",
@@ -1616,8 +1728,10 @@
       }
     },
     {
-      "year": "extern",
+      "year": "",
       "division": "extern",
+      "cat": "external",
+      "type": "buurtkeuken",
       "course": "",
       "link": "https://www.facebook.com/Buurtkeuken-116851656530443/",
       "descr": "Buurtkeuken",
@@ -1636,6 +1750,8 @@
     {
       "year": "",
       "division": "extern",
+      "cat": "external",
+      "type": "bredeschool",
       "course": "",
       "link": "https://www.facebook.com/bredeschool.noord",
       "descr": "Facebook Brede School",
@@ -1654,6 +1770,8 @@
     {
       "year": "",
       "division": "Basisschool",
+      "cat": "elementary",
+      "type": "general",
       "course": "",
       "link": "https://www.instagram.com/sintlukasbasisschool/",
       "descr": "Instagram Basisschool",
@@ -1672,6 +1790,8 @@
     {
       "year": "",
       "division": "Humaniora",
+      "cat": "secundary",
+      "type": "general",
       "course": "",
       "link": "https://www.instagram.com/sintlukaskunsthumaniora/",
       "descr": "Instagram Humaniora",
@@ -1690,6 +1810,8 @@
     {
       "year": "",
       "division": "Humaniora",
+      "cat": "secundary",
+      "type": "general",
       "course": "",
       "link": "https://www.facebook.com/SintLukasKunsthumanioraBrussel/",
       "descr": "Facebook Humaniora",

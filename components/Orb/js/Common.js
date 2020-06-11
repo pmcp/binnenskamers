@@ -249,8 +249,9 @@ class Common {
   }
 
   setMouseCoordinates = function(mousePosX, mousePosY){
-    this.mouse.x = ( (mousePosX - this.size.offsetLeft) / this.size.width ) * 2 - 1;
     const mouseY = mousePosY + window.scrollY
+    const mouseX = mousePosX + window.scrollX
+    this.mouse.x = ( (mouseX - this.size.offsetLeft) / this.size.width ) * 2 - 1;
     this.mouse.y = - ( (mouseY- this.size.offsetTop) / this.size.height ) * 2 + 1
 
   }

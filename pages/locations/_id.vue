@@ -48,7 +48,7 @@
               @mouseleave="setActive(null)"
             >Bureau Wim</a>
           </div>
-          <div v-if="activeCourses || activeLocation.name === 'G'">
+          <div v-if="secundaryCourses || activeLocation.name === 'G'">
             Kunsthumaniora: <a
               href="g/rooms/g104"
               class="link"
@@ -57,19 +57,19 @@
               @mouseleave="setActive(null)"
             >Bureau Kris</a>
             <a
-              v-for="(i, key, index) in activeCourses"
+              v-for="(i, key, index) in secundaryCourses"
               :key="`activeItems_${key}`"
               :href="`${i.location}/rooms/${i.room}`"
               class="link"
               :class="[{'link--active' : (activeRoom  !== null && i.room === activeRoom), 'link--nonActive': activeRoom === null}]"
               @mouseover="setActive(i.room)"
               @mouseleave="setActive(null)"
-            > {{ i.name }} <span v-if="index < (Object.keys(activeCourses).length-1)">/</span>
+            > {{ i.name }} <span v-if="index < (Object.keys(secundaryCourses).length-1)">/</span>
 
             </a>
           </div>
-          <div v-if="activeAcademy">
-
+          <div v-if="academyCourses">
+            <!-- TODO: Add these specific links programmatically -->
             Academie: <a
               v-if="activeLocation.name === 'G'"
               href="g/rooms/secretariaat"
@@ -77,9 +77,17 @@
               :class="[{'link--active' : (activeRoom  !== null && 'secretariaat' === activeRoom), 'link--nonActive': activeRoom === null}]"
               @mouseover="setActive('secretariaat')"
               @mouseleave="setActive(null)"
-            >Bureau Ellen / </a>
+            >Bureau Ellen <span v-if="(Object.keys(academyCourses).length > 0)"> / </span></a>
             <a
-              v-for="(i, key) in activeAcademy"
+              v-if="activeLocation.name === 'H'"
+              href="h/rooms/leraarskamer"
+              class="link"
+              :class="[{'link--active' : (activeRoom  !== null && 'leraarskamer' === activeRoom), 'link--nonActive': activeRoom === null}]"
+              @mouseover="setActive('leraarskamer')"
+              @mouseleave="setActive(null)"
+            >Leraarskamer<span v-if="Object.keys(academyCourses).length > 0 > 0"> / </span></a>
+            <a
+              v-for="(i, key, index) in academyCourses"
               :key="`activeItems_${key}`"
               :href="`${i.location}/rooms/${i.room}`"
               class="link"
@@ -87,7 +95,7 @@
               @mouseover="setActive(i.room)"
               @mouseleave="setActive(null)"
             >
-              {{ i.course }} <span v-if="key < Object.keys(activeAcademy).length-1">/</span>
+              {{ i.name }} <span v-if="index < Object.keys(academyCourses).length - 1">/</span>
             </a>
           </div>
         </div>
@@ -150,37 +158,55 @@ export default {
         };
       });
     },
-    activeCourses() {
+    secundaryCourses() {
       if (this.activeItems.length < 1) return;
-      const items = this.activeItems.reduce((previousVal, i) => {
-        if (i.division === "academie") return previousVal;
-        const item = {
-          name: i.yearCourse,
-          room: i.room,
-          location: i.location,
-          key: i.yearCourseTrimmed
-        };
-        if (previousVal[item.key]) {
-          previousVal[i.yearCourseTrimmed].total++;
-        } else {
-          previousVal[item.key] = { ...item, total: 1 };
-        }
-
-        return previousVal;
-      }, {});
-      if (items[""] !== null) return null;
-      return items;
-      // if(items.length === 1 && items[0])
-    },
-    activeAcademy() {
-      if (this.activeItems === null) return null;
-      if (this.activeItems.length < 1) return null;
-      const academyItems = this.activeItems.filter(
-        i => i.division === "academie" && i.course !== ""
+      
+      const filteredItems = this.activeItems.filter(
+        i => i.cat === "secundary" && i.type === "class"
       );
 
-      return academyItems;
-    }
+      const reducedItems = filteredItems.reduce((prevValue, i) => {
+        const yearCourse = `${i.year} ${i.course}`;
+        const yearCourseTrimmed = yearCourse.replace(/ /g, "");
+        const item = {
+          name: i.course,
+          room: i.room,
+          location: i.location,
+          key: yearCourseTrimmed
+        };
+        if (prevValue[item.key]) {
+          prevValue[yearCourseTrimmed].total++;
+        } else {
+          prevValue[item.key] = { ...item, total: 1 };
+        }
+        return prevValue;
+      }, {});
+      return reducedItems;
+    },
+    academyCourses() {
+      if (this.activeItems.length < 1) return;
+      const filteredItems = this.activeItems.filter(
+        i => i.cat === "academy" && i.type === "class"
+      );
+      const reducedItems = filteredItems.reduce((prevValue, i) => {
+        const yearCourse = `${i.year} ${i.course}`;
+        const yearCourseTrimmed = yearCourse.replace(/ /g, "");
+        const item = {
+          name: i.course,
+          room: i.room,
+          location: i.location,
+          key: yearCourseTrimmed
+        };
+        if (prevValue[item.key]) {
+          prevValue[yearCourseTrimmed].total++;
+        } else {
+          prevValue[item.key] = { ...item, total: 1 };
+        }
+        return prevValue;
+      }, {});
+      return reducedItems;
+    },
+
   },
   asyncData({ params }) {
     return { locations, items };

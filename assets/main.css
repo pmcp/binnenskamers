@@ -1532,22 +1532,12 @@ body {
 }
 
 .map {
-	/* height: 70vw; */
-  /* width: 70vw; */
   width:800px;
   height: 800px;
-  /* max-width: 800px; */
-  /* max-height: 800px; */
   display: flex;
   position: relative;
 }
-/* 
-@media (max-width: 640px){
-  .map {
-    width: 100%;
-    height: 100vw;
-  }
-} */
+
 
 
 .map__img {
@@ -1557,15 +1547,11 @@ body {
   z-index: 1;
   width: 100%;
   height: 100%;
-	/* display: flex;
-	justify-content: center;
-	align-items: center; */
 }
 
 .map__img img {
 	width: 100%;
   height: auto;
-  
 }
 
 /* GRID */

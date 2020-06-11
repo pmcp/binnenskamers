@@ -10,12 +10,11 @@
 
       <div
         class="grid"
-        :style="{ backgroundImage:`url('${colorImage}')`}"
       >
         <a
           v-for="(loc, key) in locations"
           :key="key"
-          :style="{ gridArea: loc.gridPos, backgroundColor:loc.color}"
+          :style="locStyle(loc.gridPos, loc.hoverImg)"
           class="grid__item"
           :class="[{'grid__item--active' : (activeLocationId  !== null && key === activeLocationId)}]"
           :href="`/locations/${key}`"
@@ -96,9 +95,6 @@
 import { locations, items, orbTypes } from "~/static/data.json";
 export default {
   computed: {
-    colorImage() {
-      return require(`~/assets/squares/colors.png`);
-    },
     allRooms() {
       let allRooms = [];
       if (!this.locations) return;
@@ -187,13 +183,13 @@ export default {
     };
   },
   methods: {
-    getColor(id) {
-      // console.log(this.orbTypes, id)
-      // const type = this.orbTypes[id];
-      // const r = type.rcolor * 255;
-      // const g = type.gcolor * 255;
-      // const b = type.bcolor * 255;
-      // return `rgb(${r},${g},${b})`;
+    locStyle(pos, img) {
+      const image = require(`@/assets/letters/${img}`);
+      const style = {
+        gridArea: pos,
+        background: `url(${image}) no-repeat center center`
+      }
+      return style;
     },
     setActive(id) {
       console.log(id);

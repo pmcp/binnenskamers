@@ -176,6 +176,7 @@
       "name": "V",
       "gridPos": "7 / 67 / 40 / 83",
       "color": "#C44630",
+      "hoverImg": "v.png",
       "img": {
         "base": "img21.png",
         "alt": "Artistic drawing of block V, made by Chiara Lammens"
@@ -272,6 +273,7 @@
       "name": "A-T",
       "gridPos": "16 / 20 / 50 / 40",
       "color": "#FA6800",
+      "hoverImg": "at.png",
       "img": {
         "base": "img1.png",
         "alt": "Artistic drawing of block A-T, made by Chiara Lammens"
@@ -386,6 +388,7 @@
       "name": "H",
       "gridPos": "33 / 42 / 56 / 65",
       "color": "#B84FF0",
+      "hoverImg": "h.png",
       "img": {
         "base": "img13.png",
         "alt": "Artistic drawing of block A-T, made by Chiara Lammens"
@@ -480,6 +483,7 @@
     },
     "g": {
       "name": "G",
+      "hoverImg": "g.png",
       "gridPos": "68 / 46 / 94 / 69",
       "color": "#B84FF0",
       "img": {

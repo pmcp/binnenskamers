@@ -68,6 +68,23 @@
       "redhell": false,
       "opacity": 0.7
     },
+    "basisschool": {
+      "speed": 0.2,
+      "size": 0.001,
+      "perlins": 1.0,
+      "decay": 1.2,
+      "displace": 0,
+      "complex": 10.5,
+      "waves": 10.7,
+      "eqcolor": 21,
+      "rcolor": 0,
+      "gcolor": 0.7,
+      "bcolor": 0.7,
+      "fragment": true,
+      "points": false,
+      "redhell": false,
+      "opacity": 0.7
+    },
     "blueWatermark": {
       "speed": 0.1,
       "size": 0.1,
@@ -100,7 +117,7 @@
       "fragment": true,
       "points": false,
       "redhell": false,
-      "opacity": 0.5
+      "opacity": 0.7
     },
     "teachersWatermark": {
       "speed": 0.1,
@@ -118,6 +135,40 @@
       "points": false,
       "redhell": true,
       "opacity": 0.2
+    },
+    "academy": {
+      "speed": 0.1,
+      "size": 0.1,
+      "perlins": 10.0,
+      "decay": 0.2,
+      "displace": 1.4,
+      "complex": 2,
+      "waves": 2.7,
+      "eqcolor": 1.0,
+      "rcolor": 0.50,
+      "gcolor": 0.83,
+      "bcolor": 1,
+      "fragment": true,
+      "points": false,
+      "redhell": false,
+      "opacity": 0.7
+    },
+    "external": {
+      "speed": 0.1,
+      "size": 0.1,
+      "perlins": 10.0,
+      "decay": 0.2,
+      "displace": 1.4,
+      "complex": 2,
+      "waves": 2.7,
+      "eqcolor": 1.0,
+      "rcolor": 0.9,
+      "gcolor": 0.25,
+      "bcolor": 0.1,
+      "fragment": true,
+      "points": false,
+      "redhell": false,
+      "opacity": 0.8
     }
   },
   "locations": {
@@ -134,7 +185,7 @@
           "name": "V203",
           "location": "v",
           "img": {
-            "base": "img17.png",
+            "base": "img28.png",
             "alt": ""
           },
           "orb": {
@@ -143,43 +194,24 @@
               "size": 0.06
             },
             "position": {
-              "x":0.11624999999999996, "y":0.04249999999999998
+              "x":-0.03249999999999997, "y":-0.10258335113525385
             }
           }
         },
         "v403": {
-          "name": "V403",
+          "name": "V403 - Interieurontwerp",
           "location": "v",
           "img": {
             "base": "img23.png",
             "alt": ""
           },
           "orb": {
-            "type": "blueWatermark",
+            "type": "greenWatermark",
             "overrides": {
               "size": 0.06
             },
             "position": {
-              "x": -0.5,
-              "y": 0
-            }
-          }
-        },
-        "v401": {
-          "name": "V401",
-          "location": "v",
-          "img": {
-            "base": "img23.png",
-            "alt": ""
-          },
-          "orb": {
-            "type": "blueWatermark",
-            "overrides": {
-              "size": 0.06
-            },
-            "position": {
-              "x": -0.5,
-              "y": 0
+              "x":0.010000000000000009, "y":0.2799166488647461
             }
           }
         },
@@ -191,13 +223,46 @@
             "alt": ""
           },
           "orb": {
-            "type": "blueWatermark",
+            "type": "greenWatermark",
             "overrides": {
               "size": 0.06
             },
             "position": {
-              "x": -0.5,
-              "y": 0
+              "x":0.43500000000000005, "y":-0.4475833511352538
+            }
+          }
+        },
+        "3d": {
+          "name": "3D Lokaal",
+          "location": "v",
+          "img": {
+            "base": "img27.png",
+            "alt": ""
+          },
+          "orb": {
+            "type": "greenWatermark",
+            "overrides": {
+              "size": 0.06
+            },
+            "position": {
+              "x":-0.5974999999999999, "y":0.05241664886474606
+            }
+          }
+        },
+        "zeefdruk": {
+          "name": "Zeefdruk",
+          "location": "v",
+          "img": {
+            "base": "img22.png",
+            "alt": ""
+          },
+          "orb": {
+            "type": "greenWatermark",
+            "overrides": {
+              "size": 0.06
+            },
+            "position": {
+              "x":0.32000000000000006, "y":0.02741664886474604
             }
           }
         }
@@ -220,13 +285,12 @@
             "alt": ""
           },
           "orb": {
-            "type": "blueWatermark",
+            "type": "greenWatermark",
             "overrides": {
               "size": 0.06
             },
             "position": {
-              "x": -0.5,
-              "y": 0
+              "x":-0.09499999999999997, "y":0.25741664886474613
             }
           }
         },
@@ -238,13 +302,12 @@
             "alt": ""
           },
           "orb": {
-            "type": "blueWatermark",
+            "type": "greenWatermark",
             "overrides": {
               "size": 0.06
             },
             "position": {
-              "x": -0.5,
-              "y": 0
+              "x":0.13749999999999996, "y":-0.08758335113525395
             }
           }
         },
@@ -256,13 +319,12 @@
             "alt": ""
           },
           "orb": {
-            "type": "blueWatermark",
+            "type": "greenWatermark",
             "overrides": {
               "size": 0.06
             },
             "position": {
-              "x": -0.5,
-              "y": 0
+              "x":0.6525000000000001, "y":0.31991664886474613
             }
           }
         },
@@ -274,7 +336,7 @@
             "alt": ""
           },
           "orb": {
-            "type": "blueWatermark",
+            "type": "greenWatermark",
             "overrides": {
               "size": 0.06
             },
@@ -292,12 +354,29 @@
             "alt": ""
           },
           "orb": {
-            "type": "blueWatermark",
+            "type": "greenWatermark",
             "overrides": {
               "size": 0.06
             },
             "position": {
               "x":0.39312499999999995, "y":0.0625
+            }
+          }
+        },
+        "a206": {
+          "name": "A206",
+          "location": "at",
+          "img": {
+            "base": "img26.png",
+            "alt": ""
+          },
+          "orb": {
+            "type": "greenWatermark",
+            "overrides": {
+              "size": 0.06
+            },
+            "position": {
+              "x":-0.5449999999999999, "y":0.29241664886474605
             }
           }
         }
@@ -320,12 +399,12 @@
             "alt": ""
           },
           "orb": {
-            "type": "blueWatermark",
+            "type": "greenWatermark",
             "overrides": {
               "size": 0.06
             },
             "position": {
-              "x":0.0931249999999999, "y":-0.30000000000000004
+              "x":0.21999999999999997, "y":-0.127583351135254
             }
           }
         },
@@ -337,25 +416,24 @@
             "alt": ""
           },
           "orb": {
-            "type": "blueWatermark",
+            "type": "greenWatermark",
             "overrides": {
               "size": 0.06
             },
             "position": {
-              "x": -0.5,
-              "y": 0
+              "x":-0.15749999999999997, "y":-0.07258335113525383
             }
           }
         },
         "h202": {
-          "name": "H202",
+          "name": "Bib",
           "location": "h",
           "img": {
             "base": "img6.png",
             "alt": ""
           },
           "orb": {
-            "type": "blueWatermark",
+            "type": "greenWatermark",
             "overrides": {
               "size": 0.06
             },
@@ -365,19 +443,36 @@
           }
         },
         "leraarskamer": {
-          "name": "leraarskamer",
+          "name": "Kantine - Leraarskamer",
           "location": "h",
           "img": {
             "base": "img15.png",
             "alt": ""
           },
           "orb": {
-            "type": "teachersWatermark",
+            "type": "greenWatermark",
             "overrides": {
               "size": 0.06
             },
             "position": {
-              "x":0.22312500000000002, "y":0.4525
+              "x":-0.14500000000000002, "y":-0.3850833511352538
+            }
+          }
+        },
+        "turnzaal": {
+          "name": "Turznaal",
+          "location": "h",
+          "img": {
+            "base": "img19.png",
+            "alt": ""
+          },
+          "orb": {
+            "type": "greenWatermark",
+            "overrides": {
+              "size": 0.06
+            },
+            "position": {
+              "x":-0.14, "y":0.21991664886474604
             }
           }
         }
@@ -400,30 +495,97 @@
             "alt": ""
           },
           "orb": {
-            "type": "blueWatermark",
+            "type": "greenWatermark",
             "overrides": {
               "size": 0.06
             },
             "position": {
-              "x": -0.5,
-              "y": 0
+              "x":0.37250000000000005, "y":0.16741664886474605
             }
           }
         },
         "secretariaat": {
-          "name": "Secretariaat",
+          "name": "Secretariaat - Bureau Ellen",
           "location": "g",
           "img": {
             "base": "img16.png",
             "alt": ""
           },
           "orb": {
-            "type": "blueWatermark",
+            "type": "greenWatermark",
             "overrides": {
               "size": 0.06
             },
             "position": {
-              "x":0.2350000000000001, "y":-0.08258335113525384
+              "x":-0.007499999999999951, "y":-0.07258335113525383
+            }
+          }
+        },
+        "aquarium": {
+          "name": "Aquarium",
+          "location": "g",
+          "img": {
+            "base": "img5.png",
+            "alt": ""
+          },
+          "orb": {
+            "type": "greenWatermark",
+            "overrides": {
+              "size": 0.06
+            },
+            "position": {
+              "x":0.4475, "y":0.5949166488647462
+            }
+          }
+        },
+        "bredeschool": {
+          "name": "Brede School",
+          "location": "g",
+          "img": {
+            "base": "img7.png",
+            "alt": ""
+          },
+          "orb": {
+            "type": "greenWatermark",
+            "overrides": {
+              "size": 0.06
+            },
+            "position": {
+              "x":-0.4275, "y":-0.09258335113525384
+            }
+          }
+        },
+        "g104": {
+          "name": "Bureau Wim - Kris",
+          "location": "g",
+          "img": {
+            "base": "img9.png",
+            "alt": ""
+          },
+          "orb": {
+            "type": "greenWatermark",
+            "overrides": {
+              "size": 0.06
+            },
+            "position": {
+              "x":0.08499999999999996, "y":0.10241664886474611
+            }
+          }
+        },
+        "g106": {
+          "name": "G106 - Polyvalente zaal",
+          "location": "g",
+          "img": {
+            "base": "img10.png",
+            "alt": ""
+          },
+          "orb": {
+            "type": "greenWatermark",
+            "overrides": {
+              "size": 0.06
+            },
+            "position": {
+              "x":-0.3025, "y":0.1649166488647461
             }
           }
         }
@@ -456,7 +618,7 @@
       "link": "https://sintlukasbxl-eerstegraad.tumblr.com/",
       "descr": "Tumblr pagina",
       "location": "at",
-      "room": "a203",
+      "room": "a204",
       "orb": {
         "type": "purplepink",
         "overrides": {
@@ -984,15 +1146,15 @@
       }
     },
     {
-      "year": "atelier kinderen",
+      "year": "",
       "division": "academie",
-      "course": "",
+      "course": "Atelier Kinderen",
       "link": "https://padlet.com/m_lefever/lbv7hmlo8f7i?utm_campaign=transactional&utm_content=padlet_url&utm_medium=email&utm_source=started_a_padlet",
-      "descr": "Atelier kinderen: Padlet Toon je Gezichtje - Academie Groenstraat ( Hoofdschool)",
+      "descr": "Padlet Toon je Gezichtje",
       "location": "g",
       "room": "g102",
       "orb": {
-        "type": "purplepink",
+        "type": "academy",
         "overrides": {
           "size": 0.1
         },
@@ -1002,15 +1164,33 @@
       }
     },
     {
-      "year": "atelier kinderen",
+      "year": "",
       "division": "academie",
       "course": "",
-      "link": "https://padlet.com/luciasaura/s2f93v1lx1fn1n9s",
-      "descr": "Champagnat",
+      "link": "https://vimeo.com/user113739624",
+      "descr": "Vimeo Academie",
       "location": "g",
       "room": "g102",
       "orb": {
-        "type": "purplepink",
+        "type": "academy",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x":0.5025, "y":0.3424166488647461
+        }
+      }
+    },
+    {
+      "year": "atelier kinderen (Champagnat)",
+      "division": "academie",
+      "course": "",
+      "link": "https://padlet.com/luciasaura/s2f93v1lx1fn1n9s",
+      "descr": "atelier kinderen (Champagnat)",
+      "location": "g",
+      "room": "g102",
+      "orb": {
+        "type": "academy",
         "overrides": {
           "size": 0.1
         },
@@ -1020,15 +1200,15 @@
       }
     },
     {
-      "year": "atelier kinderen",
+      "year": "atelier kinderen (Sint-Joost)",
       "division": "academie",
       "course": "",
       "link": "https://padlet.com/raisavdm/xcrzjimrp3d2xwc0",
-      "descr": "Atelier kinderen in Sint-Joost",
+      "descr": "Atelier kinderen (Sint-Joost)",
       "location": "g",
       "room": "g102",
       "orb": {
-        "type": "purplepink",
+        "type": "academy",
         "overrides": {
           "size": 0.1
         },
@@ -1046,7 +1226,7 @@
       "location": "v",
       "room": "grafiek",
       "orb": {
-        "type": "purplepink",
+        "type": "academy",
         "overrides": {
           "size": 0.1
         },
@@ -1064,7 +1244,7 @@
       "location": "t",
       "room": "t302",
       "orb": {
-        "type": "purplepink",
+        "type": "academy",
         "overrides": {
           "size": 0.1
         },
@@ -1083,7 +1263,7 @@
       "location": "h",
       "room": "h301",
       "orb": {
-        "type": "purplepink",
+        "type": "academy",
         "overrides": {
           "size": 0.1
         },
@@ -1101,13 +1281,12 @@
       "location": "v",
       "room": "v403",
       "orb": {
-        "type": "purplepink",
+        "type": "academy",
         "overrides": {
           "size": 0.1
         },
         "position": {
-          "x": -0.42874999999999996,
-          "y": -0.5
+          "x":-0.275, "y":-0.190083351135254
         }
       }
     },
@@ -1120,7 +1299,7 @@
       "location": "at",
       "room": "t303",
       "orb": {
-        "type": "purplepink",
+        "type": "academy",
         "overrides": {
           "size": 0.1
         },
@@ -1138,12 +1317,12 @@
       "location": "h",
       "room": "h202",
       "orb": {
-        "type": "purplepink",
+        "type": "academy",
         "overrides": {
           "size": 0.1
         },
         "position": {
-          "x":-0.38249999999999995, "y":0.012416648864746138
+          "x":0.27, "y":-0.42008335113525397
         }
       }
     },
@@ -1156,7 +1335,7 @@
       "location": "at",
       "room": "a302",
       "orb": {
-        "type": "purplepink",
+        "type": "academy",
         "overrides": {
           "size": 0.1
         },
@@ -1174,7 +1353,7 @@
       "location": "at",
       "room": "a302",
       "orb": {
-        "type": "purplepink",
+        "type": "academy",
         "overrides": {
           "size": 0.1
         },
@@ -1192,7 +1371,7 @@
       "location": "at",
       "room": "a302",
       "orb": {
-        "type": "purplepink",
+        "type": "academy",
         "overrides": {
           "size": 0.1
         },
@@ -1204,9 +1383,27 @@
     {
       "year": "kunstkuur",
       "division": "academie",
-      "course": "Sint-Albert",
+      "course": "Kunstkuur Sint-Albert",
       "link": "https://padlet.com/ellenjanssens/1heuhcn6hx5t",
       "descr": "Kunstkuur Sint-Albert : Padlet Kunstketten",
+      "location": "g",
+      "room": "secretariaat",
+      "orb": {
+        "type": "academy",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x":0.45500000000000007, "y":0.15241664886474604
+        }
+      }
+    },
+    {
+      "year": "",
+      "division": "academie",
+      "course": "",
+      "link": "http://blog.sintlukaskunsthumaniora.be/",
+      "descr": "Website Kunsthumaniora",
       "location": "g",
       "room": "secretariaat",
       "orb": {
@@ -1215,7 +1412,79 @@
           "size": 0.1
         },
         "position": {
-          "x":-0.3175, "y":0.27241664886474615
+          "x":-0.09750000000000003, "y":0.25241664886474613
+        }
+      }
+    },
+    {
+      "year": "",
+      "division": "academie",
+      "course": "",
+      "link": "https://sintlukasacademie.brussels/",
+      "descr": "Website Academie",
+      "location": "g",
+      "room": "secretariaat",
+      "orb": {
+        "type": "academy",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x":-0.405, "y":-0.03508335113525396
+        }
+      }
+    },
+    {
+      "year": "",
+      "division": "academie",
+      "course": "",
+      "link": "https://www.instagram.com/sintlukasacademie/",
+      "descr": "Instagram Academie",
+      "location": "g",
+      "room": "secretariaat",
+      "orb": {
+        "type": "academy",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x":0.4950000000000001, "y":-0.39508335113525384
+        }
+      }
+    },
+    {
+      "year": "",
+      "division": "academie",
+      "course": "",
+      "link": "https://www.facebook.com/Sint-Lukas-Academie-1478159235778473/",
+      "descr": "Facebook Academie",
+      "location": "g",
+      "room": "secretariaat",
+      "orb": {
+        "type": "academy",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x":0.6525000000000001, "y":0.3949166488647461
+        }
+      }
+    },
+    {
+      "year": "",
+      "division": "",
+      "course": "",
+      "link": "http://www.sintlukasbasisschool.be/",
+      "descr": "Website Basisschool",
+      "location": "g",
+      "room": "secretariaat",
+      "orb": {
+        "type": "basisschool",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x":-0.11750000000000005, "y":-0.2250833511352539
         }
       }
     },
@@ -1332,7 +1601,7 @@
       "year": "Leerkrachten eigen website",
       "division": "academie",
       "course": "kinderatelier, fotokunst",
-      "link": "https://raisavandamme.com/ ",
+      "link": "https://raisavandamme.com/",
       "descr": "website Raisa Vandamme",
       "location": "h",
       "room": "leraarskamer",
@@ -1345,7 +1614,97 @@
           "x":-0.015000000000000013, "y":0.275
         }
       }
-    }          
+    },
+    {
+      "year": "extern",
+      "division": "extern",
+      "course": "",
+      "link": "https://www.facebook.com/Buurtkeuken-116851656530443/",
+      "descr": "Buurtkeuken",
+      "location": "h",
+      "room": "leraarskamer",
+      "orb": {
+        "type": "academy",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x":-0.015000000000000013, "y":0.275
+        }
+      }
+    },
+    {
+      "year": "",
+      "division": "extern",
+      "course": "",
+      "link": "https://www.facebook.com/bredeschool.noord",
+      "descr": "Facebook Brede School",
+      "location": "g",
+      "room": "bredeschool",
+      "orb": {
+        "type": "external",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x":0.050000000000000044, "y":-0.14008335113525394
+        }
+      }
+    },
+    {
+      "year": "",
+      "division": "Basisschool",
+      "course": "",
+      "link": "https://www.instagram.com/sintlukasbasisschool/",
+      "descr": "Instagram Basisschool",
+      "location": "g",
+      "room": "g104",
+      "orb": {
+        "type": "basisschool",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x":0.355, "y":-0.1625833511352539
+        }
+      }
+    },
+    {
+      "year": "",
+      "division": "Humaniora",
+      "course": "",
+      "link": "https://www.instagram.com/sintlukaskunsthumaniora/",
+      "descr": "Instagram Humaniora",
+      "location": "g",
+      "room": "g104",
+      "orb": {
+        "type": "purplepink",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x":-0.6699999999999999, "y":-0.10758335113525397
+        }
+      }
+    },
+    {
+      "year": "",
+      "division": "Humaniora",
+      "course": "",
+      "link": "https://www.facebook.com/SintLukasKunsthumanioraBrussel/",
+      "descr": "Facebook Humaniora",
+      "location": "g",
+      "room": "g104",
+      "orb": {
+        "type": "purplepink",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x":-0.35, "y":0.09991664886474605
+        }
+      }
+    }                
   
 
   

@@ -24,7 +24,6 @@
         </div>
       </div>
       <div class="links">
-
         <a
           v-for="(l, key) in itemsOfRoom"
           :key="key"
@@ -32,10 +31,10 @@
           target="_blank"
           class="link"
           :class="[{'link--active' : (activeLink  !== null && key === activeLink), 'link--nonActive': activeLink === null}]"
-          :style="{'color': setColor(l.orb.type) }"
+          :style="{'color': getColor(l.orb.type) }"
           @mouseover="setActive(key)"
           @mouseleave="setActive(null)"
-        > {{ l.year }} {{l.course }}: {{ l.descr }} <span v-if="key < (itemsOfRoom.length-1)">-</span></a>
+        > <span v-if="l.division !== 'academie'">{{ l.year }} {{l.course }}</span><span v-if="!l.year === '' && !l.course === ''">: </span>{{ l.descr }} <span v-if="key < (itemsOfRoom.length-1)">/ </span></a>
       </div>
     </div>
     <!-- <iframe :src="activeLink" style="width:100%;height:100vh;"></iframe> -->
@@ -58,12 +57,10 @@ export default {
     itemsOfRoom() {
       if (!this.location) return null;
       const filteredLinks = this.items.filter(i => i.room === this.room);
-
       return filteredLinks.sort((a, b) => a.year - b.year);
     },
 
     activeRoom() {
-      console.log(this.location, this.room);
       if (!this.location || !this.room) return null;
       return this.locations[this.location].rooms[this.room];
     },
@@ -106,10 +103,8 @@ export default {
   },
 
   methods: {
-    setColor(id) {
-      console.log(id)
+    getColor(id) {
       const type = this.orbTypes[id];
-
       const r = type.rcolor * 255;
       const g = type.gcolor * 255;
       const b = type.bcolor * 255;

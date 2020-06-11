@@ -27,7 +27,35 @@
         <!-- {{ activeLocation.name }} -->
       </div>
 
-      <div class="legend__columns">
+    <div class="legend__columns">
+        <div v-if="allRooms">
+          Lokalen: <a
+            v-for="(i, key, index) in allRooms"
+            :key="`activeItems_${key}`"
+            :href="`locations/${i.location}/rooms/${key}`"
+            
+          >
+            {{ i }} <span v-if="index < (Object.keys(activeRooms).length-1)">-</span>
+          </a>
+        </div>
+        <!-- <div v-if="activeCourses">  
+          Richtingen: <a
+            v-for="(i, key, index) in activeCourses"
+            :key="`activeItems_${key}`"
+            :href="`locations/${i.location}/rooms/${i.room}`"
+          > {{ i.name }} <span v-if="index < (Object.keys(activeCourses).length-1)">-</span>
+            
+          </a>
+        </div>
+        <div v-if="activeAcademy">
+         Academie: <a v-for="(i, key) in activeAcademy" :key="`activeItems_${key}`" :href="`locations/${i.location}/rooms/${i.room}`">
+            {{ i.year }} {{ i.course }} <span v-if="key < (activeAcademy.length-1)">-</span>
+          </a>
+        </div> -->
+      </div>
+
+
+      <!-- <div class="legend__columns">
         <div v-if="activeRooms">
           Lokalen: <a
             v-for="(i, key, index) in activeRooms"
@@ -42,9 +70,7 @@
             v-for="(i, key, index) in activeCourses"
             :key="`activeItems_${key}`"
             :href="`locations/${i.location}/rooms/${i.room}`"
-          > {{ i.name }} <span v-if="index < (Object.keys(activeCourses).length-1)">-</span>
-           <!-- ({{ i.total }}) -->
-            
+          > {{ i.name }} <span v-if="index < (Object.keys(activeCourses).length-1)">-</span> 
           </a>
         </div>
         <div v-if="activeAcademy">
@@ -52,24 +78,32 @@
             {{ i.year }} {{ i.course }} <span v-if="key < (activeAcademy.length-1)">-</span>
           </a>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
 
 <script>
-import { locations, items } from "~/static/data.json";
+import { locations, items, orbTypes } from "~/static/data.json";
 export default {
   computed: {
     colorImage() {
       return require(`~/assets/squares/colors.png`)
     },
-    // allRooms(){
-    //   return this.location.reduce((acc, i) => {
-    //     roomsArray
-    //     acc = [...acc, i.rooms]
-    //   }, [])
-    // }
+    allRooms(){
+      let allRooms = [];
+      if(!this.locations) return;
+      for (let loc of Object.keys(this.locations)) {
+        console.log(loc)
+        const rooms = this.locations[loc].rooms
+        console.log(rooms)
+        // if(!rooms) return 
+        // for (let room of Object.keys(rooms)) {
+        //   allRooms.push(rooms[room])
+        // }
+      }
+      return allRooms
+    },
     activeRooms() {
       if (this.activeLocation === null || this.activeLocation === undefined)
         return null;
@@ -121,6 +155,15 @@ export default {
     };
   },
   methods: {
+    getColor(id) {
+      // console.log(this.orbTypes, id)
+      // const type = this.orbTypes[id];
+      
+      // const r = type.rcolor * 255;
+      // const g = type.gcolor * 255;
+      // const b = type.bcolor * 255;
+      // return `rgb(${r},${g},${b})`;
+    },
     setActive(id) {
       this.activeLocationId = id;  
     }

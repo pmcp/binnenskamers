@@ -1282,7 +1282,7 @@ body {
 
 
 a {
-	color: #5680cc;
+	color: HSLA(129, 20%, 62%, 1.00);
 	text-decoration: none;
 }
 
@@ -1654,7 +1654,8 @@ body {
   height: 800px;
 }
 .links a {
-  /* color: rgb(0.65,0.80,0.68) */
+  color: HSLA(129, 20%, 62%, 1.00);
+  
 }
 
 /* Breadcrumbs */

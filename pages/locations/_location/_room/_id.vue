@@ -149,10 +149,10 @@ export default {
     EventBus.$on("MOUSEDOWNONORB", data => {
       if (data.type === "room") return;
       this.activeLink = this.items[data.index].link;
-      //  window.open(
-      //   this.items[data.index].link,
-      //   '_blank' // <- This is what makes it open in a new window.
-      // );
+       window.open(
+        this.items[data.index].link,
+        '_blank' // <- This is what makes it open in a new window.
+      );
     });
   }
 };

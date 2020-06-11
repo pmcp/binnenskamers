@@ -28,7 +28,7 @@
       </div>
 
     <div class="legend__columns">
-        <div v-if="allRooms">
+        <!-- <div v-if="allRooms">
           Lokalen: <a
             v-for="(i, key, index) in allRooms"
             :key="`activeItems_${key}`"
@@ -37,8 +37,8 @@
           >
             {{ i }} <span v-if="index < (Object.keys(activeRooms).length-1)">-</span>
           </a>
-        </div>
-        <!-- <div v-if="activeCourses">  
+        </div> -->
+        <div v-if="activeCourses">  
           Richtingen: <a
             v-for="(i, key, index) in activeCourses"
             :key="`activeItems_${key}`"
@@ -51,7 +51,7 @@
          Academie: <a v-for="(i, key) in activeAcademy" :key="`activeItems_${key}`" :href="`locations/${i.location}/rooms/${i.room}`">
             {{ i.year }} {{ i.course }} <span v-if="key < (activeAcademy.length-1)">-</span>
           </a>
-        </div> -->
+        </div>
       </div>
 
 
@@ -94,9 +94,7 @@ export default {
       let allRooms = [];
       if(!this.locations) return;
       for (let loc of Object.keys(this.locations)) {
-        console.log(loc)
         const rooms = this.locations[loc].rooms
-        console.log(rooms)
         // if(!rooms) return 
         // for (let room of Object.keys(rooms)) {
         //   allRooms.push(rooms[room])
@@ -137,7 +135,6 @@ export default {
       if (this.activeItems === null) return null;
       if (this.activeItems.length  < 1) return null;
       const academyItems = this.activeItems.filter(i => i.division === 'academie')
-      console.log(academyItems)
       return academyItems;
     },
 

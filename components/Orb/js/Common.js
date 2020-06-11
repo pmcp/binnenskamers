@@ -64,7 +64,6 @@ class Common {
 
     
     EventBus.$on("DEACTIVATEORB", data => {  
-      console.log('deactivate')
       this.hoverStatus = 'NOHOVER'
       if(this.activeOrb === null) return;
       this.onHover(this.activeOrb)
@@ -160,7 +159,6 @@ class Common {
     
     if(event.shiftKey) {
       this.orbDev = this.activeOrb.parent.clone()
-      console.log(this.orbDev)
       this.scene.add(this.orbDev)
       
       return;
@@ -193,7 +191,6 @@ class Common {
       EventBus.$emit("MOUSEOVERORB", null);
       this.onHover(this.activeOrb)
       this.activeOrb = null
-      console.log(this.activeOrb)
     }
   }
 
@@ -215,7 +212,6 @@ class Common {
   onHover(orb){
     let start = {}
     let finish = {}
-    console.log(orb)
     if(this.hoverStatus === 'HOVERING') {
       start.opacity = orb.material.uniforms.opacity.value,
       finish.opacity = orb.material.uniforms.opacity.value * 1.4,

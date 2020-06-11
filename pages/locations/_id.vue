@@ -168,7 +168,6 @@ export default {
 
         return previousVal;
       }, {});
-      console.log(items[""]);
       if (items[""] !== null) return null;
       return items;
       // if(items.length === 1 && items[0])
@@ -195,7 +194,6 @@ export default {
   },
   methods: {
     setActive(id) {
-      console.log(id, this.activeRoom);
       // if(this.activeRoom = id;)
       if (id === null) {
         EventBus.$emit("DEACTIVATEORB", { room: id, link: null });
@@ -222,7 +220,6 @@ export default {
     // This event is coming from the threejs instance, when clicked on an orb. When clicked -> go to page
     EventBus.$on("MOUSEDOWNONORB", data => {
       if (data.type === "link") return;
-      console.log("room", data.type);
       this.$router.push({
         path: `${data.location}/rooms/${data.room}`
       });

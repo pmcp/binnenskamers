@@ -15,7 +15,7 @@
           :style="{ gridArea: loc.gridPos, backgroundColor:loc.color}"
           class="grid__item"
           :class="[{'grid__item--active' : (activeLocationId  !== null && key === activeLocationId)}]"
-          :href="`locations/${key}`"
+          :href="`/locations/${key}`"
           @mouseover="setActive(key)"
         > 
         

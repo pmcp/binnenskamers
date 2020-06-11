@@ -22,7 +22,7 @@
         </a>
       </div>
     </div>
-    <div class="legend">
+    <div class="legend" v-if="1 != 1">
       <div v-if="activeLocation">
         <!-- {{ activeLocation.name }} -->
       </div>

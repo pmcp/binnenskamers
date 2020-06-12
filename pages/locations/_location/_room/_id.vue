@@ -2,7 +2,7 @@
   <div>
     <div class="container">
       <div class="breadcrumbs" v-if="activeLocation">
-        <a href="/map">Plattegrond</a> - <a :href="`/locations/${location}`">Blok {{ activeLocation.name }}</a> - {{ activeRoom.name }}
+        <a href="/">Inleiding</a> - <a href="/map">Plattegrond</a> - <a :href="`/locations/${location}`">Blok {{ activeLocation.name }}</a> - {{ activeRoom.name }}
       </div>
       <div
         class="map"

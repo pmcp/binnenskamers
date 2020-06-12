@@ -1,5 +1,8 @@
 <template>
   <div class="container">
+    <div class="breadcrumbs" v-if="activeLocation">
+      <a href="/">Inleiding</a>
+    </div>
     <div class="map">
       <div class="map__img">
         <img

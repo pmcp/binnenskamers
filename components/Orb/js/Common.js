@@ -195,11 +195,13 @@ class Common {
   }
 
   setSize() {
+    
     const width = this.canvas.clientWidth;
     const height = this.canvas.clientHeight;
     const offsetLeft =  this.canvas.getBoundingClientRect().left;
     const offsetTop =  this.canvas.getBoundingClientRect().top;
-    if (this.canvas.width !== width || this.canvas.height !== height) {
+    console.log(offsetTop, offsetLeft)
+    if (this.size.width !== width || this.size.height !== height || this.size.offsetTop !== offsetTop || this.size.offsetLeft !== offsetLeft)  {
       this.size = {
         width: width,
         height: height,
@@ -257,6 +259,7 @@ class Common {
   }
 
   onResize() {
+
     this.setSize();
     this.renderer.setSize(this.size.width, this.size.height, false);
     this.camera.aspect = this.size.width / this.size.height;

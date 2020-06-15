@@ -1,7 +1,7 @@
 <template>
   <div class="container">
-    <div class="breadcrumbs" v-if="activeLocation">
-      <a href="/">Inleiding</a>
+    <div class="breadcrumbs">
+      <a href="/">Inleiding</a> - Plattegrond <a v-if="activeLocation" :href="`/locations/${location}`">- <i>Blok {{ activeLocation.name }}</i></a>
     </div>
     <div class="map">
       <div class="map__img">
@@ -32,12 +32,12 @@
         Lokalen: <a
           v-for="(i, key) in allRooms"
           :key="`activeItems_${key}`"
-          :href="`locations/${i.location}/rooms/${key}`"
+          :href="`locations/${i.location}/rooms/${i.id}`"
           class="link"
           :class="[{'link--active' : (activeLocationId  !== null && i.location === activeLocationId), 'link--nonActive': activeLocationId === null}]"
           @mouseover="setActive(i.location)"
           @mouseleave="setActive(null)"
-        >{{ i.name }} <span v-if="key < (Object.keys(allRooms).length - 1)"> / </span>
+        >{{ i.name }}<span v-if="key < (Object.keys(allRooms).length - 1)"> / </span>
         </a>
       </div>
 
@@ -61,7 +61,7 @@
         <a
           v-for="(i, key, index) in secundaryCourses"
           :key="`activeItems_${key}`"
-          :href="`locations/${i.location}/rooms/${key}`"
+          :href="`locations/${i.location}/rooms/${i.room}`"
           class="link"
           :class="[{'link--active' : (activeLocationId  !== null && i.location === activeLocationId), 'link--nonActive': activeLocationId === null}]"
           @mouseover="setActive(i.location)"
@@ -81,7 +81,7 @@
         <a
           v-for="(i, key, index) in academyCourses"
           :key="`activeItems_${key}`"
-          :href="`locations/${i.location}/rooms/${key}`"
+          :href="`locations/${i.location}/rooms/${i.room}`"
           class="link"
           :class="[{'link--active' : (activeLocationId  !== null && i.location === activeLocationId), 'link--nonActive': activeLocationId === null}]"
           @mouseover="setActive(i.location)"

@@ -133,12 +133,10 @@ class Common {
   }
 
   setSize() {
-    
     const width = this.canvas.clientWidth;
     const height = this.canvas.clientHeight;
     const offsetLeft =  this.canvas.getBoundingClientRect().left;
     const offsetTop =  this.canvas.getBoundingClientRect().top;
-    console.log(offsetTop, offsetLeft)
     if (this.size.width !== width || this.size.height !== height || this.size.offsetTop !== offsetTop || this.size.offsetLeft !== offsetLeft)  {
       this.size = {
         width: width,
@@ -156,9 +154,9 @@ class Common {
       start.opacity = orb.material.uniforms.opacity.value,
       finish.opacity = orb.material.uniforms.opacity.value * 1.4,
       start.size = orb.material.uniforms.size.value,
-      finish.size = orb.userData.originalSettings.size * 0.8,
+      finish.size = orb.userData.originalSettings.size * 0.4,
       start.displace = orb.material.uniforms.displace.value
-      finish.displace = 2.2
+      finish.displace = 1.5
     }
   
     if(this.hoverStatus === 'NOHOVER') {

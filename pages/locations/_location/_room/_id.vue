@@ -8,9 +8,21 @@
         class="map"
         :class="cursorClass"
         @mouseleave="setActive(null)"
-      >
-        <orbs
-          v-if="orbSettings"
+      ><template v-if="!loadOrbs">
+        <a
+          v-for="(orb, key) in orbSettings"
+          :key="'orb'+key"
+          class="fallbackOrb"
+          :class="[{'fallbackOrb--active' : (activeLink  !== null && orb.meta.index === activeLink)}]"
+          :style="setStyle(orb)"
+          :href="itemsOfRoom[orb.meta.index].link"
+          target="_blank"
+          @mouseover="setActive(orb.meta.index)"
+          @mouseleave="setActive(null)"
+        ></a>
+      </template>
+      <orbs
+          v-if="orbSettings && loadOrbs"
           :settings="orbSettings"
         />
         <div
@@ -52,6 +64,27 @@
 </template>
 
 <script>
+function webglAvailable() {
+  try {
+    var canvas = document.createElement("canvas");
+    return (
+      !!window.WebGLRenderingContext &&
+      (canvas.getContext("webgl") || canvas.getContext("experimental-webgl"))
+    );
+  } catch (e) {
+    return false;
+  }
+}
+
+function hasTouch() {
+  return (
+    "ontouchstart" in document.documentElement ||
+    navigator.maxTouchPoints > 0 ||
+    navigator.msMaxTouchPoints > 0
+  );
+}
+
+
 import { locations, items, orbTypes } from "~/static/data.json";
 import EventBus from "~/utils/event-bus";
 import orbs from "~/components/Orb";
@@ -108,11 +141,24 @@ export default {
       activeLink: null,
       cursorClass: null,
       activeLink: null,
-      orbTypes: orbTypes
+      orbTypes: orbTypes,
+      loadOrbs: false
     };
   },
 
   methods: {
+    setStyle(orb) {
+      const color = `rgb(${orb.perlin.rcolor * 255}, ${orb.perlin.gcolor *
+        255}, ${orb.perlin.bcolor * 255})`;
+      const gradient = `radial-gradient(circle, ${color} 24%, rgb(255,255,255) 52%);`;
+      const left = (orb.position.x + 0.9) / 0.02 + "%";
+      const top = 100 - (orb.position.y + 1.1) / 0.02 + "%";
+      return {
+        left: left,
+        top: top,
+        background: `radial-gradient(${color}, #fff)`
+      };
+    },
     getColor(id) {
       const type = this.orbTypes[id];
       const r = type.rcolor * 255;
@@ -121,6 +167,7 @@ export default {
       return `rgb(${r},${g},${b})`;
     },
     setActive(id) {
+      console.log(id, this.activeLink)
       if (id === this.activeLink) return;
       if (id === null) {
         EventBus.$emit("DEACTIVATEORB", { room: null, link: id });
@@ -134,6 +181,11 @@ export default {
   mounted() {
     this.room = this.$route.params.id;
     this.location = this.$route.params.location;
+
+
+    // Check if the browser can handle the threejs and if we are on a touch device
+    if (webglAvailable() && !hasTouch()) {
+      this.loadOrbs = true;
     // This event is coming from the threejs instance, when hovering over on an orb.
     EventBus.$on("MOUSEOVERORB", data => {
       // add a class so the cursor changes into a pointer
@@ -154,6 +206,9 @@ export default {
         '_blank' // <- This is what makes it open in a new window.
       );
     });
+    }
+
+
   }
 };
 </script>

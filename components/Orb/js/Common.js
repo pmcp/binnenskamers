@@ -6,6 +6,7 @@ import EventBus from "~/utils/event-bus";
 // const EffectComposer = require('three-effectcomposer')(THREE)
 
 
+
 class Common {
   constructor() {
     this.scene = null;
@@ -24,6 +25,9 @@ class Common {
   }
 
   init() {
+
+    // Let's first check if we can do webgl
+
     this.canvas = document.getElementById('canvas');
     this.setSize();
     this.scene = new THREE.Scene();
@@ -36,6 +40,7 @@ class Common {
     this.mouse = new THREE.Vector2();
 
     // Renderer with transparent background (alpha)
+    
     this.renderer = new THREE.WebGLRenderer({
       canvas: this.canvas,
       antialias: true,
@@ -67,105 +72,38 @@ class Common {
       this.hoverStatus = 'NOHOVER'
       if(this.activeOrb === null) return;
       this.onHover(this.activeOrb)
-      // this.activeOrb = null;
     });
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-    // let TEXTURE = new THREE.TextureLoader().load(bg);
-    // console.log(TEXTURE) 
-    // let mesh = new THREE.Mesh(
-    //   new THREE.PlaneBufferGeometry(this.size.width, this.size.height, 32), 
-    //   new THREE.MeshBasicMaterial({map: TEXTURE})
-    // )
-    // mesh.position.z = -100
-
-    // // post processing
-    
-    // this.composer = new EffectComposer(this.renderer);
-    // const renderPass = new EffectComposer.RenderPass(this.scene, this.camera);
-    // this.composer.addPass(renderPass);
-
-    // var myEffect = {
-    //   uniforms: {
-    //     "tDiffuse": { value: null },
-    //     "resolution": { value: new THREE.Vector2(1.,this.size.height/this.size.width) },
-    //     "uMouse": { value: new THREE.Vector2(-10,-10) },
-    //     "uVelo": { value: 0 },
-    //   },
-    //   vertexShader: `varying vec2 vUv;void main() {vUv = uv;gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0 );}`,
-    //   fragmentShader: `uniform float time;
-    //   uniform sampler2D tDiffuse;
-    //   uniform vec2 resolution;
-    //   varying vec2 vUv;
-    //   uniform vec2 uMouse;
-    //   float circle(vec2 uv, vec2 disc_center, float disc_radius, float border_size) {
-    //     uv -= disc_center;
-    //     uv*=resolution;
-    //     float dist = sqrt(dot(uv, uv));
-    //     return smoothstep(disc_radius+border_size, disc_radius-border_size, dist);
-    //   }
-    //   void main()  {
-    //       vec2 newUV = vUv;
-    //       float c = circle(vUv, uMouse, 0.0, 0.2);
-    //       float r = texture2D(tDiffuse, newUV.xy += c * (0.1 * .5)).x;
-    //       float g = texture2D(tDiffuse, newUV.xy += c * (0.1 * .525)).y;
-    //       float b = texture2D(tDiffuse, newUV.xy += c * (0.1 * .55)).z;
-    //       vec4 color = vec4(r, g, b, 1.);
-    //       gl_FragColor = color;
-    //   }`
-    // }
-
-    // this.customPass = new EffectComposer.ShaderPass(myEffect);
-    // this.customPass.renderToScreen = true;
-    // this.composer.addPass(this.customPass);
-
-
-
-
-
-
-
   }
 
   onMouseDown(event) {
     this.setMouseCoordinates(event.clientX, event.clientY)
     this.setIntersects();
-    
-    
-    if(event.altKey) {
-      const size = this.size.width
-      this.orbDev.position.set(size * this.mouse.x , size * this.mouse.y, 0);
-    }
+    // if(event.altKey) {
+    //   const size = this.size.width
+    //   this.orbDev.position.set(size * this.mouse.x , size * this.mouse.y, 0);
+    // }
 
 
-    if(event.metaKey) {
-      alert(`"x":${this.mouse.x}, "y":${this.mouse.y}`)
-    }
-    if(this.activeOrb === null) return;
+    // if(event.metaKey) {
+    //   alert(`"x":${this.mouse.x}, "y":${this.mouse.y}`)
+    // }
+    // if(this.activeOrb === null) return;
 
     
     
-    if(event.shiftKey) {
-      this.orbDev = this.activeOrb.parent.clone()
-      this.scene.add(this.orbDev)
+    // if(event.shiftKey) {
+    //   this.orbDev = this.activeOrb.parent.clone()
+    //   this.scene.add(this.orbDev)
       
-      return;
-    } else {
-      EventBus.$emit("MOUSEDOWNONORB", this.activeOrb.userData); 
-      return;
-    }
+    //   return;
+    // } else {
+    //   EventBus.$emit("MOUSEDOWNONORB", this.activeOrb.userData); 
+    //   return;
+    // }
+
+    EventBus.$emit("MOUSEDOWNONORB", this.activeOrb.userData); 
+
+
   }
 
   onMouseMove(event) {

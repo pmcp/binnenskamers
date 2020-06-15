@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+
     <div
       class="breadcrumbs"
       v-if="activeLocation"
@@ -12,8 +13,20 @@
       @mouseleave="setActive(null)"
       v-if="activeLocation"
     >
+      <template v-if="!loadOrbs">
+        <a
+          v-for="(orb, key) in orbSettings"
+          :key="'orb'+key"
+          class="fallbackOrb"
+          :class="[{'fallbackOrb--active' : (activeRoom  !== null && orb.meta.room === activeRoom)}]"
+          :style="setStyle(orb)"
+          :href="`/locations/${orb.meta.location}/rooms/${orb.meta.room}`"
+          @mouseover="setActive(orb.meta)"
+          @mouseleave="setActive(null)"
+        ></a>
+      </template>
       <orbs
-        v-if="orbSettings"
+        v-if="orbSettings && loadOrbs"
         :settings="orbSettings"
       />
       <div class="map__img">
@@ -105,6 +118,26 @@
 </template>
 
 <script>
+function webglAvailable() {
+  try {
+    var canvas = document.createElement("canvas");
+    return (
+      !!window.WebGLRenderingContext &&
+      (canvas.getContext("webgl") || canvas.getContext("experimental-webgl"))
+    );
+  } catch (e) {
+    return false;
+  }
+}
+
+function hasTouch() {
+  return (
+    "ontouchstart" in document.documentElement ||
+    navigator.maxTouchPoints > 0 ||
+    navigator.msMaxTouchPoints > 0
+  );
+}
+
 import orbs from "~/components/Orb";
 import EventBus from "~/utils/event-bus";
 import { locations, items, orbTypes } from "~/static/data.json";
@@ -160,7 +193,7 @@ export default {
     },
     secundaryCourses() {
       if (this.activeItems.length < 1) return;
-      
+
       const filteredItems = this.activeItems.filter(
         i => i.cat === "secundary" && i.type === "class"
       );
@@ -205,8 +238,7 @@ export default {
         return prevValue;
       }, {});
       return reducedItems;
-    },
-
+    }
   },
   asyncData({ params }) {
     return { locations, items };
@@ -215,11 +247,26 @@ export default {
     return {
       activeRoom: null,
       location: null,
-      cursorClass: null
+      cursorClass: null,
+      loadOrbs: false
     };
   },
   methods: {
+    setStyle(orb) {
+      console.log(orb);
+      const color = `rgb(${orb.perlin.rcolor * 255}, ${orb.perlin.gcolor *
+        255}, ${orb.perlin.bcolor * 255})`;
+      const gradient = `radial-gradient(circle, ${color} 24%, rgb(255,255,255) 52%);`;
+      const left = (orb.position.x + 0.9) / 0.02 + "%";
+      const top = 100 - (orb.position.y + 1.1) / 0.02 + "%";
+      return {
+        left: left,
+        top: top,
+        background: `radial-gradient(${color}, #fff)`
+      };
+    },
     setActive(id) {
+      console.log(id)
       // if(this.activeRoom = id;)
       if (id === null) {
         EventBus.$emit("DEACTIVATEORB", { room: id, link: null });
@@ -232,24 +279,28 @@ export default {
   },
   mounted() {
     this.location = this.$route.params.id;
-    // This event is coming from the threejs instance, when hovering over on an orb.
-    EventBus.$on("MOUSEOVERORB", data => {
-      // add a class so the cursor changes into a pointer
-      if (data !== null) {
-        this.cursorClass = "cursor";
-        this.setActive(data.room);
-      } else {
-        this.cursorClass = null;
-        this.setActive(null);
-      }
-    });
-    // This event is coming from the threejs instance, when clicked on an orb. When clicked -> go to page
-    EventBus.$on("MOUSEDOWNONORB", data => {
-      if (data.type === "link") return;
-      this.$router.push({
-        path: `${data.location}/rooms/${data.room}`
+
+    // Check if the browser can handle the threejs and if we are on a touch device
+    if (webglAvailable() && !hasTouch()) {
+      this.loadOrbs = true;
+      EventBus.$on("MOUSEOVERORB", data => {
+        // add a class so the cursor changes into a pointer
+        if (data !== null) {
+          this.cursorClass = "cursor";
+          this.setActive(data.room);
+        } else {
+          this.cursorClass = null;
+          this.setActive(null);
+        }
       });
-    });
+      // This event is coming from the threejs instance, when clicked on an orb. When clicked -> go to page
+      EventBus.$on("MOUSEDOWNONORB", data => {
+        if (data.type === "link") return;
+        this.$router.push({
+          path: `${data.location}/rooms/${data.room}`
+        });
+      });
+    }
   }
 };
 </script>

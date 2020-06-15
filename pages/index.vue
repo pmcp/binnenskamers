@@ -3,7 +3,7 @@
     <div class="map">
       <div class="map__img" >
         <a class="img" href="/map">
-          <img src="@/assets/squares/img14.png">
+          <img src="@/assets/squares/compressed/img14.jpg">
         </a>
       </div>
     </div>

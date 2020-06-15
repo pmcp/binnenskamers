@@ -62,7 +62,7 @@ export default {
   computed: {
     image() {
       if (!this.activeLocation) return;
-      return require(`@/assets/squares/${this.activeRoom.img.base}`);
+      return require(`@/assets/squares/compressed/${this.activeRoom.img.base}`);
     },
     itemsOfRoom() {
       if (!this.location) return null;

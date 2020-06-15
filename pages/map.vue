@@ -1,12 +1,12 @@
 <template>
   <div class="container">
     <div class="breadcrumbs">
-      <a href="/">Inleiding</a> - Plattegrond <a v-if="activeLocation" :href="`/locations/${location}`">- <i>Blok {{ activeLocation.name }}</i></a>
+      <a href="/">Inleiding</a> - Plattegrond
     </div>
     <div class="map">
       <div class="map__img">
         <img
-          src="@/assets/squares/img12.png"
+          src="@/assets/squares/compressed/img12.jpg"
           alt="tekening van de hele plattegrond van het Sint Lukas-gebouw"
         />
       </div>

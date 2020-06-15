@@ -140,7 +140,7 @@ export default {
     image() {
       if (!this.activeLocation) return;
 
-      return require(`@/assets/squares/${this.activeLocation.img.base}`);
+      return require(`@/assets/squares/compressed/${this.activeLocation.img.base}`);
     },
     activeLocation() {
       if (!this.location) return;

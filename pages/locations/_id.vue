@@ -48,7 +48,7 @@
               :class="[{'link--active' : (activeRoom  !== null && key === activeRoom), 'link--nonActive': activeRoom === null}]"
               @mouseover="setActive(key)"
               @mouseleave="setActive(null)"
-            >
+            > 
               {{ i.name }} <span v-if="index < (Object.keys(activeLocation.rooms).length-1)">/</span>
             </a>
           </div>
@@ -155,10 +155,12 @@ export default {
       const rooms = Object.keys(object).map(key => {
         return { ...object[key], room: key };
       });
+      
       let settings = rooms.map((i,index) => {
+        
         const orbMeta = {
           location: i.location,
-          index: index,
+          index: i.room,
           room: i.room,
           type: "room"
         };
@@ -288,6 +290,7 @@ export default {
     if (webglAvailable() && !hasTouch()) {
       this.loadOrbs = true;
       EventBus.$on("MOUSEOVERORB", data => {
+        
         // add a class so the cursor changes into a pointer
         if (data !== null) {
           this.cursorClass = "cursor";

@@ -3,6 +3,14 @@ import EventBus from "~/utils/event-bus";
 import Shape from "./Shape"
 
 
+function isEmpty(obj) {
+  for(var key in obj) {
+      if(obj.hasOwnProperty(key))
+          return false;
+  }
+  return true;
+}
+
 class Common {
   constructor() {
     this.scene = null;
@@ -59,16 +67,7 @@ class Common {
       
       activeGroup = this.scene.children.filter(i => i.children[0].userData.meta.index === data.index)
         
-        if(this.activeOrbs !== {}) {
-          for (var key in this.activeOrbs) {
-            if (!this.activeOrbs.hasOwnProperty(key)) continue;
-            var obj = this.activeOrbs[key];
-            obj.userData.grow(0)
-          }
-  
-          this.activeOrbs = {}
-        }
-
+   
       if(activeGroup.length === 1) {
         const activeOrb = activeGroup[0].children[0];
         if(this.activeOrbs[activeOrb.uuid]) return;
@@ -81,7 +80,18 @@ class Common {
 
     
     EventBus.$on("DEACTIVATEORB", data => { 
-      if(this.activeOrb === null) return;
+      
+      // if(this.activeOrbs === null) return;
+      if(!isEmpty(this.activeOrbs)) {
+        for (var key in this.activeOrbs) {
+          if (!this.activeOrbs.hasOwnProperty(key)) continue;
+          var obj = this.activeOrbs[key];
+          obj.userData.grow(0)
+        }
+
+        this.activeOrbs = {}
+      }
+
       
     });
 
@@ -99,13 +109,7 @@ class Common {
       alert(`"x":${this.mouse.x}, "y":${this.mouse.y}`)
     }
   
-    function isEmpty(obj) {
-      for(var key in obj) {
-          if(obj.hasOwnProperty(key))
-              return false;
-      }
-      return true;
-  }
+  
     if(isEmpty(this.activeOrbs)) return;
     EventBus.$emit("MOUSEDOWNONORB", this.activeOrbs[Object.keys(this.activeOrbs)[0]].userData.meta);
   }
@@ -120,22 +124,25 @@ class Common {
 
     this.intersects = this.raycaster.intersectObjects( this.scene.children, true )
     if (this.intersects.length > 0) {
+      console.log('heeer')
       const activeOrb = this.intersects[0].object.parent.children[0]
       if(this.activeOrbs[activeOrb.uuid]) return;
       this.activeOrbs[activeOrb.uuid] = activeOrb
       activeOrb.userData.grow(1)
+      EventBus.$emit("MOUSEOVERORB", this.activeOrbs[Object.keys(this.activeOrbs)[0]].userData.meta);
     } else { 
-      if(this.activeOrbs !== {}) {
+      
+      if(!isEmpty(this.activeOrbs)) {
         for (var key in this.activeOrbs) {
           if (!this.activeOrbs.hasOwnProperty(key)) continue;
           var obj = this.activeOrbs[key];
           obj.userData.grow(0)
-          EventBus.$emit("MOUSEOVERORB", this.activeOrbs[Object.keys(this.activeOrbs)[0]].userData.meta);
+          
         }
-
         this.activeOrbs = {}
+       
       }
-      EventBus.$emit("MOUSEOVERORB", null);
+      
     }
   }
 
@@ -154,48 +161,6 @@ class Common {
     }
   }
 
-  // onHover(){
-    
-  //   let finish = {...this.activeOrb.material.uniforms};
-  //   if (this.hoverStatus === 'HOVERING') {
-  //     finish.opacity.value = finish.opacity.value * 1.4
-  //     finish.size.value = finish.size.value * 0.4
-  //     finish.displace.value = 1.5
-  //   } else {
-  //     finish.opacity.value = this.activeOrb.userData.originalSettings.opacity
-  //     finish.size.value = this.activeOrb.userData.originalSettings.size
-  //     finish.displace.value = this.activeOrb.userData.originalSettings.displace
-  //   }
-    
-  //   // TODO: Make this OO, add tween to object. On hover: Start tween
-
-  //   let tween = new TWEEN.Tween(this.activeOrb.material.uniforms).to(finish, 2000);
-  //   // Easings examples: https://sole.github.io/tween.js/examples/03_graphs.html
-  //   tween.easing(TWEEN.Easing.Exponential.Out)
-    
-  //   tween.onUpdate(i => {
-  //     // console.log(this.activeOrb.material.uniforms)
-  //     // console.log(this.activeOrb.material.uniforms)
-  //     // if(this.activeOrb) {
-  //     //   this.activeOrb.material.uniforms.opacity.value = start.opacity
-  //     //   this.activeOrb.material.uniforms.size.value = start.size
-  //     //   this.activeOrb.material.uniforms.displace.value = start.displace
-  //     // }
-  //   })
-  //   tween.start();  
-  //   // tween.onStart(i => {})
-  //   tween.onComplete(i => {
-  //     // If after this animation there is no hover anymore, reset the orb.
-  //     console.log('complete')
-  //     // tween.stop();
-  //     this.activeOrb = null;
-  //     // if(this.hoverStatus === 'HOVERING') {
-  //     //   // this.hoverStatus = 'NOHOVER';
-  //     //   this.activeOrb = null;
-  //     // }
-  //     console.log(this.hoverStatus)
-  //   });
-  // }
 
   setMouseCoordinates = function(mousePosX, mousePosY){
     this.mouse.x = ( (mousePosX + window.scrollX - this.size.offsetLeft) / this.size.width ) * 2 - 1;

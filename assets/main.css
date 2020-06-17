@@ -1606,8 +1606,14 @@ body {
   width: var(--width);
 }
 
+.legend a {
+  text-transform: capitalize;
+}
+
+
 .link {
   opacity: 0.2;
+
 }
 .link--active {
   opacity: 1;
@@ -1636,10 +1642,13 @@ body {
   height: var(--height);
 }
 .links a {
-  color: HSLA(129, 20%, 62%, 1.00);
-  
+  color: HSLA(129, 20%, 62%, 1.00); 
+  text-transform: capitalize;
 }
 
+.underlined {
+  text-decoration: underline;
+}
 /* Breadcrumbs */
 .breadcrumbs {
   padding-top: 2em;
@@ -1650,8 +1659,7 @@ body {
 }
 
 .breadcrumbs a {
-  color: unset
-  
+  color: unset 
 }
 
 /* Blob canvas */

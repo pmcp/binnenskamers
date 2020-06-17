@@ -602,7 +602,7 @@
       "division": "",
       "cat": "secundary",
       "type": "class",
-      "course": "Eerste Humaniora",
+      "course": "1ste jaar",
       "link": "https://sintlukasbxl-eerstegraad.tumblr.com/",
       "descr": "Tumblr pagina",
       "location": "at",
@@ -622,7 +622,7 @@
       "division": "",
       "cat": "secundary",
       "type": "class",
-      "course": "Artistieke Vorming",
+      "course": "2de Artistieke Vorming",
       "link": "https://sintlukasbxl-eerstegraad.tumblr.com/",
       "descr": "Tumblr pagina",
       "location": "at",
@@ -642,7 +642,7 @@
       "division": "Vorming",
       "cat": "secundary",
       "type": "class",
-      "course": "Audiovisuele Vorming",
+      "course": "3 & 4 Audiovisuele Vorming",
       "link": "https://padlet.com/4vorming/2sx51umefb53tcia",
       "descr": "",
       "location": "at",
@@ -653,48 +653,7 @@
           "size": 0.1
         },
         "position": {
-          "x": -0.42874999999999996,
-          "y": -0.5
-        }
-      }
-    },
-    {
-      "year": "4",
-      "division": "Vorming",
-      "type": "class",
-      "course": "Audiovisuele Vorming",
-      "cat": "secundary",
-      "link": "https://padlet.com/4vorming/2sx51umefb53tcia",
-      "descr": "",
-      "location": "at",
-      "room": "t303",
-      "orb": {
-        "type": "purplepink",
-        "overrides": {
-          "size": 0.1
-        },
-        "position": {
-          "x":-0.5875, "y":0.21991664886474604
-        }
-      }
-    },
-    {
-      "year": "5",
-      "division": "Kunsten",
-      "type": "class",
-      "cat": "secundary",
-      "course": "Vrije Beeldende Kunst",
-      "link": "https://sintlukas.blogspot.com/",
-      "descr": "TEKENblog VBK",
-      "location": "at",
-      "room": "a302",
-      "orb": {
-        "type": "purplepink",
-        "overrides": {
-          "size": 0.1
-        },
-        "position": {
-          "x":0.405, "y":0.4049166488647461
+          "x":-0.07874999999999999, "y":-0.3274999999999999
         }
       }
     },
@@ -703,9 +662,9 @@
       "division": "Vorming",
       "type": "class",
       "cat": "secundary",
-      "course": "Audiovisuele Vorming",
+      "course": "5 & 6 Audiovisuele Vorming",
       "link": "http://www.vimeo.com/derdegraadavv",
-      "descr": "Vimeo-account van de derde graad AVV, met een selectie van het filmwerk gemaakt in het schooljaar 2019 - 2020",
+      "descr": "Vimeo",
       "location": "at",
       "room": "t302",
       "orb": {
@@ -714,21 +673,21 @@
           "size": 0.1
         },
         "position": {
-          "x": -0.42874999999999996,
-          "y": -0.5
+          "x":-0.14125, "y":0.20750000000000002
         }
       }
     },
     {
       "year": "5",
-      "division": "Vorming",
+      "hideOnLocation": true,
+      "division": "Vorming", 
       "type": "class",
       "cat": "secundary",
-      "course": "Audiovisuele Vorming",
+      "course": "5 & 6 Audiovisuele Vorming",
       "link": "https://audiovisuelevorming.hotglue.me",
-      "descr": "Portaalsite die toegang biedt tot het werk van 5AVV en 6AVV (jaarwerk en GIP)",
+      "descr": "Website",
       "location": "at",
-      "room": "t303",
+      "room": "t302",
       "orb": {
         "type": "purplepink",
         "overrides": {
@@ -744,9 +703,9 @@
       "division": "Kunsten",
       "type": "class",
       "cat": "secundary",
-      "course": "Vrije Beeldende Kunst",
+      "course": "5 & 6 Vrije Beeldende Kunst",
       "link": "https://sintlukas.blogspot.com/",
-      "descr": "TEKENblog VBK",
+      "descr": "TEKENblog",
       "location": "at",
       "room": "a302",
       "orb": {
@@ -765,10 +724,11 @@
       "division": "Kunsten",
       "type": "class",
       "cat": "secundary",
-      "course": "Beeldende & Architecturale Kunsten",
+      "hideOnLocation": true,
+      "course": "3 & 4 Beeldende & Architecturale Kunsten",
       "link": "http://users.telenet.be/bram.ollieuz/3bak/3BAK.html",
-      "descr": "Filmpjes met werken van 3BAK",
-      "location": "at",
+      "descr": "",
+      "location": "h",
       "room": "h302",
       "orb": {
         "type": "purplepink",
@@ -785,10 +745,10 @@
       "division": "Kunsten",
       "type": "class",
       "cat": "secundary",
-      "course": "Beeldende & Architecturale Kunsten",
+      "course": "3 & 4 Beeldende & Architecturale kunsten",
       "link": "https://www.youtube.com/watch?v=oCMoeTDcfiU",
-      "descr": "Youtube film compilatie van photoshop animaties",
-      "location": "at",
+      "descr": "Youtube film",
+      "location": "h",
       "room": "h302",
       "orb": {
         "type": "purplepink",
@@ -800,76 +760,15 @@
         }
       }
     },
-    {
-      "year": "6",
-      "division": "Vorming",
-      "type": "class",
-      "cat": "secundary",
-      "course": "Audiovisuele Vorming",
-      "link": "http://www.vimeo.com/derdegraadavv",
-      "descr": "Vimeo-account van de derde graad AVV, met een selectie van het filmwerk gemaakt in het schooljaar 2019 - 2020",
-      "location": "at",
-      "room": "t302",
-      "orb": {
-        "type": "purplepink",
-        "overrides": {
-          "size": 0.1
-        },
-        "position": {
-          "x": -0.42874999999999996,
-          "y": -0.5
-        }
-      }
-    },
-    {
-      "year": "3",
-      "division": "Opleiding",
-      "type": "class",
-      "cat": "secundary",
-      "course": "Artistieke Opleiding",
-      "link": "http://artistiekeopleiding.blogspot.com/",
-      "descr": "Blog tweede graad AO",
-      "location": "v",
-      "room": "v203",
-      "orb": {
-        "type": "purplepink",
-        "overrides": {
-          "size": 0.1
-        },
-        "position": {
-          "x":-0.77, "y":-0.10849998474121092
-        }
-      }
-    },
-    {
-      "year": "3",
-      "division": "Vorming",
-      "type": "class",
-      "cat": "secundary",
-      "course": "Beeldende & Architecturale Vorming",
-      "link": "https://sintlukasbxl-bav.tumblr.com/",
-      "descr": "",
-      "location": "v",
-      "room": "v403",
-      "orb": {
-        "type": "purplepink",
-        "overrides": {
-          "size": 0.1
-        },
-        "position": {
-          "x": 0.38675003051757817,
-          "y": 0.30000000000000004
-        }
-      }
-    },
+   
     {
       "year": "4",
       "division": "Opleiding",
       "type": "class",
       "cat": "secundary",
-      "course": "Artistieke opleiding",
+      "course": "3 & 4 Artistieke opleiding",
       "link": "http://artistiekeopleiding.blogspot.com/",
-      "descr": "blog tweede graad AO",
+      "descr": "blog",
       "location": "v",
       "room": "v203",
       "orb": {
@@ -886,10 +785,11 @@
       "year": "4",
       "division": "Opleiding",
       "type": "class",
+      "hideOnLocation": true,
       "cat": "secundary",
-      "course": "Artistieke opleiding",
+      "course": "3 & 4 Artistieke opleiding",
       "link": "https://www.instagram.com/explore/tags/warybabstract/",
-      "descr": "Instagram Who's afraid of red yellow and blue",
+      "descr": "Instagram 1 - Who's afraid of red yellow and blue",
       "location": "v",
       "room": "v203",
       "orb": {
@@ -907,9 +807,9 @@
       "division": "Opleiding",
       "type": "class",
       "cat": "secundary",
-      "course": "Artistieke opleiding",
+      "course": "3 & 4 Artistieke opleiding",
       "link": "https://www.instagram.com/explore/tags/waryb/",
-      "descr": "Instagram Who's afraid of red yellow and blue",
+      "descr": "Instagram 2 - Who's afraid of red yellow and blue",
       "location": "v",
       "room": "v203",
       "orb": {
@@ -928,9 +828,9 @@
       "division": "Vorming",
       "type": "class",
       "cat": "secundary",
-      "course": "Beeldende & Architecturale vorming",
+      "course": "3 & 4 Beeldende & Architecturale vorming",
       "link": "https://sintlukasbxl-bav.tumblr.com/",
-      "descr": "Instagram Who's afraid of red yellow and blue",
+      "descr": "Tumblr",
       "location": "v",
       "room": "v403",
       "orb": {
@@ -946,51 +846,409 @@
     },
     {
       "year": "5",
-      "division": "Kunsten",
+      "division": "Vorming",
       "type": "class",
       "cat": "secundary",
-      "course": "Toegepaste Beeldende Kunst",
-      "link": "https://sintlukasbxl-tbk.tumblr.com/",
-      "descr": "Tumblr pagina",
-      "location": "v",
-      "room": "grafiek",
+      "course": "5 & 6 Beeldende vorming",
+      "link": "https://enearuizer.wixsite.com/mijnsite",
+      "descr": "Enea",
+      "location": "at",
+      "room": "a206",
       "orb": {
         "type": "purplepink",
         "overrides": {
           "size": 0.1
         },
         "position": {
-          "x":-0.5075000000000001, "y":0.13991664886474608
+          "x":-0.14625, "y":0.3275
         }
       }
     },
     {
       "year": "5",
-      "division": "Kunsten",
+      "hideOnLocation": true,
+      "division": "Vorming",
       "type": "class",
       "cat": "secundary",
-      "course": "Architecturale & Binnenhuiskunst",
-      "link": "https://padlet.com/tomjanssens/SintLukasABK",
-      "descr": "",
-      "location": "v",
-      "room": "v403",
+      "course": "5 & 6 Beeldende vorming",
+      "link": "https://tibbeliesmons.wixsite.com/tibbeliesmons",
+      "descr": "Lies",
+      "location": "at",
+      "room": "a206",
       "orb": {
         "type": "purplepink",
         "overrides": {
           "size": 0.1
         },
         "position": {
-          "x": 0.31425003051757816,
-          "y": -0.22999999999999998
+          "x":0.3587499999999999, "y":-0.6000000000000001
         }
       }
     },
+    
+        {
+      "year": "5",
+      "hideOnLocation": true,
+      "division": "Vorming",
+      "type": "class",
+      "cat": "secundary",
+      "course": "5 & 6 Beeldende vorming",
+      "link": "https://louis12345678.wixsite.com/mijnsite-1",
+      "descr": "Louis",
+      "location": "at",
+      "room": "a206",
+      "orb": {
+        "type": "purplepink",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x":-0.29625, "y":-0.81
+        }
+      }
+    },
+
+    {
+      "year": "5",
+      "hideOnLocation": true,
+      "division": "Vorming",
+      "type": "class",
+      "cat": "secundary",
+      "course": "5 & 6 Beeldende vorming",
+      "link": "https://marielefranc2.wixsite.com/website",
+      "descr": "Lies",
+      "location": "at",
+      "room": "a206",
+      "orb": {
+        "type": "purplepink",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x":-0.5137499999999999, "y":-0.7224999999999999
+        }
+      }
+    },
+
+    {
+      "year": "5",
+      "hideOnLocation": true,
+      "division": "Vorming",
+      "type": "class",
+      "cat": "secundary",
+      "course": "5 & 6 Beeldende vorming",
+      "link": "https://victoriahercot.wixsite.com/mijnsite",
+      "descr": "Victoria",
+      "location": "at",
+      "room": "a206",
+      "orb": {
+        "type": "purplepink",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x":0.59625, "y":0.395
+        }
+      }
+    },
+
+    {
+      "year": "5",
+      "hideOnLocation": true,
+      "division": "Vorming",
+      "type": "class",
+      "cat": "secundary",
+      "course": "5 & 6 Beeldende vorming",
+      "link": "https://vayasarafianos.wixsite.com/mijnsite",
+      "descr": "Vaya",
+      "location": "at",
+      "room": "a206",
+      "orb": {
+        "type": "purplepink",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x":-0.46875, "y":-0.48
+        }
+      }
+    },
+
+    {
+      "year": "5",
+      "hideOnLocation": true,
+      "division": "Vorming",
+      "type": "class",
+      "cat": "secundary",
+      "course": "5 & 6 Beeldende vorming",
+      "link": "https://timdj2602.wixsite.com/sintlukas-expo-5bv",
+      "descr": "Tim",
+      "location": "at",
+      "room": "a206",
+      "orb": {
+        "type": "purplepink",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x":-0.11875000000000002, "y":-0.4650000000000001
+        }
+      }
+    },
+
+    {
+      "year": "5",
+      "hideOnLocation": true,
+      "division": "Vorming",
+      "type": "class",
+      "cat": "secundary",
+      "course": "5 & 6 Beeldende vorming",
+      "link": "https://yanadegryse03.wixsite.com/yana",
+      "descr": "Yana",
+      "location": "at",
+      "room": "a206",
+      "orb": {
+        "type": "purplepink",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x":0.13874999999999993, "y":-0.02750000000000008
+        }
+      }
+    },
+
+    {
+      "year": "5",
+      "hideOnLocation": true,
+      "division": "Vorming",
+      "type": "class",
+      "cat": "secundary",
+      "course": "5 & 6 Beeldende vorming",
+      "link": "https://trajanjossart8.wixsite.com/website",
+      "descr": "Trajan",
+      "location": "at",
+      "room": "a206",
+      "orb": {
+        "type": "purplepink",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x":0.53375, "y":-0.14500000000000002
+        }
+      }
+    },
+
+    {
+      "year": "5",
+      "hideOnLocation": true,
+      "division": "Vorming",
+      "type": "class",
+      "cat": "secundary",
+      "course": "5 & 6 Beeldende vorming",
+      "link": "https://toonblondeel2.wixsite.com/portfolio",
+      "descr": "Toon",
+      "location": "at",
+      "room": "a206",
+      "orb": {
+        "type": "purplepink",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x":-0.02124999999999999, "y":-0.2775000000000001
+        }
+      }
+    },
+
+
+
+
+ {
+      "year": "6",
+      "hideOnLocation": true,
+      "division": "Vorming",
+      "type": "class",
+      "cat": "secundary",
+      "course": "5 & 6 Beeldende vorming",
+      "link": "https://margvanbel.wixsite.com/portfolio-website",
+      "descr": "Marg",
+      "location": "at",
+      "room": "a206",
+      "orb": {
+        "type": "purplepink",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x":0.55125, "y":-0.06000000000000005
+        }
+      }
+    },
+
+
+ {
+  "year": "6",
+  "hideOnLocation": true,
+  "division": "Vorming",
+  "type": "class",
+  "cat": "secundary",
+  "course": "5 & 6 Beeldende vorming",
+  "link": "https://www.youtube.com/watch?v=eI0w3PvMX6w&feature=youtu.be",
+  "descr": "Louis Corthout: Utopie/Dystopie",
+  "location": "at",
+  "room": "a206",
+  "orb": {
+    "type": "purplepink",
+    "overrides": {
+      "size": 0.1
+    },
+    "position": {
+      "x":-0.27875000000000005, "y":-0.2849999999999999
+    }
+  }
+},
+
+ {
+      "year": "6",
+      "hideOnLocation": true,
+      "division": "Vorming",
+      "type": "class",
+      "cat": "secundary",
+      "course": "5 & 6 Beeldende vorming",
+      "link": "https://breynaertsimon.wixsite.com/mijnsite",
+      "descr": "Simon",
+      "location": "at",
+      "room": "a206",
+      "orb": {
+        "type": "purplepink",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x":0.21750000000000003, "y":0.3759765625
+        }
+      }
+    },
+
+ {
+      "year": "6",
+      "hideOnLocation": true,
+      "division": "Vorming",
+      "type": "class",
+      "cat": "secundary",
+      "course": "5 & 6 Beeldende vorming",
+      "link": "https://geyzej.wixsite.com/janageyzels",
+      "descr": "Jana",
+      "location": "at",
+      "room": "a206",
+      "orb": {
+        "type": "purplepink",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x":0.375, "y":-0.2765234375000001
+        }
+      }
+    },
+
+ {
+      "year": "6",
+      "hideOnLocation": true,
+      "division": "Vorming",
+      "type": "class",
+      "cat": "secundary",
+      "course": "5 & 6 Beeldende vorming",
+      "link": "https://meesarne1.wixsite.com/arnemees",
+      "descr": "Arne",
+      "location": "at",
+      "room": "a206",
+      "orb": {
+        "type": "purplepink",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x":-0.010000000000000009, "y":0.058476562499999996
+        }
+      }
+    },
+
+ {
+      "year": "6",
+      "hideOnLocation": true,
+      "division": "Vorming",
+      "type": "class",
+      "cat": "secundary",
+      "course": "5 & 6 Beeldende vorming",
+      "link": "https://noraroukaerts.wixsite.com/mysite",
+      "descr": "Nora",
+      "location": "at",
+      "room": "a206",
+      "orb": {
+        "type": "purplepink",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x":-0.02749999999999997, "y":0.5959765625
+        }
+      }
+    },
+
+ {
+      "year": "6",
+      "hideOnLocation": true,
+      "division": "Vorming",
+      "type": "class",
+      "cat": "secundary",
+      "course": "5 & 6 Beeldende vorming",
+      "link": "https://louis1corthout.wixsite.com/louiscorthout",
+      "descr": "Louis",
+      "location": "at",
+      "room": "a206",
+      "orb": {
+        "type": "purplepink",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x":-0.40249999999999997, "y":-0.07152343750000001
+        }
+      }
+    },
+
+ {
+      "year": "6",
+      "hideOnLocation": true,
+      "division": "Vorming",
+      "type": "class",
+      "cat": "secundary",
+      "course": "5 & 6 Beeldende vorming",
+      "link": "https://conorturley.wixsite.com/website",
+      "descr": "Conor",
+      "location": "at",
+      "room": "a206",
+      "orb": {
+        "type": "purplepink",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x":-0.5275000000000001, "y":-0.14152343750000007
+        }
+      }
+    },
+
+ 
     {
       "year": "5",
       "division": "Kunsten",
       "type": "class",
       "cat": "secundary",
-      "course": "Architecturale & Binnenhuiskunst",
+      "course": "5 & 6 Artistieke opleiding",
       "link": "https://www.instagram.com/explore/tags/5ao6micromacro/?hl=nl",
       "descr": "Instagram MicroMacro",
       "location": "v",
@@ -1009,10 +1267,11 @@
       "year": "5",
       "division": "Kunsten",
       "type": "class",
+      "hideOnLocation": true,
       "cat": "secundary",
-      "course": "Architecturale & Binnenhuiskunst",
+      "course": "5 & 6 Artistieke opleiding",
       "link": "https://www.instagram.com/3de_graad_ao/",
-      "descr": "instagramaccount met selectie werk gemaakt door 5 en 6 ao",
+      "descr": "instagram",
       "location": "v",
       "room": "v203",
       "orb": {
@@ -1030,7 +1289,7 @@
       "division": "Vorming",
       "type": "class",
       "cat": "secundary",
-      "course": "Architecturale Vorming",
+      "course": "5 & 6 Architecturale Vorming",
       "link": "https://www.tumblr.com/blog/sintlukas-bxl-av",
       "descr": "",
       "location": "v",
@@ -1051,9 +1310,9 @@
       "division": "Kunsten",
       "type": "class",
       "cat": "secundary",
-      "course": "Toegepaste Beeldende Kunst",
+      "course": "5 & 6 Toegepaste Beeldende Kunst",
       "link": "https://sintlukasbxl-tbk.tumblr.com/",
-      "descr": "Tumblr pagina",
+      "descr": "Tumblr",
       "location": "v",
       "room": "grafiek",
       "orb": {
@@ -1071,7 +1330,7 @@
       "division": "Kunsten",
       "type": "class",
       "cat": "secundary",
-      "course": "Architecturale & Binnenhuiskunst",
+      "course": "5 & 6 Architecturale & Binnenhuiskunst",
       "link": "https://padlet.com/tomjanssens/SintLukasABK",
       "descr": "",
       "location": "v",
@@ -1087,74 +1346,16 @@
         }
       }
     },
+    
     {
       "year": "6",
       "division": "Opleiding",
       "type": "class",
       "cat": "secundary",
-      "course": "Artistieke Opleiding",
-      "link": "https://www.instagram.com/3de_graad_ao/",
-      "descr": "Instagramaccount met selectie werk gemaakt door 5 en 6 ao",
-      "location": "v",
-      "room": "v203",
-      "orb": {
-        "type": "purplepink",
-        "overrides": {
-          "size": 0.1
-        },
-        "position": {
-          "x":0.050000000000000044, "y":-0.260999984741211
-        }
-      }
-    },
-    {
-      "year": "6",
-      "division": "Opleiding",
-      "type": "class",
-      "cat": "secundary",
-      "course": "Artistieke Opleiding",
-      "link": "https://www.instagram.com/3de_graad_ao/",
-      "descr": "Instagramaccount met selectie werk gemaakt door 5 en 6 ao",
-      "location": "v",
-      "room": "v203",
-      "orb": {
-        "type": "purplepink",
-        "overrides": {
-          "size": 0.1
-        },
-        "position": {
-          "x":-0.24875000000000003, "y":0.37749999999999995
-        }
-      }
-    },
-    {
-      "year": "6",
-      "division": "Opleiding",
-      "type": "class",
-      "cat": "secundary",
-      "course": "Artistieke Opleiding",
+      "course": "5 & 6 Artistieke Opleiding",
+      "hideOnLocation": true,
       "link": "https://sintlukasbxl-5ao6.tumblr.com",
-      "descr": "tumblr pagina voor 5 en 6ao",
-      "location": "v",
-      "room": "v203",
-      "orb": {
-        "type": "purplepink",
-        "overrides": {
-          "size": 0.1
-        },
-        "position": {
-          "x":0.40625, "y":-0.13250000000000006
-        }
-      }
-    },
-    {
-      "year": "6",
-      "division": "Opleiding",
-      "type": "class",
-      "cat": "secundary",
-      "course": "Artistieke Opleiding",
-      "link": "https://sintlukasbxl-5ao6.tumblr.com",
-      "descr": "tumblr 5 en 6ao",
+      "descr": "tumblr",
       "location": "v",
       "room": "v203",
       "orb": {
@@ -1168,44 +1369,22 @@
       }
     },
     {
-      "year": "6",
-      "division": "Opleiding",
+      "year": "kinderen",
+      "division": "academie",
+      "cat": "academy",
       "type": "class",
-      "cat": "secundary",
-      "course": "Artistieke Opleiding",
-      "link": "https://audiovisuelevorming.hotglue.me/",
-      "descr": "Portaalsite die toegang biedt tot het werk van 5AVV en 6AVV (jaarwerk en GIP)",
-      "location": "at",
-      "room": "v303",
+      "course": "Atelier Kinderen",
+      "link": "https://padlet.com/m_lefever/lbv7hmlo8f7i?utm_campaign=transactional&utm_content=padlet_url&utm_medium=email&utm_source=started_a_padlet",
+      "descr": "Padlet: Toon je Gezichtje",
+      "location": "g",
+      "room": "g102",
       "orb": {
-        "type": "purplepink",
+        "type": "academy",
         "overrides": {
           "size": 0.1
         },
         "position": {
-          "x": -0.42874999999999996,
-          "y": -0.5
-        }
-      }
-    },
-    {
-      "year": "6",
-      "division": "Vorming",
-      "type": "class",
-      "cat": "secundary",
-      "course": "Architecturale Vorming",
-      "link": "https://www.tumblr.com/blog/sintlukas-bxl-av",
-      "descr": "",
-      "location": "at",
-      "room": "t401",
-      "orb": {
-        "type": "purplepink",
-        "overrides": {
-          "size": 0.1
-        },
-        "position": {
-          "x": -0.42874999999999996,
-          "y": -0.5
+          "x":0.21750000000000003, "y":0.07741664886474608
         }
       }
     },
@@ -1215,8 +1394,8 @@
       "cat": "academy",
       "type": "class",
       "course": "Atelier Kinderen",
-      "link": "https://padlet.com/m_lefever/lbv7hmlo8f7i?utm_campaign=transactional&utm_content=padlet_url&utm_medium=email&utm_source=started_a_padlet",
-      "descr": "Padlet Toon je Gezichtje",
+      "link": "https://padlet.com/roselyndwerniers/vywgezynv9byn8r9",
+      "descr": "Atelier Kinderen (boodschap)",
       "location": "g",
       "room": "g102",
       "orb": {
@@ -1294,9 +1473,9 @@
       "division": "academie",
       "cat": "academy",
       "type": "class",
-      "course": "Atelier Kinderen",
+      "course": "Jongerenatelier",
       "link": "https://padlet.com/tvsintlukas/Bookmarks",
-      "descr": "Padlet jongeren Groenstraat",
+      "descr": "Jongerenatelier",
       "location": "v",
       "room": "grafiek",
       "orb": {
@@ -1316,7 +1495,7 @@
       "type": "class",
       "course": "fotokunst",
       "link": "https://atelierfotokunst.wordpress.com",
-      "descr": "Atelier volwassenen",
+      "descr": "Fotokunst",
       "location": "at",
       "room": "t302",
       "orb": {
@@ -1335,9 +1514,50 @@
       "division": "academie",
       "cat": "academy",
       "type": "class",
+      "course": "grafiek",
+      "link": "https://nl.padlet.com/bartvano67/e58n6yqu21t3bhws",
+      "descr": "Grafiek",
+      "location": "v",
+      "room": "grafiek",
+      "orb": {
+        "type": "academy",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x": -0.42874999999999996,
+          "y": -0.5
+        }
+      }
+    },
+    {
+      "year": "volwassenen",
+      "division": "academie",
+      "cat": "academy",
+      "type": "class",
+      "course": "grafiek",
+      "link": "https://nl.padlet.com/bartvano67/e58n6yqu21t3bhws",
+      "descr": "Grafiek",
+      "location": "v",
+      "room": "zeefdruk",
+      "orb": {
+        "type": "academy",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x":0.2749999999999999, "y":-0.08652343749999991
+        }
+      }
+    },
+    {
+      "year": "volwassenen",
+      "division": "academie",
+      "cat": "academy",
+      "type": "class",
       "course": "schilderkunst",
       "link": "https://padlet.com/jonasdelaey/fb0mwx1bm8l3irce",
-      "descr": "Padlet Schilderkunst",
+      "descr": "Schilderkunst",
       "location": "h",
       "room": "h301",
       "orb": {
@@ -1357,7 +1577,7 @@
       "type": "class",
       "course": "interieurontwerp",
       "link": "https://padlet.com/tomjanssens/interieurontwerp",
-      "descr": "Padlet Interieurontwerp",
+      "descr": "Interieurontwerp",
       "location": "v",
       "room": "v403",
       "orb": {
@@ -1377,7 +1597,7 @@
       "type": "class",
       "course": "grafisch ontwerp & illustratie",
       "link": "https://padlet.com/deboeck_anne/SLA_GrafischOntwerpIllustratie",
-      "descr": "Padlet Grafisch ontwerp en Illustratie",
+      "descr": "Grafisch ontwerp en Illustratie",
       "location": "at",
       "room": "t303",
       "orb": {
@@ -1395,9 +1615,29 @@
       "division": "academie",
       "cat": "academy",
       "type": "class",
+      "course": "grafisch ontwerp & illustratie",
+      "link": "https://artspaces.kunstmatrix.com/en/exhibition/1420802/laure-baert-2020",
+      "descr": "VR-ruimte Laure Baert",
+      "location": "at",
+      "room": "t303",
+      "orb": {
+        "type": "academy",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x":0.49249999999999994, "y":0.08847656250000002
+        }
+      }
+    },
+    {
+      "year": "volwassenen",
+      "division": "academie",
+      "cat": "academy",
+      "type": "class",
       "course": "kunstbeschouwing",
       "link": "https://www.youtube.com/watch?v=Kf8EzRobak0&feature=youtu.be",
-      "descr": "voorbeeldles kunstbeschouwing",
+      "descr": "Kunstbeschouwing",
       "location": "h",
       "room": "h202",
       "orb": {
@@ -1417,7 +1657,7 @@
       "type": "class",
       "course": "modeltekenen",
       "link": "https://padlet.com/chiara_lammens/wacgangj32l7",
-      "descr": "Modeltekenen",
+      "descr": "Modeltekenen - waarneming",
       "location": "at",
       "room": "a302",
       "orb": {
@@ -1427,26 +1667,6 @@
         },
         "position": {
           "x":-0.27249999999999996, "y":0.5974166488647461
-        }
-      }
-    },
-    {
-      "year": "volwassenen",
-      "division": "academie",
-      "cat": "academy",
-      "type": "class",
-      "course": "tekenkunst",
-      "link": "https://padlet.com/chiara_lammens/wacgangj32l7",
-      "descr": "Padlet waarneming/model",
-      "location": "at",
-      "room": "a302",
-      "orb": {
-        "type": "academy",
-        "overrides": {
-          "size": 0.1
-        },
-        "position": {
-          "x":0.07250000000000001, "y":-0.200083351135254
         }
       }
     },
@@ -1741,6 +1961,26 @@
       "descr": "Buurtkeuken",
       "location": "h",
       "room": "leraarskamer",
+      "orb": {
+        "type": "academy",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x":-0.015000000000000013, "y":0.275
+        }
+      }
+    },
+    {
+      "year": "",
+      "division": "extern",
+      "cat": "external",
+      "type": "buurtkeuken",
+      "course": "",
+      "link": "https://www.facebook.com/Buurtkeuken-116851656530443/",
+      "descr": "Buurtkeuken",
+      "location": "g",
+      "room": "bredeschool",
       "orb": {
         "type": "academy",
         "overrides": {

@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="breadcrumbs">
-      <a href="/">Inleiding</a> - Plattegrond
+      <a class="underlined" href="/">Inleiding</a> - Plattegrond
     </div>
     <div class="map">
       <div class="map__img">
@@ -195,7 +195,7 @@ export default {
       return style;
     },
     setActive(id) {
-      console.log(id);
+      // console.log(id);
       this.activeLocationId = id;
     }
   }

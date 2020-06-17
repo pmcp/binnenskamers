@@ -1,10 +1,6 @@
 import * as THREE from "three";
-import TWEEN from '@tweenjs/tween.js'
 import EventBus from "~/utils/event-bus";
-
-
-// const EffectComposer = require('three-effectcomposer')(THREE)
-
+import Shape from "./Shape"
 
 
 class Common {
@@ -16,94 +12,102 @@ class Common {
     this.renderer = null;
     this.objectsToCheckIntersects = [];
     this.activeOrb = null;
+    this.activeOrbs = {};
     this.orbDev = null;
     this.hoverStatus = 'NOHOVER';
     this.size = {
       width: null,
-      height: null
+      height: null,
+      offsetTop: null,
+      offsetLeft: null
     };
   }
 
-  init() {
-
+  init(props) {
+    
     // Let's first check if we can do webgl
-
     this.canvas = document.getElementById('canvas');
     this.setSize();
     this.scene = new THREE.Scene();
     this.camera = new THREE.OrthographicCamera( this.size.width / - 1, this.size.width / 1, this.size.height / 1, this.size.height / - 1, 1, 1000 );
-
+  
+    this.camera.position.set(0, 10, 20);
+  
     // Raycaster for mouse over and clicks
     this.raycaster = new THREE.Raycaster();
-
     // Coordinate for cursor
     this.mouse = new THREE.Vector2();
-
-    // Renderer with transparent background (alpha)
-    
+    // Renderer with transparent background (alpha: true)
     this.renderer = new THREE.WebGLRenderer({
       canvas: this.canvas,
       antialias: true,
       alpha: true
     });
 
-
     // Event Listeners
     this.canvas.addEventListener('mousemove', this.onMouseMove.bind(this), false);
     this.canvas.addEventListener('mousedown', this.onMouseDown.bind(this), false);
-
     window.addEventListener("resize", this.onResize.bind(this), false);
 
+    // Trigger on resize already once, so everything is nicely matched up
     this.onResize()
-
     // Event bus coming from vue app
     EventBus.$on("ACTIVATEORB", data => {
-      let activeGroup = null;
-      if(data.room !== null) activeGroup = this.scene.children.filter(i => i.children[0].userData.room === data.room)
-      if(data.link !== null) activeGroup = this.scene.children.filter(i => i.children[0].userData.index === data.link)
-      if(activeGroup.length < 1) return;
-      this.activeOrb = activeGroup[0].children[0]
-      this.hoverStatus = 'HOVERING'
-      this.onHover(this.activeOrb)
+      let activeGroup = [];
+      // TODO: Might change this to id's of orbs.
+      // let val = (data.room === null) ? data.link : val = data.room;
+      
+      activeGroup = this.scene.children.filter(i => i.children[0].userData.meta.index === data.index)
+        
+        if(this.activeOrbs !== {}) {
+          for (var key in this.activeOrbs) {
+            if (!this.activeOrbs.hasOwnProperty(key)) continue;
+            var obj = this.activeOrbs[key];
+            obj.userData.grow(0)
+          }
+  
+          this.activeOrbs = {}
+        }
+
+      if(activeGroup.length === 1) {
+        const activeOrb = activeGroup[0].children[0];
+        if(this.activeOrbs[activeOrb.uuid]) return;
+        this.activeOrbs[activeOrb.uuid] = activeOrb
+        activeOrb.userData.grow(1)
+        
+      }
+      
     });
 
     
-    EventBus.$on("DEACTIVATEORB", data => {  
-      this.hoverStatus = 'NOHOVER'
+    EventBus.$on("DEACTIVATEORB", data => { 
       if(this.activeOrb === null) return;
-      this.onHover(this.activeOrb)
+      
     });
+
+    // Create Orbs
+    props.orbSettings.map(orb => new Shape(orb))
+    
+
   }
 
   onMouseDown(event) {
     this.setMouseCoordinates(event.clientX, event.clientY)
     this.setIntersects();
-    // if(event.altKey) {
-    //   const size = this.size.width
-    //   this.orbDev.position.set(size * this.mouse.x , size * this.mouse.y, 0);
-    // }
 
-
-    // if(event.metaKey) {
-    //   alert(`"x":${this.mouse.x}, "y":${this.mouse.y}`)
-    // }
-    // if(this.activeOrb === null) return;
-
-    
-    
-    // if(event.shiftKey) {
-    //   this.orbDev = this.activeOrb.parent.clone()
-    //   this.scene.add(this.orbDev)
-      
-    //   return;
-    // } else {
-    //   EventBus.$emit("MOUSEDOWNONORB", this.activeOrb.userData); 
-    //   return;
-    // }
-
-    EventBus.$emit("MOUSEDOWNONORB", this.activeOrb.userData); 
-
-
+    if(event.metaKey) {
+      alert(`"x":${this.mouse.x}, "y":${this.mouse.y}`)
+    }
+  
+    function isEmpty(obj) {
+      for(var key in obj) {
+          if(obj.hasOwnProperty(key))
+              return false;
+      }
+      return true;
+  }
+    if(isEmpty(this.activeOrbs)) return;
+    EventBus.$emit("MOUSEDOWNONORB", this.activeOrbs[Object.keys(this.activeOrbs)[0]].userData.meta);
   }
 
   onMouseMove(event) {
@@ -112,23 +116,26 @@ class Common {
   }
 
   setIntersects() {
-    // Set the raycaster correctly (mouse position changed)
     this.raycaster.setFromCamera( this.mouse, this.camera );
-    // Get intersected objects
-    const intersects = this.raycaster.intersectObjects( this.objectsToCheckIntersects, true )
-    if (intersects.length > 0) {
-      if(this.hoverStatus === 'HOVERING') return;
-      this.hoverStatus = 'HOVERING';
-      if(this.activeOrb === intersects[0].object.parent.children[0]) return;
-      this.activeOrb = intersects[0].object.parent.children[0];
-      EventBus.$emit("MOUSEOVERORB", this.activeOrb.userData);  
-      this.onHover(this.activeOrb)
-    } else {
-      if(this.hoverStatus === 'NOHOVER') return;
-      this.hoverStatus = 'NOHOVER';
+
+    this.intersects = this.raycaster.intersectObjects( this.scene.children, true )
+    if (this.intersects.length > 0) {
+      const activeOrb = this.intersects[0].object.parent.children[0]
+      if(this.activeOrbs[activeOrb.uuid]) return;
+      this.activeOrbs[activeOrb.uuid] = activeOrb
+      activeOrb.userData.grow(1)
+    } else { 
+      if(this.activeOrbs !== {}) {
+        for (var key in this.activeOrbs) {
+          if (!this.activeOrbs.hasOwnProperty(key)) continue;
+          var obj = this.activeOrbs[key];
+          obj.userData.grow(0)
+          EventBus.$emit("MOUSEOVERORB", this.activeOrbs[Object.keys(this.activeOrbs)[0]].userData.meta);
+        }
+
+        this.activeOrbs = {}
+      }
       EventBus.$emit("MOUSEOVERORB", null);
-      this.onHover(this.activeOrb)
-      this.activeOrb = null
     }
   }
 
@@ -139,7 +146,7 @@ class Common {
     const offsetTop =  this.canvas.getBoundingClientRect().top;
     if (this.size.width !== width || this.size.height !== height || this.size.offsetTop !== offsetTop || this.size.offsetLeft !== offsetLeft)  {
       this.size = {
-        width: width,
+        width: width, 
         height: height,
         offsetTop: offsetTop,
         offsetLeft: offsetLeft
@@ -147,55 +154,56 @@ class Common {
     }
   }
 
-  onHover(orb){
-    let start = {}
-    let finish = {}
-    if(this.hoverStatus === 'HOVERING') {
-      start.opacity = orb.material.uniforms.opacity.value,
-      finish.opacity = orb.material.uniforms.opacity.value * 1.4,
-      start.size = orb.material.uniforms.size.value,
-      finish.size = orb.userData.originalSettings.size * 0.4,
-      start.displace = orb.material.uniforms.displace.value
-      finish.displace = 1.5
-    }
-  
-    if(this.hoverStatus === 'NOHOVER') {
-      start.opacity = orb.material.uniforms.opacity.value,
-      finish.opacity = orb.userData.originalSettings.opacity,
-      start.size = orb.material.uniforms.size.value,
-      finish.size = orb.userData.originalSettings.size,
-      start.displace = orb.material.uniforms.displace.value,
-      finish.displace = orb.userData.originalSettings.displace
-    }
-  
-    let tween = new TWEEN.Tween(start).to(finish, 500);
-    // Easings examples: https://sole.github.io/tween.js/examples/03_graphs.html
-    tween.easing(TWEEN.Easing.Exponential.Out)
+  // onHover(){
     
-    tween.onUpdate(i => {
-      orb.material.uniforms.opacity.value = start.opacity
-      orb.material.uniforms.size.value = start.size
-      orb.material.uniforms.displace.value = start.displace
-    })
-    tween.start();
-    // tween.onStart(i => {})
-    tween.onComplete(i => {
-      if(this.hoverStatus === 'NOHOVER') {
-        this.activeOrb = null;
-      }
-    });
-  }
+  //   let finish = {...this.activeOrb.material.uniforms};
+  //   if (this.hoverStatus === 'HOVERING') {
+  //     finish.opacity.value = finish.opacity.value * 1.4
+  //     finish.size.value = finish.size.value * 0.4
+  //     finish.displace.value = 1.5
+  //   } else {
+  //     finish.opacity.value = this.activeOrb.userData.originalSettings.opacity
+  //     finish.size.value = this.activeOrb.userData.originalSettings.size
+  //     finish.displace.value = this.activeOrb.userData.originalSettings.displace
+  //   }
+    
+  //   // TODO: Make this OO, add tween to object. On hover: Start tween
+
+  //   let tween = new TWEEN.Tween(this.activeOrb.material.uniforms).to(finish, 2000);
+  //   // Easings examples: https://sole.github.io/tween.js/examples/03_graphs.html
+  //   tween.easing(TWEEN.Easing.Exponential.Out)
+    
+  //   tween.onUpdate(i => {
+  //     // console.log(this.activeOrb.material.uniforms)
+  //     // console.log(this.activeOrb.material.uniforms)
+  //     // if(this.activeOrb) {
+  //     //   this.activeOrb.material.uniforms.opacity.value = start.opacity
+  //     //   this.activeOrb.material.uniforms.size.value = start.size
+  //     //   this.activeOrb.material.uniforms.displace.value = start.displace
+  //     // }
+  //   })
+  //   tween.start();  
+  //   // tween.onStart(i => {})
+  //   tween.onComplete(i => {
+  //     // If after this animation there is no hover anymore, reset the orb.
+  //     console.log('complete')
+  //     // tween.stop();
+  //     this.activeOrb = null;
+  //     // if(this.hoverStatus === 'HOVERING') {
+  //     //   // this.hoverStatus = 'NOHOVER';
+  //     //   this.activeOrb = null;
+  //     // }
+  //     console.log(this.hoverStatus)
+  //   });
+  // }
 
   setMouseCoordinates = function(mousePosX, mousePosY){
-    const mouseY = mousePosY + window.scrollY
-    const mouseX = mousePosX + window.scrollX
-    this.mouse.x = ( (mouseX - this.size.offsetLeft) / this.size.width ) * 2 - 1;
-    this.mouse.y = - ( (mouseY- this.size.offsetTop) / this.size.height ) * 2 + 1
+    this.mouse.x = ( (mousePosX + window.scrollX - this.size.offsetLeft) / this.size.width ) * 2 - 1;
+    this.mouse.y = - ( (mousePosY + window.scrollY - this.size.offsetTop) / this.size.height ) * 2 + 1
 
   }
 
   onResize() {
-
     this.setSize();
     this.renderer.setSize(this.size.width, this.size.height, false);
     this.camera.aspect = this.size.width / this.size.height;
@@ -204,8 +212,8 @@ class Common {
 
   render() {
     this.renderer.render(this.scene, this.camera);
-    // this.customPass.uniforms.uMouse.value = this.mouse;
-    // this.composer.render()
+    this.scene.children.map(child => child.children[0].userData.animate())
+    
   }
 }
 

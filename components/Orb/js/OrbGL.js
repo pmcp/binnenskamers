@@ -1,27 +1,21 @@
 import Common from "./Common";
 import Shape from "./Shape"
+import TWEEN from '@tweenjs/tween.js'
 
+// const start = Date.now();
 export default class OrbGL{
   constructor(props){
-    // Props passed from the vue instance
     this.init(props);
   }
 
   init(props){
-    Common.init()
-    // Create the orb
-    console.log([props])
-    this.shape = new Shape(props);
-    
-    // Start rendering. This is a recurring function (requestAnimationFrame)
+    Common.init(props)    
     this.render();
   }
 
   render() {
-    // Animate the orb
-    this.shape.update();
     Common.render();
-    // Recursion
+    TWEEN.update()
     requestAnimationFrame(this.render.bind(this));
   }
 }

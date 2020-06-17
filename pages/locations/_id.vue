@@ -5,7 +5,7 @@
       class="breadcrumbs"
       v-if="activeLocation"
     >
-      <a href="/">Inleiding</a> - <a href="/map">Plattegrond</a> - Blok {{ activeLocation.name }}
+      <a class="underlined" href="/">Inleiding</a> - <a class="underlined" href="/map">Plattegrond</a> - Blok {{ activeLocation.name }}
     </div>
     <div
       class="map"
@@ -62,9 +62,11 @@
             >Bureau Wim</a>
           </div>
           <div v-if="secundaryCourses || activeLocation.name === 'G'">
-            Kunsthumaniora: <a
+            Kunsthumaniora:
+            <a
               href="g/rooms/g104"
               class="link"
+              v-if="activeLocation.name === 'G'"
               :class="[{'link--active' : (activeRoom  !== null && 'g104' === activeRoom), 'link--nonActive': activeRoom === null}]"
               @mouseover="setActive('g104')"
               @mouseleave="setActive(null)"
@@ -78,7 +80,6 @@
               @mouseover="setActive(i.room)"
               @mouseleave="setActive(null)"
             > {{ i.name }} <span v-if="index < (Object.keys(secundaryCourses).length-1)">/</span>
-
             </a>
           </div>
           <div v-if="academyCourses">
@@ -91,14 +92,14 @@
               @mouseover="setActive('secretariaat')"
               @mouseleave="setActive(null)"
             >Bureau Ellen <span v-if="(Object.keys(academyCourses).length > 0)"> / </span></a>
-            <a
+            <!-- <a
               v-if="activeLocation.name === 'H'"
               href="h/rooms/leraarskamer"
               class="link"
               :class="[{'link--active' : (activeRoom  !== null && 'leraarskamer' === activeRoom), 'link--nonActive': activeRoom === null}]"
               @mouseover="setActive('leraarskamer')"
               @mouseleave="setActive(null)"
-            >Leraarskamer<span v-if="Object.keys(academyCourses).length > 0 > 0"> / </span></a>
+            >Leraarskamer<span v-if="Object.keys(academyCourses).length > 0 > 0"> / </span></a> -->
             <a
               v-for="(i, key, index) in academyCourses"
               :key="`activeItems_${key}`"
@@ -154,9 +155,10 @@ export default {
       const rooms = Object.keys(object).map(key => {
         return { ...object[key], room: key };
       });
-      let settings = rooms.map(i => {
+      let settings = rooms.map((i,index) => {
         const orbMeta = {
           location: i.location,
+          index: index,
           room: i.room,
           type: "room"
         };
@@ -195,22 +197,26 @@ export default {
       if (this.activeItems.length < 1) return;
 
       const filteredItems = this.activeItems.filter(
-        i => i.cat === "secundary" && i.type === "class"
+        i => {
+          if(i.hideOnLocation === true ) return;
+          if(i.cat === "secundary" && i.type === "class") return i
+        }
       );
 
       const reducedItems = filteredItems.reduce((prevValue, i) => {
         const yearCourse = `${i.year} ${i.course}`;
         const yearCourseTrimmed = yearCourse.replace(/ /g, "");
+        const key = i.course.replace(/ /g, "");
         const item = {
           name: i.course,
           room: i.room,
           location: i.location,
-          key: yearCourseTrimmed
+          key: key
         };
         if (prevValue[item.key]) {
-          prevValue[yearCourseTrimmed].total++;
+          // prevValue[yearCourseTrimmed].total++;
         } else {
-          prevValue[item.key] = { ...item, total: 1 };
+          prevValue[item.key] = { ...item };
         }
         return prevValue;
       }, {});
@@ -253,7 +259,7 @@ export default {
   },
   methods: {
     setStyle(orb) {
-      console.log(orb);
+      // console.log(orb);
       const color = `rgb(${orb.perlin.rcolor * 255}, ${orb.perlin.gcolor *
         255}, ${orb.perlin.bcolor * 255})`;
       const gradient = `radial-gradient(circle, ${color} 24%, rgb(255,255,255) 52%);`;
@@ -266,14 +272,12 @@ export default {
       };
     },
     setActive(id) {
-      console.log(id)
-      // if(this.activeRoom = id;)
       if (id === null) {
         EventBus.$emit("DEACTIVATEORB", { room: id, link: null });
         return;
       }
       if (id === this.activeRoom) return;
-      EventBus.$emit("ACTIVATEORB", { room: id, link: null });
+      EventBus.$emit("ACTIVATEORB", { room: id, link: null, index: id });
       this.activeRoom = id;
     }
   },

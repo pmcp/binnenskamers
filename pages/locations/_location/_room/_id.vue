@@ -2,7 +2,7 @@
   <div>
     <div class="container">
       <div class="breadcrumbs" v-if="activeLocation">
-        <a href="/">Inleiding</a> - <a href="/map">Plattegrond</a> - <a :href="`/locations/${location}`">Blok {{ activeLocation.name }}</a> - {{ activeRoom.name }}
+        <a class="underlined" href="/">Inleiding</a> - <a class="underlined" href="/map">Plattegrond</a> - <a class="underlined" :href="`/locations/${location}`">Blok {{ activeLocation.name }}</a> - {{ activeRoom.name }}
       </div>
       <div
         class="map"
@@ -56,7 +56,7 @@
           :style="{'color': getColor(l.orb.type) }"
           @mouseover="setActive(key)"
           @mouseleave="setActive(null)"
-        > <span v-if="l.division !== 'academie'">{{ l.year }} {{l.course }}</span><span v-if="l.year !== '' && l.course !== ''">: </span> {{ l.descr }} <span v-if="key < (itemsOfRoom.length-1)">/ </span></a>
+        ><span v-if="l.division !== 'academie'">{{l.course }}</span><span v-if="(l.year !== '' && l.course !== '' && l.division !== 'academie') && l.descr !== ''">: </span> {{ l.descr }}<span v-if="key < (itemsOfRoom.length-1)"> / </span></a>
       </div>
     </div>
     <!-- <iframe :src="activeLink" style="width:100%;height:100vh;"></iframe> -->
@@ -167,14 +167,14 @@ export default {
       return `rgb(${r},${g},${b})`;
     },
     setActive(id) {
-      console.log(id, this.activeLink)
       if (id === this.activeLink) return;
       if (id === null) {
         EventBus.$emit("DEACTIVATEORB", { room: null, link: id });
         return;
       }
       if (id === this.activeLink) return;
-      EventBus.$emit("ACTIVATEORB", { room: null, link: id });
+      
+      EventBus.$emit("ACTIVATEORB", { room: null, link: id, index: id });
       this.activeLink = id;
     }
   },

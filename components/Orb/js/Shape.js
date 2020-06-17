@@ -9,49 +9,6 @@ import fragmentShader from "./glsl/shape.frag";
 // Using this for a random factor a bit lower, in the createOrb function
 const start = Date.now();
 
-// Animation functions
-function move(orb){
-  
-  let start = {
-    x: orb.shape.position.x,
-    y: orb.shape.position.y,
-    z: orb.shape.position.z,
-    rX: orb.shape.rotation.x,
-    rY: orb.shape.rotation.y,
-    rZ: orb.shape.rotation.z
-  }
-
-  let finish = {
-    x: (orb.shape.position.x + -20*Math.sin(Math.floor(Math.random() * 201) - 10)),
-    y: (orb.shape.position.y + 20*Math.sin(Math.floor(Math.random() * 201) - 100)),
-    // z: (orb.shape.position.z + 1*Math.sin(Math.floor(Math.random() * 201) - 100)),
-    rX: orb.shape.rotation.x - Math.sin(Math.floor(Math.random() * 201) - 100),
-    rY: orb.shape.rotation.y - Math.sin(Math.floor(Math.random() * 201) - 100),
-    // rZ: orb.shape.rotation.z - Math.sin(Math.floor(Math.random() * 201) - 100)
-  }
-
-  const max = 5000;
-  const min = 3000;
-  const speed = Math.floor(Math.random() * (max - min + 1) + min);
-
-  let tween = new TWEEN.Tween(start).to(finish, speed);
-  // Easings examples: https://sole.github.io/tween.js/examples/03_graphs.html
-  tween.easing(TWEEN.Easing.Exponential.InOut)
-  
-  tween.onUpdate(i => {
-    orb.shape.position.set(start.x, start.y, -100)
-    orb.shape.rotation.set(start.rX, start.rY, -100)
-  })
-  tween.start();
-  tween.onComplete(i => {
-    move(orb)
-    tween.start()
-  });
-  
-  // tween.repeat(Infinity);
-
-}
-// Where we create the orb
 const createOrb = function (item) {
   this.perlin = item.perlin;
   this.mat = new THREE.ShaderMaterial({
@@ -119,37 +76,31 @@ const createOrb = function (item) {
     fragmentShader: fragmentShader
   });
 
+  this.mouseOver = false;
   // Create the orb
   const orbGeo = new THREE.IcosahedronBufferGeometry(2, 6);
-  
-  const orb = new THREE.Mesh(orbGeo, this.mat);
-  
+  this.orb = new THREE.Mesh(orbGeo, this.mat);
+
   // Create catcher for mouse
-  const scaleTom = orbGeo.parameters.radius*3/item.perlin.size
-  const tomGeo = new THREE.IcosahedronBufferGeometry(scaleTom, 1);
+  const scaleTom = orbGeo.parameters.radius / item.perlin.size * 3
+
+  var tomGeo = new THREE.CubeGeometry(scaleTom, scaleTom, scaleTom)
+
   const tomMat = new THREE.MeshBasicMaterial({
-    color: 0x0000ff,
+    color: 0xff0000,
     transparent: true,
     opacity: 0,
-    wireframe: true
+    // wireframe: true
   });
 
-  // console.log(tomGeo)
+  this.tom = new THREE.Mesh(tomGeo, tomMat);
 
-  let tom = new THREE.Mesh(tomGeo, tomMat);
-  // tom.position.z = -10
-  // orb.geometry.computeFaceNormals()
-  const shapeGroup = new THREE.Object3D();
-  shapeGroup.add(orb)
-  shapeGroup.add(tom)
-  
-  
-  // Add meta for linking in vue apps
-  shapeGroup.userData = { ...item.meta, startPosition: { ...item.position } }
-  orb.userData = { ...item.meta, startPosition: { ...item.position }, originalSettings: { ...item.perlin } }
-  this.shape = shapeGroup
 
-  // This is where we are using time, for a random factor
+  // this.shape = this.tom
+  this.shape = new THREE.Object3D();
+  this.shape.add(this.orb)
+  this.shape.add(this.tom)
+
   this.mat.uniforms['time'].value = (this.perlin.speed / 1000) * (Date.now());
 
   // Set all the uniforms based on the options we passed in "item"
@@ -157,7 +108,7 @@ const createOrb = function (item) {
   this.mat.uniforms['decay'].value = this.perlin.decay;
   this.mat.uniforms['size'].value = this.perlin.size;
   this.mat.uniforms['displace'].value = this.perlin.displace;
-  this.mat.uniforms['complex'].value  = this.perlin.complex;
+  this.mat.uniforms['complex'].value = this.perlin.complex;
   this.mat.uniforms['waves'].value = this.perlin.waves;
   this.mat.uniforms['fragment'].value = this.perlin.fragment;
 
@@ -169,66 +120,138 @@ const createOrb = function (item) {
 
   this.mat.uniforms['opacity'].value = this.perlin.opacity;
 
-  // Creating a specific array for checking intersects
-  Common.objectsToCheckIntersects.push(tom)
-  return this;
+
+
+  this.shape.userData = {
+    move: () => {
+      // TODO: Optimize
+      let start = {
+        x: this.shape.position.x,
+        y: this.shape.position.y,
+        rX: this.shape.rotation.x,
+        rY: this.shape.rotation.y,
+      }
+
+      let finish = {
+        x: (this.shape.position.x + -20 * Math.sin(Math.floor(Math.random() * 201) - 10)),
+        y: (this.shape.position.y + 20 * Math.sin(Math.floor(Math.random() * 201) - 100)),
+        rX: this.shape.rotation.x - Math.sin(Math.floor(Math.random() * 201) - 100),
+        rY: this.shape.rotation.y - Math.sin(Math.floor(Math.random() * 201) - 100),
+      }
+      const max = 5000;
+      const min = 3000;
+      const speed = Math.floor(Math.random() * (max - min + 1) + min);
+      let tween = new TWEEN.Tween(start).to(finish, speed);
+      tween.easing(TWEEN.Easing.Exponential.InOut)
+      tween.onUpdate(i => {
+        this.shape.position.set(start.x, start.y, -100)
+        this.shape.rotation.set(start.rX, start.rY, -100)
+      })
+      tween.start();
+      tween.onComplete(i => {
+        this.shape.userData.move()
+        tween.start()
+      });
+    }
+  }
   
+  this.orb.userData = {
+    meta: item.meta,
+    startValues: { ...item.position, size: this.perlin.size, opacity: this.perlin.opacity, displace: this.perlin.displace },
+    animate: () => {
+      this.orb.material.uniforms['time'].value = (this.perlin.speed / 1000) * (Date.now() - start)
+    },
+
+    grow: (val) => {
+      if (this.big && val === 0) {
+        this.orb.userData.shrink()
+        return
+      }
+
+      if (val === 0) {
+        this.tweenGrow.stop()
+        return
+      }
+
+  
+
+      if (this.mouseOver === true) return;
+      this.mouseOver = true;
+      const start = { size: this.orb.material.uniforms.size.value, opacity: this.orb.material.uniforms.opacity.value, displace: this.orb.material.uniforms.displace.value }
+      const finish = { size: 0.03, opacity: 0.9, displace: this.orb.material.uniforms.displace.value*1.5}
+
+      this.tweenGrow = new TWEEN
+        .Tween(start)
+        .to(finish, 500)
+        .easing(TWEEN.Easing.Exponential.Out) // Use an easing function to make the animation smooth.
+        .onUpdate(() => {
+          this.mat.uniforms.size.value = start.size
+          this.mat.uniforms.opacity.value = start.opacity
+          this.mat.uniforms.displace.value = start.displace
+        })
+        .start()
+        .onStart(() => {
+          // console.log('started grow')
+        })
+        .onStop(() => {
+          // console.log('stopped grow')
+          this.orb.userData.shrink()
+        })
+        .onComplete(() => {
+          // console.log('completed grow')
+          this.big = true;
+          // this.shrink()
+        })
+    },
+
+    shrink: () => {
+      this.mouseOver = false;
+      
+      const start = { size: this.orb.material.uniforms.size.value, opacity: this.orb.material.uniforms.opacity.value, displace: this.orb.material.uniforms.displace.value }
+      const finish = { size: this.orb.userData.startValues.size, opacity: this.orb.userData.startValues.opacity, displace: this.orb.userData.startValues.displace}
+
+      this.tweenShrink = new TWEEN
+        .Tween(start)
+        .to(finish, 1000)
+        .easing(TWEEN.Easing.Quadratic.Out) // Use an easing function to make the animation smooth.
+        .onUpdate(() => {
+          // console.log(start, finish)
+          this.mat.uniforms.size.value = start.size
+          this.mat.uniforms.opacity.value = start.opacity
+          this.mat.uniforms.displace.value = start.displace
+        })
+        .start()
+        .onStart(() => {
+          console.log('started shrink')
+        })
+        .onStop(() => {
+          console.log('stopped shrink')
+        })
+        .onComplete(() => {
+          console.log('completed shrink')
+        })
+    },
+
+
+  }
+  const size = Common.size.width
+  this.shape.position.x = size * item.position.x
+  this.shape.position.y = size * item.position.y
+
+  // Still needed?
+  Common.objectsToCheckIntersects.push(this.tom)
+  Common.scene.add(this.shape)
+  return this;
 }
 
 export default class Shape {
-  constructor(orbSettings) { 
+  constructor(orb) {
+    this.init(orb);
+  }
+
+  init(orb) {
+    this.orb = new createOrb(orb);
+    this.orb.shape.userData.move()
     
-    // Create Orbs (start)
-    // array to add the created orbs to
-    this.orbs = [];
-    
-    this.settings = orbSettings.orbSettings
-    this.transitioning = false;
-    this.init();
-  }
-
-  init() {
-    // Make Orbs
-    this.createdOrbs = this.settings.map(item => new createOrb(item))
-    // Add shapes to the scene
-    this.createdOrbs.map(item => {
-      const size = Common.size.width
-      item.shape.position.x = size * item.shape.userData.startPosition.x
-      item.shape.position.y = size * item.shape.userData.startPosition.y
-      Common.scene.add(item.shape) 
-    })
-    this.createdOrbs.map(move)
-  }
-
-
-  
-  resize(orb) {
-    // Resize animation
-    const start = 200;
-    let finish = 30;
-    let current = { x: start };
-
-    let tweenPopup = new TWEEN.Tween(current).to({ x: finish }, 2000);
-    // Easings examples: https://sole.github.io/tween.js/examples/03_graphs.html
-    tweenPopup.easing(TWEEN.Easing.Sinusoidal.InOut)
-    
-    tweenPopup.onUpdate(i => orb.mat.uniforms['size'].value = current.x)
-    tweenPopup.start();
-  }
-
-  onTransition(path) {
-    // Not using the path param at this point, this might be used in  a switch
-    this.transitioning = false;
-    this.createdOrbs.map(orb => this.resize(orb, 100))
-  }
-
-  animation(orb) {
-    
-    orb.mat.uniforms['time'].value = (orb.perlin.speed /1000) * (Date.now() - start);
-  }
-
-  update() {
-    TWEEN.update();
-    this.createdOrbs.map(this.animation)
   }
 }

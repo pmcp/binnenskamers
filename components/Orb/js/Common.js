@@ -124,7 +124,6 @@ class Common {
 
     this.intersects = this.raycaster.intersectObjects( this.scene.children, true )
     if (this.intersects.length > 0) {
-      console.log('heeer')
       const activeOrb = this.intersects[0].object.parent.children[0]
       if(this.activeOrbs[activeOrb.uuid]) return;
       this.activeOrbs[activeOrb.uuid] = activeOrb

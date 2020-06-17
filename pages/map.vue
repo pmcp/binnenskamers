@@ -43,7 +43,7 @@
 
       <div>
         Basisschool: <a
-          href="locations/g/rooms/g104"
+          href="/locations/g/rooms/g104"
           class="link"
           :class="[{'link--active' : (activeLocationId  !== null && 'g' === activeLocationId), 'link--nonActive': activeLocationId === null}]"
           @mouseover="setActive('g')"
@@ -72,7 +72,7 @@
 
       <div>
         Academie: <a
-          href="locations/g/rooms/g104"
+          href="locations/g/rooms/secretariaat"
           class="link"
           :class="[{'link--active' : (activeLocationId  !== null && 'g' === activeLocationId), 'link--nonActive': activeLocationId === null}]"
           @mouseover="setActive('g')"
@@ -149,7 +149,7 @@ export default {
         const yearCourse = `${i.year} ${i.course}`;
         const yearCourseTrimmed = yearCourse.replace(/ /g, "");
         const item = {
-          name: yearCourse,
+          name: i.course,
           room: i.room,
           location: i.location,
           key: yearCourseTrimmed

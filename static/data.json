@@ -176,6 +176,7 @@
       "name": "V",
       "gridPos": "7 / 67 / 40 / 83",
       "color": "#C44630",
+      "photos": [1,2,3],
       "hoverImg": "v.png",
       "img": {
         "base": "img21.jpg",
@@ -183,6 +184,7 @@
       },
       "rooms": {
         "v203": {
+          "photos": [1,2,3],
           "name": "V203",
           "location": "v",
           "img": {
@@ -200,6 +202,7 @@
           }
         },
         "v403": {
+          "photos": [1,2,3],
           "name": "V403 - Interieurontwerp",
           "location": "v",
           "img": {
@@ -217,6 +220,7 @@
           }
         },
         "grafiek": {
+          "photos": [1,2,3],
           "name": "Grafiek",
           "location": "v",
           "img": {
@@ -234,6 +238,7 @@
           }
         },
         "3d": {
+          "photos": [1,2,3],
           "name": "3D Lokaal",
           "location": "v",
           "img": {
@@ -251,6 +256,7 @@
           }
         },
         "zeefdruk": {
+          "photos": [1,2,3],
           "name": "Zeefdruk",
           "location": "v",
           "img": {
@@ -274,12 +280,14 @@
       "gridPos": "16 / 20 / 50 / 40",
       "color": "#FA6800",
       "hoverImg": "at.png",
+      "photos": [1,2,3],
       "img": {
         "base": "img1.jpg",
         "alt": "Artistic drawing of block A-T, made by Chiara Lammens"
       },
       "rooms": {
         "a302": {
+          "photos": [1,2,3],
           "name": "A302",
           "location": "at",
           "img": {
@@ -297,6 +305,7 @@
           }
         },
         "a203": {
+          "photos": [1],
           "name": "A203",
           "location": "at",
           "img": {
@@ -314,6 +323,7 @@
           }
         },
         "a204": {
+          "photos": [1,2,3],
           "name": "A204",
           "location": "at",
           "img": {
@@ -331,6 +341,7 @@
           }
         },
         "t302": {
+          "photos": [1,2],
           "name": "T302",
           "location": "at",
           "img": {
@@ -349,6 +360,7 @@
           }
         },
         "t303": {
+          "photos": [1,2],
           "name": "T303",
           "location": "at",
           "img": {
@@ -366,6 +378,7 @@
           }
         },
         "a206": {
+          "photos": [1,2,3],
           "name": "A206",
           "location": "at",
           "img": {
@@ -385,6 +398,7 @@
       }
     },
     "h": {
+      "photos": [1,2,3],
       "name": "H",
       "gridPos": "33 / 42 / 56 / 65",
       "color": "#B84FF0",
@@ -395,6 +409,7 @@
       },
       "rooms": {
         "h302": {
+          "photos": [1,2],
           "name": "H302",
           "location": "h",
           "img": {
@@ -412,6 +427,7 @@
           }
         },
         "h301": {
+          "photos": [1,2,3],
           "name": "H301",
           "location": "h",
           "img": {
@@ -429,6 +445,7 @@
           }
         },
         "h202": {
+          "photos": [1,2,3],
           "name": "Bib",
           "location": "h",
           "img": {
@@ -446,6 +463,7 @@
           }
         },
         "leraarskamer": {
+          "photos": [],
           "name": "Kantine - Leraarskamer",
           "location": "h",
           "img": {
@@ -463,6 +481,7 @@
           }
         },
         "turnzaal": {
+          "photos": [1,2],
           "name": "Turznaal",
           "location": "h",
           "img": {
@@ -483,6 +502,7 @@
     },
     "g": {
       "name": "G",
+      "photos": [1,2,3],
       "hoverImg": "g.png",
       "gridPos": "68 / 46 / 94 / 69",
       "color": "#B84FF0",
@@ -492,6 +512,7 @@
       },
       "rooms": {
         "g102": {
+          "photos": [1,2,3],
           "name": "G102",
           "location": "g",
           "img": {

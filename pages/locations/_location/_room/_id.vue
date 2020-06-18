@@ -1,9 +1,11 @@
 <template>
   <div>
     <div class="container">
-      <div class="breadcrumbs" v-if="activeLocation">
-        <a class="underlined" href="/">Inleiding</a> - <a class="underlined" href="/map">Plattegrond</a> - <a class="underlined" :href="`/locations/${location}`">Blok {{ activeLocation.name }}</a> - {{ activeRoom.name }}
-      </div>
+      <navbar v-if="activeRoom" :photos="activeRoom.photos" :path="`${location}/${room}`">
+        <div class="breadcrumbs">
+          <a class="underlined" href="/">Inleiding</a> - <a class="underlined" href="/map">Plattegrond</a> - <a class="underlined" :href="`/locations/${location}`">Blok {{ activeLocation.name }}</a> - {{ activeRoom.name }}
+        </div>
+      </navbar>
       <div
         class="map"
         :class="cursorClass"
@@ -87,10 +89,13 @@ function hasTouch() {
 
 import { locations, items, orbTypes } from "~/static/data.json";
 import EventBus from "~/utils/event-bus";
+import navbar from "~/components/Navbar";
+
 import orbs from "~/components/Orb";
 export default {
   components: {
-    orbs
+    orbs,
+    navbar
   },
   computed: {
     image() {

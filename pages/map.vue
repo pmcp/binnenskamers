@@ -1,8 +1,11 @@
 <template>
   <div class="container">
-    <div class="breadcrumbs">
-      <a class="underlined" href="/">Inleiding</a> - Plattegrond
-    </div>
+    <navbar :photos="[]">
+      <div class="breadcrumbs">
+          <a class="underlined" href="/">Inleiding</a> - Plattegrond
+      </div>
+    </navbar>
+    
     <div class="map">
       <div class="map__img">
         <img
@@ -96,7 +99,12 @@
 
 <script>
 import { locations, items, orbTypes } from "~/static/data.json";
+import navbar from "~/components/Navbar";
+
 export default {
+  components: {
+    navbar
+  },
   computed: {
     allRooms() {
       let allRooms = [];

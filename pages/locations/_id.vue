@@ -1,12 +1,12 @@
 <template>
   <div class="container">
-
-    <div
-      class="breadcrumbs"
-      v-if="activeLocation"
-    >
-      <a class="underlined" href="/">Inleiding</a> - <a class="underlined" href="/map">Plattegrond</a> - Blok {{ activeLocation.name }}
-    </div>
+    <navbar v-if="activeLocation" :photos="activeLocation.photos" :path="location">
+      <div
+        class="breadcrumbs"
+      >
+        <a class="underlined" href="/">Inleiding</a> - <a class="underlined" href="/map">Plattegrond</a> - Blok {{ activeLocation.name }}
+        </div>
+    </navbar>
     <div
       class="map"
       :class="cursorClass"
@@ -139,12 +139,14 @@ function hasTouch() {
   );
 }
 
+import navbar from "~/components/Navbar";
 import orbs from "~/components/Orb";
 import EventBus from "~/utils/event-bus";
 import { locations, items, orbTypes } from "~/static/data.json";
 export default {
   components: {
-    orbs
+    orbs,
+    navbar
   },
   computed: {
     orbSettings() {

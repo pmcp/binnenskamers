@@ -1557,6 +1557,7 @@ body {
   height: var(--height);
   display: flex;
   position: relative;
+  margin-top: 2rem;
 }
 
 
@@ -1649,18 +1650,7 @@ body {
 .underlined {
   text-decoration: underline;
 }
-/* Breadcrumbs */
-.breadcrumbs {
-  padding-top: 2em;
-  width: var(--width);
-  padding-left: var(--padding);
-  padding-right: var(--padding);
-  
-}
 
-.breadcrumbs a {
-  color: unset 
-}
 
 /* Blob canvas */
 .blobs {
@@ -1716,3 +1706,73 @@ body {
   opacity: .9
 }
 
+/* PHOTOS */
+
+.photos__container {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  overflow-y: scroll;
+  z-index: 500;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.photos__container img {
+  width: 80%;
+  height: auto;
+  margin: 2rem;
+  margin-top: 10rem;
+}
+
+
+/* NAV */
+.nav {
+  padding-left: 2rem;
+  padding-right: 2rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 501;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background-color: #fff;
+
+  /* position: fixed;
+  z-index: 501;
+  right: 0;
+  top: 0; */
+}
+
+/* Breadcrumbs */
+.breadcrumbs {
+  /* padding-top: 2em; */
+  /* width: var(--width); */
+  /* padding-left: var(--padding); */
+  /* padding-right: var(--padding); */
+  
+}
+
+.breadcrumbs a {
+  color: unset 
+}
+
+
+.photos__toggle {
+  height: 6rem;
+  width: 6rem;
+}
+
+.photos__toggle input {
+  height: 6rem;
+  width: 6rem;
+}
+.backButton {
+  height: 2.5rem;
+  width: auto;
+}

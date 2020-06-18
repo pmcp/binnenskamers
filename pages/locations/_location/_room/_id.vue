@@ -184,7 +184,8 @@ export default {
 
 
     // Check if the browser can handle the threejs and if we are on a touch device
-    if (webglAvailable() && !hasTouch()) {
+    // if (webglAvailable() && !hasTouch()) {
+      if (webglAvailable()) {
       this.loadOrbs = true;
     // This event is coming from the threejs instance, when hovering over on an orb.
     EventBus.$on("MOUSEOVERORB", data => {

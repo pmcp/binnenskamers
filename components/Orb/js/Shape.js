@@ -179,8 +179,8 @@ const createOrb = function (item) {
 
       if (this.mouseOver === true) return;
       this.mouseOver = true;
-      const start = { size: this.orb.material.uniforms.size.value, opacity: this.orb.material.uniforms.opacity.value, displace: this.orb.material.uniforms.displace.value }
-      const finish = { size: 0.03, opacity: 0.9, displace: this.orb.material.uniforms.displace.value*1.5}
+      const start = { size: this.orb.material.uniforms.size.value, opacity: this.orb.material.uniforms.opacity.value, displace: this.orb.material.uniforms.displace.value, complex: this.orb.material.uniforms.complex.value }
+      const finish = { size: 0.03, opacity: 0.9, displace: this.orb.material.uniforms.displace.value*1.4, }
 
       this.tweenGrow = new TWEEN
         .Tween(start)

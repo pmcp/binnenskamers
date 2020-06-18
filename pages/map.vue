@@ -32,7 +32,7 @@
         Lokalen: <a
           v-for="(i, key) in allRooms"
           :key="`activeItems_${key}`"
-          :href="`locations/${i.location}/rooms/${i.id}`"
+          :href="`/locations/${i.location}/rooms/${i.id}`"
           class="link"
           :class="[{'link--active' : (activeLocationId  !== null && i.location === activeLocationId), 'link--nonActive': activeLocationId === null}]"
           @mouseover="setActive(i.location)"
@@ -52,7 +52,7 @@
       </div>
       <div>
         Kunsthumaniora: <a
-          href="locations/g/rooms/g104"
+          href="/locations/g/rooms/g104"
           class="link"
           :class="[{'link--active' : (activeLocationId  !== null && 'g' === activeLocationId), 'link--nonActive': activeLocationId === null}]"
           @mouseover="setActive('g')"
@@ -61,7 +61,7 @@
         <a
           v-for="(i, key, index) in secundaryCourses"
           :key="`activeItems_${key}`"
-          :href="`locations/${i.location}/rooms/${i.room}`"
+          :href="`/locations/${i.location}/rooms/${i.room}`"
           class="link"
           :class="[{'link--active' : (activeLocationId  !== null && i.location === activeLocationId), 'link--nonActive': activeLocationId === null}]"
           @mouseover="setActive(i.location)"
@@ -72,7 +72,7 @@
 
       <div>
         Academie: <a
-          href="locations/g/rooms/secretariaat"
+          href="/locations/g/rooms/secretariaat"
           class="link"
           :class="[{'link--active' : (activeLocationId  !== null && 'g' === activeLocationId), 'link--nonActive': activeLocationId === null}]"
           @mouseover="setActive('g')"
@@ -81,7 +81,7 @@
         <a
           v-for="(i, key, index) in academyCourses"
           :key="`activeItems_${key}`"
-          :href="`locations/${i.location}/rooms/${i.room}`"
+          :href="`/locations/${i.location}/rooms/${i.room}`"
           class="link"
           :class="[{'link--active' : (activeLocationId  !== null && i.location === activeLocationId), 'link--nonActive': activeLocationId === null}]"
           @mouseover="setActive(i.location)"

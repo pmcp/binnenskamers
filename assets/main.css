@@ -1550,6 +1550,7 @@ body {
   align-items: center;
   justify-content: center;
   padding-bottom: 4em;
+  
 }
 
 .map {
@@ -1731,6 +1732,7 @@ body {
 
 /* NAV */
 .nav {
+  
   padding-left: 2rem;
   padding-right: 2rem;
   position: fixed;
@@ -1749,14 +1751,6 @@ body {
   top: 0; */
 }
 
-/* Breadcrumbs */
-.breadcrumbs {
-  /* padding-top: 2em; */
-  /* width: var(--width); */
-  /* padding-left: var(--padding); */
-  /* padding-right: var(--padding); */
-  
-}
 
 .breadcrumbs a {
   color: unset 

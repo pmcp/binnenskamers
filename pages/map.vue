@@ -37,7 +37,7 @@
           :key="`activeItems_${key}`"
           :href="`/locations/${i.location}/rooms/${i.id}`"
           class="link"
-          :class="[{'link--active' : (activeLocationId  !== null && i.location === activeLocationId), 'link--nonActive': activeLocationId === null}]"
+          :class="[{'link--active' : ((activeLocationId  !== null && i.location === activeLocationId) || !touched), 'link--nonActive': (activeLocationId === null && !touched)}]"
           @mouseover="setActive(i.location)"
           @mouseleave="setActive(null)"
         >{{ i.name }}<span v-if="key < (Object.keys(allRooms).length - 1)"> / </span>
@@ -48,7 +48,7 @@
         Basisschool: <a
           href="/locations/g/rooms/g104"
           class="link"
-          :class="[{'link--active' : (activeLocationId  !== null && 'g' === activeLocationId), 'link--nonActive': activeLocationId === null}]"
+          :class="[{'link--active' : ((activeLocationId  !== null && 'g' === activeLocationId) || !touched), 'link--nonActive': (activeLocationId === null && !touched)}]"
           @mouseover="setActive('g')"
           @mouseleave="setActive(null)"
         >Algemene Info /</a>
@@ -57,7 +57,7 @@
         Kunsthumaniora: <a
           href="/locations/g/rooms/g104"
           class="link"
-          :class="[{'link--active' : (activeLocationId  !== null && 'g' === activeLocationId), 'link--nonActive': activeLocationId === null}]"
+          :class="[{'link--active' : ((activeLocationId  !== null && 'g' === activeLocationId) || !touched), 'link--nonActive': (activeLocationId === null && !touched)}]"
           @mouseover="setActive('g')"
           @mouseleave="setActive(null)"
         >Algemene Info / </a>
@@ -66,7 +66,7 @@
           :key="`activeItems_${key}`"
           :href="`/locations/${i.location}/rooms/${i.room}`"
           class="link"
-          :class="[{'link--active' : (activeLocationId  !== null && i.location === activeLocationId), 'link--nonActive': activeLocationId === null}]"
+          :class="[{'link--active' : ((activeLocationId  !== null && i.location === activeLocationId) || !touched), 'link--nonActive': (activeLocationId === null && !touched)}]"
           @mouseover="setActive(i.location)"
           @mouseleave="setActive(null)"
         >{{ i.name }}<span v-if="index < (Object.keys(secundaryCourses).length - 1)"> / </span>
@@ -77,7 +77,7 @@
         Academie: <a
           href="/locations/g/rooms/secretariaat"
           class="link"
-          :class="[{'link--active' : (activeLocationId  !== null && 'g' === activeLocationId), 'link--nonActive': activeLocationId === null}]"
+          :class="[{'link--active' : ((activeLocationId  !== null && 'g' === activeLocationId) || !touched), 'link--nonActive': (activeLocationId === null && !touched)}]"
           @mouseover="setActive('g')"
           @mouseleave="setActive(null)"
         >Algemene Info /</a>
@@ -86,7 +86,7 @@
           :key="`activeItems_${key}`"
           :href="`/locations/${i.location}/rooms/${i.room}`"
           class="link"
-          :class="[{'link--active' : (activeLocationId  !== null && i.location === activeLocationId), 'link--nonActive': activeLocationId === null}]"
+          :class="[{'link--active' : ((activeLocationId  !== null && i.location === activeLocationId) || !touched), 'link--nonActive': (activeLocationId === null && !touched)}]"
           @mouseover="setActive(i.location)"
           @mouseleave="setActive(null)"
         >{{ i.name }}<span v-if="index < (Object.keys(academyCourses).length - 1)"> / </span>
@@ -190,7 +190,8 @@ export default {
   },
   data() {
     return {
-      activeLocationId: "5"
+      activeLocationId: "5",
+      touched: false
     };
   },
   methods: {
@@ -203,7 +204,7 @@ export default {
       return style;
     },
     setActive(id) {
-      // console.log(id);
+      this.touched = true;
       this.activeLocationId = id;
     }
   }

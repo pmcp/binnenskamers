@@ -132,6 +132,7 @@ class Common {
     } else { 
       
       if(!isEmpty(this.activeOrbs)) {
+        console.log('GONNA SHRINK')
         for (var key in this.activeOrbs) {
           if (!this.activeOrbs.hasOwnProperty(key)) continue;
           var obj = this.activeOrbs[key];

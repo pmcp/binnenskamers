@@ -8,6 +8,8 @@ import fragmentShader from "./glsl/shape.frag";
 
 // Using this for a random factor a bit lower, in the createOrb function
 const start = Date.now();
+const orbGeo = new THREE.IcosahedronBufferGeometry(2, 6);
+
 
 const createOrb = function (item) {
   this.perlin = item.perlin;
@@ -78,7 +80,7 @@ const createOrb = function (item) {
 
   this.mouseOver = false;
   // Create the orb
-  const orbGeo = new THREE.IcosahedronBufferGeometry(2, 6);
+  
   this.orb = new THREE.Mesh(orbGeo, this.mat);
 
   // Create catcher for mouse
@@ -191,10 +193,10 @@ const createOrb = function (item) {
         })
         .start()
         .onStart(() => {
-          // console.log('started grow')
+          console.log('started grow')
         })
         .onStop(() => {
-          // console.log('stopped grow')
+          console.log('stopped grow')
           this.orb.userData.shrink()
         })
         .onComplete(() => {

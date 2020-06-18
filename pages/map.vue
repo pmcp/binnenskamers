@@ -199,7 +199,9 @@ export default {
       const image = require(`@/assets/letters/${img}`);
       const style = {
         gridArea: pos,
-        background: `url(${image}) no-repeat center center`
+        background: `url(${image}) no-repeat center center`,
+        backgroundSize: '40% auto'
+
       }
       return style;
     },

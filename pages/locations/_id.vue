@@ -287,7 +287,8 @@ export default {
     this.location = this.$route.params.id;
 
     // Check if the browser can handle the threejs and if we are on a touch device
-    if (webglAvailable() && !hasTouch()) {
+    // if (webglAvailable() && !hasTouch()) {
+    if (webglAvailable()) {
       this.loadOrbs = true;
       EventBus.$on("MOUSEOVERORB", data => {
         

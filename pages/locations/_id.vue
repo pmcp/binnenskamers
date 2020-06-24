@@ -276,7 +276,7 @@ export default {
       };
     },
     setActive(id) {
-      console.log('id', null)
+
       if (id === null) {
         EventBus.$emit("DEACTIVATEORB", { room: id, link: null });
         this.activeRoom = id;

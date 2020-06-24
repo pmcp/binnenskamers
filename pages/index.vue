@@ -16,6 +16,7 @@
       <p>De ateliers vormen de centrale spil van dit alles, als blik-opener en als labo, waarin we de verbeelding, de goesting van het doen en het creëren stimuleren.</p>
       <p>Deze drie scholen op één plaats, samen met de geografische ligging zorgt voor een meervoudig kruispunt van veel culturen, leeftijden, socio-economische achtergronden en artistieke processen.</p>
       <p>Via deze site kan je binnenkijken in onze locatie,  waarin de drie scholen organisch door elkaar lopen in een uniek pedagogisch project!</p>
+      <p>Ga naar <a href="/map">het grondplan</a>.</a></p>
       </div>
     </div>  
   </div>

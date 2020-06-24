@@ -175,6 +175,7 @@ export default {
       if (id === this.activeLink) return;
       if (id === null) {
         EventBus.$emit("DEACTIVATEORB", { room: null, link: id });
+        this.activeLink = id;
         return;
       }
       if (id === this.activeLink) return;
@@ -195,6 +196,7 @@ export default {
     // This event is coming from the threejs instance, when hovering over on an orb.
     EventBus.$on("MOUSEOVERORB", data => {
       // add a class so the cursor changes into a pointer
+      console.log(data)
       if (data !== null) {
         this.cursorClass = "cursor";
         this.setActive(data.index);

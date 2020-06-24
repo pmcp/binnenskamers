@@ -47,7 +47,7 @@
         <br>°humaniora: <a href="http://blog.sintlukaskunsthumaniora.be/" target="_blank">blog.sintlukaskunsthumaniora.be</a>
         <br>°academie: <a href="https://sintlukasacademie.brussels/" target="_blank">sintlukasacademie.brussels</a>
       </div>
-      <div class="links">
+      <div class="legend links">
         <a
           v-for="(l, key) in itemsOfRoom"
           :key="key"

@@ -664,7 +664,7 @@
       "cat": "secundary",
       "type": "class",
       "course": "3 & 4 Audiovisuele Vorming",
-      "link": "https://padlet.com/4vorming/2sx51umefb53tcia",
+      "link": "https://padlet.com/3_4_vorming/2sx51umefb53tcia",
       "descr": "",
       "location": "at",
       "room": "t302",
@@ -749,6 +749,28 @@
       "course": "3 & 4 Beeldende & Architecturale Kunsten",
       "link": "http://users.telenet.be/bram.ollieuz/3bak/3BAK.html",
       "descr": "",
+      "location": "h",
+      "room": "h302",
+      "orb": {
+        "type": "purplepink",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x":0.405, "y":-0.010083351135253826
+        }
+      }
+    },
+
+    {
+      "year": "4",
+      "division": "Kunsten",
+      "type": "class",
+      "cat": "secundary",
+      "hideOnLocation": true,
+      "course": "4 Beeldende & Architecturale Kunsten",
+      "link": "https://www.flipsnack.com/binnenskamers4BAK/binnenskamers4bak.html",
+      "descr": "Flipbook",
       "location": "h",
       "room": "h302",
       "orb": {
@@ -892,7 +914,7 @@
       "cat": "secundary",
       "course": "5 & 6 Beeldende vorming",
       "link": "https://tibbeliesmons.wixsite.com/tibbeliesmons",
-      "descr": "Lies",
+      "descr": "Tibbe",
       "location": "at",
       "room": "a206",
       "orb": {
@@ -935,8 +957,8 @@
       "type": "class",
       "cat": "secundary",
       "course": "5 & 6 Beeldende vorming",
-      "link": "https://marielefranc2.wixsite.com/website",
-      "descr": "Lies",
+      "link": "https://marielefranc2.wixsite.com/sintlukas",
+      "descr": "Marie",
       "location": "at",
       "room": "a206",
       "orb": {
@@ -1001,7 +1023,7 @@
       "type": "class",
       "cat": "secundary",
       "course": "5 & 6 Beeldende vorming",
-      "link": "https://timdj2602.wixsite.com/sintlukas-expo-5bv",
+      "link": "https://timdj2602.wixsite.com/mijnsite",
       "descr": "Tim",
       "location": "at",
       "room": "a206",
@@ -1045,7 +1067,7 @@
       "type": "class",
       "cat": "secundary",
       "course": "5 & 6 Beeldende vorming",
-      "link": "https://trajanjossart8.wixsite.com/website",
+      "link": "https  ://trajanjossart8.wixsite.com/website",
       "descr": "Trajan",
       "location": "at",
       "room": "a206",
@@ -1093,7 +1115,7 @@
       "cat": "secundary",
       "course": "5 & 6 Beeldende vorming",
       "link": "https://margvanbel.wixsite.com/portfolio-website",
-      "descr": "Marg",
+      "descr": "GIP Margaux Van Bellinghen",
       "location": "at",
       "room": "a206",
       "orb": {
@@ -1115,8 +1137,8 @@
   "type": "class",
   "cat": "secundary",
   "course": "5 & 6 Beeldende vorming",
-  "link": "https://www.youtube.com/watch?v=eI0w3PvMX6w&feature=youtu.be",
-  "descr": "Louis Corthout: Utopie/Dystopie",
+  "link": "https://www.youtube.com/watch?v=5NdOrhBqbB0z",
+  "descr": "Louis Corthout: Mango",
   "location": "at",
   "room": "a206",
   "orb": {
@@ -1130,6 +1152,28 @@
   }
 },
 
+{
+  "year": "6",
+  "hideOnLocation": true,
+  "division": "Vorming",
+  "type": "class",
+  "cat": "secundary",
+  "course": "5 & 6 Beeldende vorming",
+  "link": "https://youtu.be/CfagoaJdupA",
+  "descr": "Arne Mees",
+  "location": "at",
+  "room": "a206",
+  "orb": {
+    "type": "purplepink",
+    "overrides": {
+      "size": 0.1
+    },
+    "position": {
+      "x":-0.27875000000000005, "y":-0.2849999999999999
+    }
+  }
+},
+  
  {
       "year": "6",
       "hideOnLocation": true,
@@ -1138,7 +1182,49 @@
       "cat": "secundary",
       "course": "5 & 6 Beeldende vorming",
       "link": "https://breynaertsimon.wixsite.com/mijnsite",
-      "descr": "Simon",
+      "descr": "GIP Simon Breynaert",
+      "location": "at",
+      "room": "a206",
+      "orb": {
+        "type": "purplepink",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x":0.21750000000000003, "y":0.3759765625
+        }
+      }
+    },
+    {
+      "year": "6",
+      "hideOnLocation": true,
+      "division": "Vorming",
+      "type": "class",
+      "cat": "secundary",
+      "course": "5 & 6 Beeldende vorming",
+      "link": "https://artspaces.kunstmatrix.com/en/exhibition/1497866/simon-breynaert-gip",
+      "descr": "VR-ruimte Simon Breynaert",
+      "location": "at",
+      "room": "a206",
+      "orb": {
+        "type": "purplepink",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x":0.21750000000000003, "y":0.3759765625
+        }
+      }
+    },
+    {
+      "year": "6",
+      "hideOnLocation": true,
+      "division": "Vorming",
+      "type": "class",
+      "cat": "secundary",
+      "course": "5 & 6 Beeldende vorming",
+      "link": "https://artspaces.kunstmatrix.com/en/exhibition/1570976/gip-senne-de-winne",
+      "descr": "VR-ruimte Senne De Winne",
       "location": "at",
       "room": "a206",
       "orb": {
@@ -1160,7 +1246,7 @@
       "cat": "secundary",
       "course": "5 & 6 Beeldende vorming",
       "link": "https://geyzej.wixsite.com/janageyzels",
-      "descr": "Jana",
+      "descr": "GIP Jana Gheysels",
       "location": "at",
       "room": "a206",
       "orb": {
@@ -1204,7 +1290,28 @@
       "cat": "secundary",
       "course": "5 & 6 Beeldende vorming",
       "link": "https://noraroukaerts.wixsite.com/mysite",
-      "descr": "Nora",
+      "descr": "GIP Nora Roukaerts",
+      "location": "at",
+      "room": "a206",
+      "orb": {
+        "type": "purplepink",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x":-0.02749999999999997, "y":0.5959765625
+        }
+      }
+    },
+    {
+      "year": "6",
+      "hideOnLocation": true,
+      "division": "Vorming",
+      "type": "class",
+      "cat": "secundary",
+      "course": "5 & 6 Beeldende vorming",
+      "link": "https://artspaces.kunstmatrix.com/en/exhibition/1447101/gip-nora-roukaerts",
+      "descr": "VR-ruimte Nora Roukaerts",
       "location": "at",
       "room": "a206",
       "orb": {
@@ -1225,8 +1332,8 @@
       "type": "class",
       "cat": "secundary",
       "course": "5 & 6 Beeldende vorming",
-      "link": "https://louis1corthout.wixsite.com/louiscorthout",
-      "descr": "Louis",
+      "link": "https://louis12345678.wixsite.com/bv-sl",
+      "descr": "GIP Louis Corthout",
       "location": "at",
       "room": "a206",
       "orb": {
@@ -1248,7 +1355,7 @@
       "cat": "secundary",
       "course": "5 & 6 Beeldende vorming",
       "link": "https://conorturley.wixsite.com/website",
-      "descr": "Conor",
+      "descr": "GIP Conor Turley",
       "location": "at",
       "room": "a206",
       "orb": {
@@ -1350,6 +1457,228 @@
       "division": "Kunsten",
       "type": "class",
       "cat": "secundary",
+      "course": "5 & 6 Toegepaste Beeldende Kunst",
+      "link": "https://vanessa-dagboek.tumblr.com/",
+      "descr": "GIP Vanesssa",
+      "location": "v",
+      "room": "grafiek",
+      "orb": {
+        "type": "purplepink",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x":0.5549999999999999, "y":-0.40508335113525384
+        }
+      }
+    },
+    {
+      "year": "6",
+      "division": "Kunsten",
+      "type": "class",
+      "cat": "secundary",
+      "course": "5 & 6 Toegepaste Beeldende Kunst",
+      "link": "https://ivaaga.tumblr.com/",
+      "descr": "GIP Iva",
+      "location": "v",
+      "room": "grafiek",
+      "orb": {
+        "type": "purplepink",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x":0.5549999999999999, "y":-0.40508335113525384
+        }
+      }
+    },
+    {
+      "year": "6",
+      "division": "Kunsten",
+      "type": "class",
+      "cat": "secundary",
+      "course": "5 & 6 Toegepaste Beeldende Kunst",
+      "link": "https://anaiscaers.tumblr.com/",
+      "descr": "GIP Anais",
+      "location": "v",
+      "room": "grafiek",
+      "orb": {
+        "type": "purplepink",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x":0.5549999999999999, "y":-0.40508335113525384
+        }
+      }
+    },
+    {
+      "year": "6",
+      "division": "Kunsten",
+      "type": "class",
+      "cat": "secundary",
+      "course": "5 & 6 Toegepaste Beeldende Kunst",
+      "link": "https://vnn3stl.tumblr.com/",
+      "descr": "GIP Louise",
+      "location": "v",
+      "room": "grafiek",
+      "orb": {
+        "type": "purplepink",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x":0.5549999999999999, "y":-0.40508335113525384
+        }
+      }
+    },
+    {
+      "year": "6",
+      "division": "Kunsten",
+      "type": "class",
+      "cat": "secundary",
+      "course": "5 & 6 Toegepaste Beeldende Kunst",
+      "link": "https://elolonely.tumblr.com/",
+      "descr": "GIP Elouise",
+      "location": "v",
+      "room": "grafiek",
+      "orb": {
+        "type": "purplepink",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x":0.5549999999999999, "y":-0.40508335113525384
+        }
+      }
+    },
+    {
+      "year": "6",
+      "division": "Kunsten",
+      "type": "class",
+      "cat": "secundary",
+      "course": "5 & 6 Toegepaste Beeldende Kunst",
+      "link": "https://keppensstan.tumblr.com/",
+      "descr": "GIP Stan",
+      "location": "v",
+      "room": "grafiek",
+      "orb": {
+        "type": "purplepink",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x":0.5549999999999999, "y":-0.40508335113525384
+        }
+      }
+    },
+
+    {
+      "year": "6",
+      "division": "Kunsten",
+      "type": "class",
+      "cat": "secundary",
+      "course": "5 & 6 Toegepaste Beeldende Kunst",
+      "link": "http://margauxmertens.tumblr.com/",
+      "descr": "GIP Margaux",
+      "location": "v",
+      "room": "grafiek",
+      "orb": {
+        "type": "purplepink",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x":0.5549999999999999, "y":-0.40508335113525384
+        }
+      }
+    },
+    {
+      "year": "6",
+      "division": "Kunsten",
+      "type": "class",
+      "cat": "secundary",
+      "course": "5 & 6 Toegepaste Beeldende Kunst",
+      "link": "https://maxvbsintlukas.tumblr.com/",
+      "descr": "GIP Max VB",
+      "location": "v",
+      "room": "grafiek",
+      "orb": {
+        "type": "purplepink",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x":0.5549999999999999, "y":-0.40508335113525384
+        }
+      }
+    },
+    {
+      "year": "6",
+      "division": "Kunsten",
+      "type": "class",
+      "cat": "secundary",
+      "course": "5 & 6 Toegepaste Beeldende Kunst",
+      "link": "https://888max.tumblr.com/",
+      "descr": "GIP Max M",
+      "location": "v",
+      "room": "grafiek",
+      "orb": {
+        "type": "purplepink",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x":0.5549999999999999, "y":-0.40508335113525384
+        }
+      }
+    },
+    {
+      "year": "6",
+      "division": "Kunsten",
+      "type": "class",
+      "cat": "secundary",
+      "course": "5 & 6 Toegepaste Beeldende Kunst",
+      "link": "https://m-jdrs.tumblr.com/",
+      "descr": "GIP Milla-jane",
+      "location": "v",
+      "room": "grafiek",
+      "orb": {
+        "type": "purplepink",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x":0.5549999999999999, "y":-0.40508335113525384
+        }
+      }
+    },
+    {
+      "year": "6",
+      "division": "Kunsten",
+      "type": "class",
+      "cat": "secundary",
+      "course": "5 & 6 Toegepaste Beeldende Kunst",
+      "link": "https://chikasimpson.tumblr.com/",
+      "descr": "GIP Chika",
+      "location": "v",
+      "room": "grafiek",
+      "orb": {
+        "type": "purplepink",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x":0.5549999999999999, "y":-0.40508335113525384
+        }
+      }
+    },
+
+    {
+      "year": "6",
+      "division": "Kunsten",
+      "type": "class",
+      "cat": "secundary",
       "course": "5 & 6 Architecturale & Binnenhuiskunst",
       "link": "https://padlet.com/tomjanssens/SintLukasABK",
       "descr": "",
@@ -1396,6 +1725,26 @@
       "course": "Atelier Kinderen",
       "link": "https://padlet.com/m_lefever/lbv7hmlo8f7i?utm_campaign=transactional&utm_content=padlet_url&utm_medium=email&utm_source=started_a_padlet",
       "descr": "Padlet: Toon je Gezichtje",
+      "location": "g",
+      "room": "g102",
+      "orb": {
+        "type": "academy",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x":0.21750000000000003, "y":0.07741664886474608
+        }
+      }
+    },
+    {
+      "year": "kinderen",
+      "division": "academie",
+      "cat": "academy",
+      "type": "class",
+      "course": "Atelier Kinderen",
+      "link": "https://padlet.com/jonasdelaey/rtub2wqwf0l6rd4p",
+      "descr": "Atelier Kinderen (groenstraat)",
       "location": "g",
       "room": "g102",
       "orb": {
@@ -1558,6 +1907,26 @@
       "course": "grafiek",
       "link": "https://nl.padlet.com/bartvano67/e58n6yqu21t3bhws",
       "descr": "Grafiek",
+      "location": "v",
+      "room": "zeefdruk",
+      "orb": {
+        "type": "academy",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x":0.2749999999999999, "y":-0.08652343749999991
+        }
+      }
+    },
+    {
+      "year": "volwassenen",
+      "division": "academie",
+      "cat": "academy",
+      "type": "class",
+      "course": "grafiek",
+      "link": "https://padlet.com/bartvano67/qv7ito9baqhordjz",
+      "descr": "Techniek zeefdruk",
       "location": "v",
       "room": "zeefdruk",
       "orb": {
@@ -2091,15 +2460,6 @@
         }
       }
     }                
-  
-
-  
-
-
-  ],
-  "photos": [
-    {
-      "url": ""
-    }
   ]
 }
+

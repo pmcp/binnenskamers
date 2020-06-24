@@ -25,6 +25,7 @@
           :class="[{'grid__item--active' : (activeLocationId  !== null && key === activeLocationId)}]"
           :href="`/locations/${key}`"
           @mouseover="setActive(key)"
+          @mouseleave="setActive(null)"
         >
 
         </a>
@@ -207,6 +208,10 @@ export default {
     },
     setActive(id) {
       this.touched = true;
+      if(id === null) {
+        this.touched = false;
+      }
+      
       this.activeLocationId = id;
     }
   }

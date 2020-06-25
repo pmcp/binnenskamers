@@ -3,7 +3,7 @@
     <div class="container">
       <navbar v-if="activeRoom" :photos="activeRoom.photos" :path="`${location}/${room}`">
         <div class="breadcrumbs">
-          <a class="underlined" href="/">Inleiding</a> - <a class="underlined" href="/map">Plattegrond</a> - <a class="underlined" :href="`/locations/${location}`">Blok {{ activeLocation.name }}</a> - {{ activeRoom.name }}
+          <nuxt-link class="underlined" to="/">Inleiding</nuxt-link> - <nuxt-link class="underlined" to="/map">Plattegrond</nuxt-link> - <nuxt-link class="underlined" :to="`/locations/${location}`">Blok {{ activeLocation.name }}</nuxt-link> - {{ activeRoom.name }}
         </div>
       </navbar>
       <div
@@ -11,17 +11,17 @@
         :class="cursorClass"
         @mouseleave="setActive(null)"
       ><template v-if="!loadOrbs">
-        <a
+        <nuxt-link
           v-for="(orb, key) in orbSettings"
           :key="'orb'+key"
           class="fallbackOrb"
           :class="[{'fallbackOrb--active' : (activeLink  !== null && orb.meta.index === activeLink)}]"
           :style="setStyle(orb)"
-          :href="itemsOfRoom[orb.meta.index].link"
+          :to="itemsOfRoom[orb.meta.index].link"
           target="_blank"
           @mouseover="setActive(orb.meta.index)"
           @mouseleave="setActive(null)"
-        ></a>
+        ></nuxt-link>
       </template>
       <orbs
           v-if="orbSettings && loadOrbs"
@@ -41,11 +41,11 @@
       <div class="room__description" v-if="activeRoom && activeRoom.name == 'Secretariaat - Bureau Ellen'">
         <br>INFO:
           <br>°telefoon 02 217 77 00
-          <br>°mail : <a href="mailto:info@sintlukas.brussels">info@sintlukas.brussels</a>
+          <br>°mail : <nuxt-link to="mailto:info@sintlukas.brussels">info@sintlukas.brussels</nuxt-link>
         <br>INSCHRIJVINGEN:
-        <br>°basisschool: <a href="http://www.sintlukasbasisschool.be/" target="_blank">sintlukasbasisschool.be</a>
-        <br>°humaniora: <a href="http://blog.sintlukaskunsthumaniora.be/" target="_blank">blog.sintlukaskunsthumaniora.be</a>
-        <br>°academie: <a href="https://sintlukasacademie.brussels/" target="_blank">sintlukasacademie.brussels</a>
+        <br>°basisschool: <nuxt-link to="http://www.sintlukasbasisschool.be/" target="_blank">sintlukasbasisschool.be</nuxt-link>
+        <br>°humaniora: <nuxt-link to="http://blog.sintlukaskunsthumaniora.be/" target="_blank">blog.sintlukaskunsthumaniora.be</nuxt-link>
+        <br>°academie: <nuxt-link to="https://sintlukasacademie.brussels/" target="_blank">sintlukasacademie.brussels</nuxt-link>
       </div>
       <div class="legend links">
         <a
@@ -58,7 +58,8 @@
           :style="{'color': getColor(l.orb.type) }"
           @mouseover="setActive(key)"
           @mouseleave="setActive(null)"
-        ><span v-if="l.division !== 'academie'">{{l.course }}</span><span v-if="(l.year !== '' && l.course !== '' && l.division !== 'academie') && l.descr !== ''">: </span> {{ l.descr }}<span v-if="key < (itemsOfRoom.length-1)"> / </span></a>
+        ><span v-if="l.division !== 'academie'">{{l.course }}</span><span v-if="(l.year !== '' && l.course !== '' && l.division !== 'academie') && l.descr !== ''">: </span> {{ l.descr }}<span v-if="key < (itemsOfRoom.length-1)"> / </span>
+        </a>
       </div>
     </div>
     <!-- <iframe :src="activeLink" style="width:100%;height:100vh;"></iframe> -->

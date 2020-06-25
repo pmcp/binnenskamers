@@ -2,7 +2,7 @@
   <div class="container">
     <navbar :photos="[]">
       <div class="breadcrumbs">
-          <a class="underlined" href="/">Inleiding</a> - Plattegrond
+          <nuxt-link class="underlined" to="/">Inleiding</nuxt-link> - Plattegrond
       </div>
     </navbar>
     
@@ -17,81 +17,81 @@
       <div
         class="grid"
       >
-        <a
+        <nuxt-link
           v-for="(loc, key) in locations"
           :key="key"
           :style="locStyle(loc.gridPos, loc.hoverImg)"
           class="grid__item"
           :class="[{'grid__item--active' : (activeLocationId  !== null && key === activeLocationId)}]"
-          :href="`/locations/${key}`"
+          :to="`/locations/${key}`"
           @mouseover="setActive(key)"
           @mouseleave="setActive(null)"
         >
 
-        </a>
+        </nuxt-link>
       </div>
     </div>
     <div class="legend">
       <div v-if="allRooms">
-        Lokalen: <a
+        Lokalen: <nuxt-link
           v-for="(i, key) in allRooms"
           :key="`activeItems_${key}`"
-          :href="`/locations/${i.location}/rooms/${i.id}`"
+          :to="`/locations/${i.location}/rooms/${i.id}`"
           class="link"
           :class="[{'link--active' : ((activeLocationId  !== null && i.location === activeLocationId) || !touched), 'link--nonActive': (activeLocationId === null && !touched)}]"
           @mouseover="setActive(i.location)"
           @mouseleave="setActive(null)"
         >{{ i.name }}<span v-if="key < (Object.keys(allRooms).length - 1)"> / </span>
-        </a>
+        </nuxt-link>
       </div>
 
       <div>
-        Basisschool: <a
-          href="/locations/g/rooms/g104"
+        Basisschool: <nuxt-link
+          to="/locations/g/rooms/g104"
           class="link"
           :class="[{'link--active' : ((activeLocationId  !== null && 'g' === activeLocationId) || !touched), 'link--nonActive': (activeLocationId === null && !touched)}]"
           @mouseover="setActive('g')"
           @mouseleave="setActive(null)"
-        >Algemene Info /</a>
+        >Algemene Info /</nuxt-link>
       </div>
       <div>
-        Kunsthumaniora: <a
-          href="/locations/g/rooms/g104"
+        Kunsthumaniora: <nuxt-link
+          to="/locations/g/rooms/g104"
           class="link"
           :class="[{'link--active' : ((activeLocationId  !== null && 'g' === activeLocationId) || !touched), 'link--nonActive': (activeLocationId === null && !touched)}]"
           @mouseover="setActive('g')"
           @mouseleave="setActive(null)"
-        >Algemene Info / </a>
-        <a
+        >Algemene Info / </nuxt-link>
+        <nuxt-link
           v-for="(i, key, index) in secundaryCourses"
           :key="`activeItems_${key}`"
-          :href="`/locations/${i.location}/rooms/${i.room}`"
+          :to="`/locations/${i.location}/rooms/${i.room}`"
           class="link"
           :class="[{'link--active' : ((activeLocationId  !== null && i.location === activeLocationId) || !touched), 'link--nonActive': (activeLocationId === null && !touched)}]"
           @mouseover="setActive(i.location)"
           @mouseleave="setActive(null)"
         >{{ i.name }}<span v-if="index < (Object.keys(secundaryCourses).length - 1)"> / </span>
-        </a>
+        </nuxt-link>
       </div>
 
       <div>
-        Academie: <a
-          href="/locations/g/rooms/secretariaat"
+        Academie: <nuxt-link
+          to="/locations/g/rooms/secretariaat"
           class="link"
           :class="[{'link--active' : ((activeLocationId  !== null && 'g' === activeLocationId) || !touched), 'link--nonActive': (activeLocationId === null && !touched)}]"
           @mouseover="setActive('g')"
           @mouseleave="setActive(null)"
-        >Algemene Info /</a>
-        <a
+        >Algemene Info /</nuxt-link>
+        <nuxt-link
           v-for="(i, key, index) in academyCourses"
           :key="`activeItems_${key}`"
-          :href="`/locations/${i.location}/rooms/${i.room}`"
+          :to="`/locations/${i.location}/rooms/${i.room}`"
           class="link"
           :class="[{'link--active' : ((activeLocationId  !== null && i.location === activeLocationId) || !touched), 'link--nonActive': (activeLocationId === null && !touched)}]"
           @mouseover="setActive(i.location)"
           @mouseleave="setActive(null)"
         >{{ i.name }}<span v-if="index < (Object.keys(academyCourses).length - 1)"> / </span>
-        </a>
+        </nuxt-link>
       </div>
     </div>
   </div>

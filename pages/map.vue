@@ -12,24 +12,25 @@
           src="@/assets/squares/compressed/img12.jpg"
           alt="tekening van de hele plattegrond van het Sint Lukas-gebouw"
         />
-      </div>
-
-      <div
+         <div
         class="grid"
       >
-        <nuxt-link
-          v-for="(loc, key) in locations"
-          :key="key"
-          :style="locStyle(loc.gridPos, loc.hoverImg)"
-          class="grid__item"
-          :class="[{'grid__item--active' : (activeLocationId  !== null && key === activeLocationId)}]"
-          :to="`/locations/${key}`"
-          @mouseover="setActive(key)"
+      <nuxt-link :to="`/locations/${key}`" v-for="(loc, key) in locations"
+        :key="key"
+        class="grid__item"
+        :style="locStyle(loc.gridPos, loc.hoverImg)"
+        :class="[{'grid__item--active' : (activeLocationId  !== null && key === activeLocationId)}]">
+        <div 
+          class="grid__actions"
           @mouseleave="setActive(null)"
-        >
-
+          @mouseover="setActive(key)"
+        ></div>
         </nuxt-link>
+      
       </div>
+      </div>
+
+     
     </div>
     <div class="legend">
       <div v-if="allRooms">

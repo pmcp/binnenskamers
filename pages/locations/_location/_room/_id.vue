@@ -19,9 +19,13 @@
           :style="setStyle(orb)"
           :to="itemsOfRoom[orb.meta.index].link"
           target="_blank"
+
+        >
+        <div 
+          class="grid__actions"
           @mouseover="setActive(orb.meta.index)"
           @mouseleave="setActive(null)"
-        ></nuxt-link>
+        ></div></nuxt-link>
       </template>
       <orbs
           v-if="orbSettings && loadOrbs"

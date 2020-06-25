@@ -21,9 +21,13 @@
           :class="[{'fallbackOrb--active' : (activeRoom  !== null && orb.meta.room === activeRoom)}]"
           :style="setStyle(orb)"
           :to="`/locations/${orb.meta.location}/rooms/${orb.meta.room}`"
+        >
+        <div 
+          class="grid__actions"
           @mouseover="setActive(orb.meta)"
           @mouseleave="setActive(null)"
-        ></nuxt-link>
+        ></div>
+        </nuxt-link>
       </template>
       <orbs
         v-if="orbSettings && loadOrbs"

@@ -1,5 +1,6 @@
 
 export default {
+    target: 'static',
   mode: 'universal',
   /*
   ** Headers of the page
@@ -56,9 +57,6 @@ export default {
     fallback: true,
     routes: [
       '/',
-      '/about',
-      '/contact',
-      '404'
     ]
   },
   css: [

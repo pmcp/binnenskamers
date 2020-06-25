@@ -6,14 +6,15 @@
   "private": true,
   "scripts": {
     "dev": "nuxt",
-    "serve": "nuxt",
+    "serve": "nuxt serve",
     "build": "nuxt build",
     "start": "nuxt start",
-    "generate": "nuxt generate"
+    "generate": "nuxt generate",
+    "export": "nuxt build --target static && nuxt export"
   },
   "dependencies": {
     "@tweenjs/tween.js": "^18.5.0",
-    "nuxt": "^2.0.0",
+    "nuxt": "^2.13.1",
     "raw-loader": "^4.0.0",
     "three": "^0.111.0",
     "three-effectcomposer": "0.0.1"

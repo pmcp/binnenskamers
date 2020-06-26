@@ -42,7 +42,9 @@
         </div>
       </div>
 
-      <div class="room__description" v-if="activeRoom && activeRoom.name == 'Secretariaat - Bureau Ellen'">
+      
+      <div class="legend links">
+        <div class="room__description" v-if="activeRoom && activeRoom.name == 'Secretariaat - Bureau Ellen'">
         <br>INFO:
           <br>°telefoon 02 217 77 00
           <br>°mail : <nuxt-link to="mailto:info@sintlukas.brussels">info@sintlukas.brussels</nuxt-link>
@@ -51,14 +53,14 @@
         <br>°humaniora: <nuxt-link to="http://blog.sintlukaskunsthumaniora.be/" target="_blank">blog.sintlukaskunsthumaniora.be</nuxt-link>
         <br>°academie: <nuxt-link to="https://sintlukasacademie.brussels/" target="_blank">sintlukasacademie.brussels</nuxt-link>
       </div>
-      <div class="legend links">
+      <br>
         <a
           v-for="(l, key) in itemsOfRoom"
           :key="key"
           :href="l.link"
           target="_blank"
           class="link"
-          :class="[{'link--active' : (activeLink  !== null && key === activeLink), 'link--nonActive': activeLink === null}]"
+          :class="[{'link--active' : (activeLink  !== null && key ===   activeLink), 'link--nonActive': activeLink === null}]"
           :style="{'color': getColor(l.orb.type) }"
           @mouseover="setActive(key)"
           @mouseleave="setActive(null)"

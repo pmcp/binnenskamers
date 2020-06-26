@@ -62,7 +62,7 @@
           :style="{'color': getColor(l.orb.type) }"
           @mouseover="setActive(key)"
           @mouseleave="setActive(null)"
-        ><span v-if="l.division !== 'academie'">{{l.course }}</span><span v-if="(l.year !== '' && l.course !== '' && l.division !== 'academie') && l.descr !== ''">: </span> {{ l.descr }}<span v-if="key < (itemsOfRoom.length-1)"> / </span>
+        >{{l.link}}<span v-if="l.division !== 'academie'">{{l.course }}</span><span v-if="(l.year !== '' && l.course !== '' && l.division !== 'academie') && l.descr !== ''">: </span> {{ l.descr }}<span v-if="key < (itemsOfRoom.length-1)"> / </span>
         </a>
       </div>
     </div>
@@ -148,7 +148,6 @@ export default {
     return {
       room: null,
       location: null,
-      activeLink: null,
       cursorClass: null,
       activeLink: null,
       orbTypes: orbTypes,
@@ -201,7 +200,7 @@ export default {
     // This event is coming from the threejs instance, when hovering over on an orb.
     EventBus.$on("MOUSEOVERORB", data => {
       // add a class so the cursor changes into a pointer
-      console.log(data)
+      
       if (data !== null) {
         this.cursorClass = "cursor";
         this.setActive(data.index);
@@ -212,12 +211,17 @@ export default {
     });
     // This event is coming from the threejs instance, when clicked on an orb. When clicked -> go to page
     EventBus.$on("MOUSEDOWNONORB", data => {
+      
       if (data.type === "room") return;
+      const link = this.itemsOfRoom[data.index].link
+      if(link === this.activeLink) return
       this.activeLink = this.itemsOfRoom[data.index].link;
-       window.open(
-        this.itemsOfRoom[data.index].link,
+      window.open(
+        link,
         '_blank' // <- This is what makes it open in a new window.
       );
+      
+      
     });
     }
 

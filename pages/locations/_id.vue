@@ -68,7 +68,7 @@
           <div v-if="secundaryCourses || activeLocation.name === 'G'">
             Kunsthumaniora:
             <nuxt-link
-              to="g/rooms/g104"
+              to="/locations/g/rooms/g104"
               class="link"
               v-if="activeLocation.name === 'G'"
               :class="[{'link--active' : (activeRoom  !== null && 'g104' === activeRoom), 'link--nonActive': activeRoom === null}]"
@@ -78,7 +78,7 @@
             <nuxt-link
               v-for="(i, key, index) in secundaryCourses"
               :key="`activeItems_${key}`"
-              :to="`${i.location}/rooms/${i.room}`"
+              :to="`/locations/${i.location}/rooms/${i.room}`"
               class="link"
               :class="[{'link--active' : (activeRoom  !== null && i.room === activeRoom), 'link--nonActive': activeRoom === null}]"
               @mouseover="setActive(i.room)"
@@ -90,7 +90,7 @@
             <!-- TODO: Add these specific links programmatically -->
             Academie: <nuxt-link
               v-if="activeLocation.name === 'G'"
-              to="g/rooms/secretariaat"
+              to="/locations/g/rooms/secretariaat"
               class="link"
               :class="[{'link--active' : (activeRoom  !== null && 'secretariaat' === activeRoom), 'link--nonActive': activeRoom === null}]"
               @mouseover="setActive('secretariaat')"
@@ -99,7 +99,7 @@
             <nuxt-link
               v-for="(i, key, index) in academyCourses"
               :key="`activeItems_${key}`"
-              :to="`${i.location}/rooms/${i.room}`"
+              :to="`/locations/${i.location}/rooms/${i.room}`"
               class="link"
               :class="[{'link--active' : (activeRoom  !== null && i.room === activeRoom), 'link--nonActive': activeRoom === null}]"
               @mouseover="setActive(i.room)"

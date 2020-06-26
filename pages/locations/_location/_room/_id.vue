@@ -62,7 +62,7 @@
           :style="{'color': getColor(l.orb.type) }"
           @mouseover="setActive(key)"
           @mouseleave="setActive(null)"
-        >{{l.link}}<span v-if="l.division !== 'academie'">{{l.course }}</span><span v-if="(l.year !== '' && l.course !== '' && l.division !== 'academie') && l.descr !== ''">: </span> {{ l.descr }}<span v-if="key < (itemsOfRoom.length-1)"> / </span>
+        ><span v-if="l.division !== 'academie'">{{l.course }}</span><span v-if="(l.year !== '' && l.course !== '' && l.division !== 'academie') && l.descr !== ''">: </span> {{ l.descr }}<span v-if="key < (itemsOfRoom.length-1)"> / </span>
         </a>
       </div>
     </div>

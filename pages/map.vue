@@ -2,35 +2,38 @@
   <div class="container">
     <navbar :photos="[]">
       <div class="breadcrumbs">
-          <nuxt-link class="underlined" to="/">Inleiding</nuxt-link> - Plattegrond
+        <nuxt-link
+          class="underlined"
+          to="/"
+        >Inleiding</nuxt-link> - Plattegrond
       </div>
     </navbar>
-    
+
     <div class="map">
       <div class="map__img">
         <img
           src="@/assets/squares/compressed/img12.jpg"
           alt="tekening van de hele plattegrond van het Sint Lukas-gebouw"
         />
-         <div
-        class="grid"
-      >
-      <nuxt-link :to="`/locations/${key}`" v-for="(loc, key) in locations"
-        :key="key"
-        class="grid__item"
-        :style="locStyle(loc.gridPos, loc.hoverImg)"
-        :class="[{'grid__item--active' : (activeLocationId  !== null && key === activeLocationId)}]">
-        <div 
-          class="grid__actions"
-          @mouseleave="setActive(null)"
-          @mouseover="setActive(key)"
-        ></div>
-        </nuxt-link>
-      
-      </div>
+        <div class="grid">
+          <nuxt-link
+            :to="`/locations/${key}`"
+            v-for="(loc, key) in locations"
+            :key="key"
+            class="grid__item"
+            :style="locStyle(loc.gridPos, loc.hoverImg)"
+            :class="[{'grid__item--active' : (activeLocationId  !== null && key === activeLocationId)}]"
+          >
+            <div
+              class="grid__actions"
+              @mouseleave="setActive(null)"
+              @mouseover="setActive(key)"
+            ></div>
+          </nuxt-link>
+
+        </div>
       </div>
 
-     
     </div>
     <div class="legend">
       <div v-if="allRooms">
@@ -40,9 +43,12 @@
           :to="`/locations/${i.location}/rooms/${i.id}`"
           class="link"
           :class="[{'link--active' : ((activeLocationId  !== null && i.location === activeLocationId) || !touched), 'link--nonActive': (activeLocationId === null && !touched)}]"
-          @mouseover="setActive(i.location)"
-          @mouseleave="setActive(null)"
-        >{{ i.name }}<span v-if="key < (Object.keys(allRooms).length - 1)"> / </span>
+        ><span
+            @mouseover="setActive(i.location)"
+            @mouseleave="setActive(null)"
+            {{ i.name }}<span
+            v-if="key < (Object.keys(allRooms).length - 1)"
+          > / </span></span>
         </nuxt-link>
       </div>
 
@@ -51,27 +57,30 @@
           to="/locations/g/rooms/g104"
           class="link"
           :class="[{'link--active' : ((activeLocationId  !== null && 'g' === activeLocationId) || !touched), 'link--nonActive': (activeLocationId === null && !touched)}]"
-          @mouseover="setActive('g')"
-          @mouseleave="setActive(null)"
-        >Algemene Info /</nuxt-link>
+        ><span
+            @mouseover="setActive('g')"
+            @mouseleave="setActive(null)"
+          >Algemene Info /</nuxt-link></span>
       </div>
       <div>
         Kunsthumaniora: <nuxt-link
           to="/locations/g/rooms/g104"
           class="link"
           :class="[{'link--active' : ((activeLocationId  !== null && 'g' === activeLocationId) || !touched), 'link--nonActive': (activeLocationId === null && !touched)}]"
-          @mouseover="setActive('g')"
-          @mouseleave="setActive(null)"
-        >Algemene Info / </nuxt-link>
+        ><span
+            @mouseover="setActive('g')"
+            @mouseleave="setActive(null)"
+          >Algemene Info /</span> </nuxt-link>
         <nuxt-link
           v-for="(i, key, index) in secundaryCourses"
           :key="`activeItems_${key}`"
           :to="`/locations/${i.location}/rooms/${i.room}`"
           class="link"
           :class="[{'link--active' : ((activeLocationId  !== null && i.location === activeLocationId) || !touched), 'link--nonActive': (activeLocationId === null && !touched)}]"
-          @mouseover="setActive(i.location)"
-          @mouseleave="setActive(null)"
-        >{{ i.name }}<span v-if="index < (Object.keys(secundaryCourses).length - 1)"> / </span>
+        ><span
+            @mouseover="setActive(i.location)"
+            @mouseleave="setActive(null)"
+          >{{ i.name }}<span v-if="index < (Object.keys(secundaryCourses).length - 1)"> / </span></span>
         </nuxt-link>
       </div>
 
@@ -80,18 +89,20 @@
           to="/locations/g/rooms/secretariaat"
           class="link"
           :class="[{'link--active' : ((activeLocationId  !== null && 'g' === activeLocationId) || !touched), 'link--nonActive': (activeLocationId === null && !touched)}]"
-          @mouseover="setActive('g')"
-          @mouseleave="setActive(null)"
-        >Algemene Info /</nuxt-link>
+        ><span
+            @mouseover="setActive('g')"
+            @mouseleave="setActive(null)"
+          >Algemene Info /</span></nuxt-link>
         <nuxt-link
           v-for="(i, key, index) in academyCourses"
           :key="`activeItems_${key}`"
           :to="`/locations/${i.location}/rooms/${i.room}`"
           class="link"
           :class="[{'link--active' : ((activeLocationId  !== null && i.location === activeLocationId) || !touched), 'link--nonActive': (activeLocationId === null && !touched)}]"
-          @mouseover="setActive(i.location)"
-          @mouseleave="setActive(null)"
-        >{{ i.name }}<span v-if="index < (Object.keys(academyCourses).length - 1)"> / </span>
+        ><span
+            @mouseover="setActive(i.location)"
+            @mouseleave="setActive(null)"
+          >{{ i.name }}<span v-if="index < (Object.keys(academyCourses).length - 1)"> / </span></span>
         </nuxt-link>
       </div>
     </div>
@@ -202,17 +213,16 @@ export default {
       const style = {
         gridArea: pos,
         background: `url(${image}) no-repeat center center`,
-        backgroundSize: '40% auto'
-
-      }
+        backgroundSize: "40% auto"
+      };
       return style;
     },
     setActive(id) {
       this.touched = true;
-      if(id === null) {
+      if (id === null) {
         this.touched = false;
       }
-      
+
       this.activeLocationId = id;
     }
   }

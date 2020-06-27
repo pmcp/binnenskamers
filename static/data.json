@@ -741,6 +741,27 @@
       }
     },
     {
+      "year": "6",
+      "division": "Kunsten",
+      "type": "class",
+      "cat": "secundary",
+      "course": "6 Vrije Beeldende Kunst",
+      "link": "https://artspaces.kunstmatrix.com/en/exhibition/1613371/6vbk",
+      "descr": "VR-Ruimte",
+      "location": "h",
+      "room": "h301",
+      "orb": {
+        "type": "purplepink",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x": -0.42874999999999996,
+          "y": -0.5
+        }
+      }
+    },
+    {
       "year": "3",
       "division": "Kunsten",
       "type": "class",
@@ -1023,6 +1044,28 @@
       "type": "class",
       "cat": "secundary",
       "course": "5 & 6 Beeldende vorming",
+      "link": "https://youtu.be/CfagoaJdupA",
+      "descr": "Arne: DAYS OF DAWN AND SUNSET",
+      "location": "at",
+      "room": "a206",
+      "orb": {
+        "type": "purplepink",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x":0.5131396957123098, "y":0.38531278331822305
+        }
+      }
+    },
+
+    {
+      "year": "5",
+      "hideOnLocation": true,
+      "division": "Vorming",
+      "type": "class",
+      "cat": "secundary",
+      "course": "5 & 6 Beeldende vorming",
       "link": "https://timdj2602.wixsite.com/mijnsite",
       "descr": "Tim",
       "location": "at",
@@ -1256,6 +1299,28 @@
         },
         "position": {
           "x":0.375, "y":-0.2765234375000001
+        }
+      }
+    },
+
+    {
+      "year": "6",
+      "hideOnLocation": true,
+      "division": "Vorming",
+      "type": "class",
+      "cat": "secundary",
+      "course": "5 & 6 Beeldende vorming",
+      "link": "https://artspaces.kunstmatrix.com/en/exhibition/1617871/gip-janageyzels",
+      "descr": "VR-ruimte Jana Gheysels",
+      "location": "at",
+      "room": "a206",
+      "orb": {
+        "type": "purplepink",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x":0.37291666666666656, "y":0.5611967361740707
         }
       }
     },
@@ -1721,6 +1786,50 @@
         }
       }
     },
+
+    {
+      "year": "6",
+      "division": "Opleiding",
+      "type": "class",
+      "cat": "secundary",
+      "course": "5 & 6 Artistieke Opleiding",
+      "hideOnLocation": true,
+      "link": "https://youtu.be/49r4DYNDvVQ",
+      "descr": "Wouter Tran",
+      "location": "v",
+      "room": "v203",
+      "orb": {
+        "type": "purplepink",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x":-0.17291666666666672, "y":0.1477787851314597
+        }
+      }
+    },
+    {
+      "year": "6",
+      "division": "Opleiding",
+      "type": "class",
+      "cat": "secundary",
+      "course": "5 & 6 Artistieke Opleiding",
+      "hideOnLocation": true,
+      "link": "https://artspaces.kunstmatrix.com/en/exhibition/1639481/tran?fbclid=IwAR2_75p8yag85kt2HfKPLIpmnoE3z8Yi6_0CcMWyv_cktd-f4xEOMW-iURY",
+      "descr": "VR-rruimte Wouter Tran",
+      "location": "v",
+      "room": "v203",
+      "orb": {
+        "type": "purplepink",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x":-0.21666666666666667, "y":-0.2021758839528558
+        }
+      }
+    },
+
     {
       "year": "kinderen",
       "division": "academie",
@@ -1757,7 +1866,7 @@
           "size": 0.1
         },
         "position": {
-          "x":0.21750000000000003, "y":0.07741664886474608
+          "x":-0.09166666666666667, "y":0.485040797824116
         }
       }
     },
@@ -1777,7 +1886,7 @@
           "size": 0.1
         },
         "position": {
-          "x":0.21750000000000003, "y":0.07741664886474608
+          "x":0.20398009950248763, "y":0.24750679963735267
         }
       }
     },
@@ -2441,6 +2550,26 @@
         },
         "position": {
           "x":-0.6699999999999999, "y":-0.10758335113525397
+        }
+      }
+    },
+    {
+      "year": "",
+      "division": "Humaniora",
+      "cat": "secundary",
+      "type": "general",
+      "course": "",
+      "link": "https://drive.google.com/drive/u/0/folders/1V9a6qVHzaSbV9X28I5Y3iMTbU37Ye29K",
+      "descr": "Atelier Frans 6e jaar",
+      "location": "g",
+      "room": "g102",
+      "orb": {
+        "type": "purplepink",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x":0.29374999999999996, "y":0.3327289211242067
         }
       }
     },

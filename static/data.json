@@ -153,6 +153,23 @@
       "redhell": false,
       "opacity": 0.7
     },
+    "academyPartner": {
+      "speed": 0.1,
+      "size": 0.1,
+      "perlins": 10.0,
+      "decay": 0.2,
+      "displace": 1.4,
+      "complex": 2,
+      "waves": 2.7,
+      "eqcolor": 1.0,
+      "rcolor": 0.80,
+      "gcolor": 0.23,
+      "bcolor": 0.4,
+      "fragment": true,
+      "points": false,
+      "redhell": false,
+      "opacity": 0.7
+    },
     "external": {
       "speed": 0.1,
       "size": 0.1,
@@ -2493,6 +2510,459 @@
         }
       }
     },
+
+    {
+      "year": "",
+      "division": "extern",
+      "cat": "external",
+      "type": "bredeschool",
+      "course": "",
+      "link": "https://www.facebook.com/profile.php?id=100017388937458",
+      "descr": "Wijkinactie – Quartierenaction",
+      "location": "g",
+      "room": "bredeschool",
+      "orb": {
+        "type": "academyPartner",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x":0.330016583747927, "y":0.07014681892332786
+        }
+      }
+    },
+
+
+    {
+      "year": "",
+      "division": "extern",
+      "cat": "external",
+      "type": "bredeschool",
+      "course": "",
+      "link": "https://www.circuszonderhanden.be",
+      "descr": "Circus Zonder Handen",
+      "location": "g",
+      "room": "bredeschool",
+      "orb": {
+        "type": "academyPartner",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x":0.4361525704809286, "y":0.5367047308319739
+        }
+      }
+    },
+
+
+
+    {
+      "year": "",
+      "division": "extern",
+      "cat": "external",
+      "type": "bredeschool",
+      "course": "",
+      "link": "https://defilmclub.be/",
+      "descr": "De Filmclub",
+      "location": "g",
+      "room": "bredeschool",
+      "orb": {
+        "type": "academyPartner",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x":0.17412935323383083, "y":-0.44208809135399685
+        }
+      }
+    },
+
+
+
+    {
+      "year": "",
+      "division": "extern",
+      "cat": "external",
+      "type": "bredeschool",
+      "course": "",
+      "link": "https://bbjja.be/nl/index.php",
+      "descr": "Brussels Brazilian Jiu Jitsu Academy",
+      "location": "g",
+      "room": "bredeschool",
+      "orb": {
+        "type": "academyPartner",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x":-0.42951907131011613, "y":-0.5595432300163132
+        }
+      }
+    },
+
+
+
+    {
+      "year": "",
+      "division": "extern",
+      "cat": "external",
+      "type": "bredeschool",
+      "course": "",
+      "link": "https://www.facebook.com/jongsportblabla/",
+      "descr": "Jong Sport & Bla Bla",
+      "location": "g",
+      "room": "bredeschool",
+      "orb": {
+        "type": "academyPartner",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x":-0.021558872305140975, "y":0.6052202283849919
+        }
+      }
+    },
+
+
+    {
+      "year": "",
+      "division": "extern",
+      "cat": "external",
+      "type": "bredeschool",
+      "course": "",
+      "link": "https://www.facebook.com/renovasasbl",
+      "descr": "Renovas",
+      "location": "g",
+      "room": "bredeschool",
+      "orb": {
+        "type": "academyPartner",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x":-0.36650082918739635, "y":0.17781402936378465
+        }
+      }
+    },
+
+    
+
+    {
+      "year": "",
+      "division": "extern",
+      "cat": "external",
+      "type": "bredeschool",
+      "course": "",
+      "link": "https://www.facebook.com/dupontplusverte/",
+      "descr": "Wijkcomité Dupont Plus Verte",
+      "location": "g",
+      "room": "bredeschool",
+      "orb": {
+        "type": "academyPartner",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x":0.16086235489220568, "y":0.5725938009787928
+        }
+      }
+    },
+
+    {
+      "year": "",
+      "division": "extern",
+      "cat": "external",
+      "type": "bredeschool",
+      "course": "",
+      "link": "https://www.luca-arts.be",
+      "descr": "LUCA School of Arts",
+      "location": "g",
+      "room": "bredeschool",
+      "orb": {
+        "type": "academyPartner",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x":0.23750000000000004, "y":0.24206708975521307
+        }
+      }
+    },
+
+
+    {
+      "year": "",
+      "division": "extern",
+      "cat": "external",
+      "type": "bredeschool",
+      "course": "",
+      "link": "https://www.gaffi.be",
+      "descr": "Gaffi",
+      "location": "g",
+      "room": "bredeschool",
+      "orb": {
+        "type": "academyPartner",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x":-0.39303482587064675, "y":-0.46166394779771625
+        }
+      }
+    },
+
+    
+
+    {
+      "year": "",
+      "division": "extern",
+      "cat": "external",
+      "type": "bredeschool",
+      "course": "",
+      "link": "https://www.facebook.com/deschakelschaarbeek/",
+      "descr": "De Schakel",
+      "location": "g",
+      "room": "bredeschool",
+      "orb": {
+        "type": "academyPartner",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x":-0.22291666666666665, "y":-0.4306436990027198
+        }
+      }
+    },
+
+     
+
+    {
+      "year": "",
+      "division": "extern",
+      "cat": "external",
+      "type": "bredeschool",
+      "course": "",
+      "link": "https://www.maisonbilobahuis.be/",
+      "descr": "MaisonBilobaHuis",
+      "location": "g",
+      "room": "bredeschool",
+      "orb": {
+        "type": "academyPartner",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x":-0.44166666666666665, "y":-0.1967361740707163
+        }
+      }
+    },
+
+    
+    {
+      "year": "",
+      "division": "extern",
+      "cat": "external",
+      "type": "bredeschool",
+      "course": "",
+      "link": "https://www.facebook.com/Ratatouille1030",
+      "descr": "Ratatouille",
+      "location": "g",
+      "room": "bredeschool",
+      "orb": {
+        "type": "academyPartner",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x":0.3999999999999999, "y":-0.17316409791477794
+        }
+      }
+    },
+
+
+    {
+      "year": "",
+      "division": "extern",
+      "cat": "external",
+      "type": "bredeschool",
+      "course": "",
+      "link": "https://www.facebook.com/huisvanhetkindnoord/",
+      "descr": "Huis van het Kind",
+      "location": "g",
+      "room": "bredeschool",
+      "orb": {
+        "type": "academyPartner",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x":0.17708333333333326, "y":0.2456935630099728
+        }
+      }
+    },
+
+    
+
+    {
+      "year": "",
+      "division": "extern",
+      "cat": "external",
+      "type": "bredeschool",
+      "course": "",
+      "link": "https://www.dekriekelaar.be",
+      "descr": "GC De Kriekelaar",
+      "location": "g",
+      "room": "bredeschool",
+      "orb": {
+        "type": "academyPartner",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x":0.38541666666666674, "y":-0.30190389845874877
+        }
+      }
+    },
+
+    
+
+    {
+      "year": "",
+      "division": "extern",
+      "cat": "external",
+      "type": "bredeschool",
+      "course": "",
+      "link": "https://www.tennoey.be",
+      "descr": "GC Ten Noey",
+      "location": "g",
+      "room": "bredeschool",
+      "orb": {
+        "type": "academyPartner",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x":-0.22916666666666663, "y":0.48866727107887575
+        }
+      }
+    },
+
+    
+
+    {
+      "year": "",
+      "division": "extern",
+      "cat": "external",
+      "type": "bredeschool",
+      "course": "",
+      "link": "https://schaarbeek.bibliotheek.be/",
+      "descr": "Bibliotheek Schaarbeek",
+      "location": "g",
+      "room": "bredeschool",
+      "orb": {
+        "type": "academyPartner",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x":-0.05833333333333335, "y":-0.3327289211242066
+        }
+      }
+    },
+
+
+
+    {
+      "year": "",
+      "division": "extern",
+      "cat": "external",
+      "type": "bredeschool",
+      "course": "",
+      "link": "https://sint-joost-ten-node.bibliotheek.be/",
+      "descr": "Bib Joske",
+      "location": "g",
+      "room": "bredeschool",
+      "orb": {
+        "type": "academyPartner",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x":-0.41041666666666665, "y":-0.06618313689936528
+        }
+      }
+    },
+
+    
+    {
+      "year": "",
+      "division": "extern",
+      "cat": "external",
+      "type": "bredeschool",
+      "course": "",
+      "link": "https://www.abc-web.be/",
+      "descr": "ABC (ART BASICS for CHILDREN)",
+      "location": "g",
+      "room": "bredeschool",
+      "orb": {
+        "type": "academyPartner",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x":0.24583333333333335, "y":-0.6119673617407071
+        }
+      }
+    },
+
+    {
+      "year": "",
+      "division": "extern",
+      "cat": "external",
+      "type": "bredeschool",
+      "course": "",
+      "link": "https://www.facebook.com/BredeSchoolBrussel/",
+      "descr": "Brede School Brussel",
+      "location": "g",
+      "room": "bredeschool",
+      "orb": {
+        "type": "academyPartner",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x":-0.2833333333333333, "y":-0.07343608340888497
+        }
+      }
+    },
+
+    
+    {
+      "year": "",
+      "division": "extern",
+      "cat": "external",
+      "type": "bredeschool",
+      "course": "",
+      "link": "https://www.onderwijscentrumbrussel.be",
+      "descr": "Onderwijscentrum Brussel",
+      "location": "g",
+      "room": "bredeschool",
+      "orb": {
+        "type": "academyPartner",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x":0.21458333333333335, "y":-0.12964641885766093
+        }
+      }
+    },
+
+    
+
+
+
+
     {
       "year": "",
       "division": "extern",

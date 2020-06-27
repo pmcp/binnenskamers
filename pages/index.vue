@@ -8,7 +8,6 @@
       </div>
     </div>
     <div class="legend">
-      <div>
       <p>De Sint-Lukas Kunstschool (Academie, Basisschool en Humaniora) is gesitueerd in de Brabantwijk in Schaarbeek, pal naast de Hogeschool LUCA School of Arts.</p>
       <p>De Brabantwijk bevindt zich in hartje Brussel aan het station Brussel-Noord en is een interessant knooppunt tussen verschillende ‘gebruikers’. Er is een levendige winkelstraat, ze herbergt vele nationaliteiten en is een transitzone voor ambtenaren en studenten.</p>
       <p>Onze studenten komen van overal: overdag brengen ouders die in de buurt wonen hun jonge kinderen naar de Sint-Lukas Basisschool, jongeren komen uit Brussel en Vlaanderen met het openbaar vervoer naar de Sint-Lukas Kunsthumaniora en nadien sluiten kinderen uit de buurt en volwassenen, vooral uit het centrum en de Brusselse rand, aan om in hun vrije tijd de beeldende kunsten te verkennen in de Sint-Lukas Academie.</p>
@@ -17,7 +16,6 @@
       <p>Deze drie scholen op één plaats, samen met de geografische ligging zorgt voor een meervoudig kruispunt van veel culturen, leeftijden, socio-economische achtergronden en artistieke processen.</p>
       <p>Via deze site kan je binnenkijken in onze locatie,  waarin de drie scholen organisch door elkaar lopen in een uniek pedagogisch project!</p>
       <p>Ga naar <nuxt-link to="/map">het grondplan</nuxt-link>.</p>
-      </div>
     </div>  
   </div>
 </template>

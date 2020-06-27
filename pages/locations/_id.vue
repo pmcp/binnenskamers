@@ -1,11 +1,19 @@
 <template>
   <div class="container">
-    <navbar v-if="activeLocation" :photos="activeLocation.photos" :path="location">
-      <div
-        class="breadcrumbs"
-      >
-        <nuxt-link class="underlined" to="/">Inleiding</nuxt-link> - <nuxt-link class="underlined" to="/map">Plattegrond</nuxt-link> - Blok {{ activeLocation.name }}
-        </div>
+    <navbar
+      v-if="activeLocation"
+      :photos="activeLocation.photos"
+      :path="location"
+    >
+      <div class="breadcrumbs">
+        <nuxt-link
+          class="underlined"
+          to="/"
+        >Inleiding</nuxt-link> - <nuxt-link
+          class="underlined"
+          to="/map"
+        >Plattegrond</nuxt-link> - Blok {{ activeLocation.name }}
+      </div>
     </navbar>
     <div
       class="map"
@@ -22,11 +30,11 @@
           :style="setStyle(orb)"
           :to="`/locations/${orb.meta.location}/rooms/${orb.meta.room}`"
         >
-        <div 
-          class="grid__actions"
-          @mouseover="setActive(orb.meta)"
-          @mouseleave="setActive(null)"
-        ></div>
+          <div
+            class="grid__actions"
+            @mouseover="setActive(orb.meta)"
+            @mouseleave="setActive(null)"
+          ></div>
         </nuxt-link>
       </template>
       <orbs
@@ -50,10 +58,12 @@
               :to="`/locations/${i.location}/rooms/${key}`"
               class="link"
               :class="[{'link--active' : (activeRoom  !== null && key === activeRoom), 'link--nonActive': activeRoom === null}]"
-              @mouseover="setActive(key)"
-              @mouseleave="setActive(null)"
-            > 
-              {{ i.name }} <span v-if="index < (Object.keys(activeLocation.rooms).length-1)">/</span>
+            > <span
+                @mouseover="setActive(key)"
+                @mouseleave="setActive(null)"
+              >
+                {{ i.name }} <span v-if="index < (Object.keys(activeLocation.rooms).length-1)">/</span>
+              </span>
             </nuxt-link>
           </div>
           <!-- TODO: Fix this when more basisschool -->
@@ -61,9 +71,10 @@
               to="g/rooms/g104"
               class="link"
               :class="[{'link--active' : (activeRoom  !== null && 'g104' === activeRoom), 'link--nonActive': activeRoom === null}]"
-              @mouseover="setActive('g104')"
-              @mouseleave="setActive(null)"
-            >Bureau Wim</nuxt-link>
+            ><span
+                @mouseover="setActive('g104')"
+                @mouseleave="setActive(null)"
+              >Bureau Wim</span></nuxt-link>
           </div>
           <div v-if="secundaryCourses || activeLocation.name === 'G'">
             Kunsthumaniora:
@@ -72,9 +83,11 @@
               class="link"
               v-if="activeLocation.name === 'G'"
               :class="[{'link--active' : (activeRoom  !== null && 'g104' === activeRoom), 'link--nonActive': activeRoom === null}]"
-              @mouseover="setActive('g104')"
-              @mouseleave="setActive(null)"
-            >Bureau Kris</nuxt-link>
+            >
+              <span
+                @mouseover="setActive('g104')"
+                @mouseleave="setActive(null)"
+              >Bureau Kris</span></nuxt-link>
             <nuxt-link
               v-for="(i, key, index) in secundaryCourses"
               :key="`activeItems_${key}`"
@@ -83,7 +96,11 @@
               :class="[{'link--active' : (activeRoom  !== null && i.room === activeRoom), 'link--nonActive': activeRoom === null}]"
               @mouseover="setActive(i.room)"
               @mouseleave="setActive(null)"
-            > {{ i.name }} <span v-if="index < (Object.keys(secundaryCourses).length-1)">/</span>
+            >
+              <span
+                @mouseover="setActive(i.room)"
+                @mouseleave="setActive(null)"
+              > {{ i.name }} <span v-if="index < (Object.keys(secundaryCourses).length-1)">/</span>
             </nuxt-link>
           </div>
           <div v-if="academyCourses">
@@ -93,19 +110,21 @@
               to="/locations/g/rooms/secretariaat"
               class="link"
               :class="[{'link--active' : (activeRoom  !== null && 'secretariaat' === activeRoom), 'link--nonActive': activeRoom === null}]"
-              @mouseover="setActive('secretariaat')"
-              @mouseleave="setActive(null)"
-            >Bureau Ellen <span v-if="(Object.keys(academyCourses).length > 0)"> / </span></nuxt-link>
+            ><span
+                @mouseover="setActive('secretariaat')"
+                @mouseleave="setActive(null)"
+              >Bureau Ellen <span v-if="(Object.keys(academyCourses).length > 0)"> / </span></span></nuxt-link>
             <nuxt-link
               v-for="(i, key, index) in academyCourses"
               :key="`activeItems_${key}`"
               :to="`/locations/${i.location}/rooms/${i.room}`"
               class="link"
               :class="[{'link--active' : (activeRoom  !== null && i.room === activeRoom), 'link--nonActive': activeRoom === null}]"
-              @mouseover="setActive(i.room)"
-              @mouseleave="setActive(null)"
             >
-              {{ i.name }} <span v-if="index < Object.keys(academyCourses).length - 1">/</span>
+              <span
+                @mouseover="setActive(i.room)"
+                @mouseleave="setActive(null)"
+              >{{ i.name }} <span v-if="index < Object.keys(academyCourses).length - 1">/</span></span>
             </nuxt-link>
           </div>
         </div>
@@ -153,9 +172,8 @@ export default {
       const rooms = Object.keys(object).map(key => {
         return { ...object[key], room: key };
       });
-      
-      let settings = rooms.map((i,index) => {
-        
+
+      let settings = rooms.map((i, index) => {
         const orbMeta = {
           location: i.location,
           index: i.room,
@@ -196,12 +214,10 @@ export default {
     secundaryCourses() {
       if (this.activeItems.length < 1) return;
 
-      const filteredItems = this.activeItems.filter(
-        i => {
-          if(i.hideOnLocation === true ) return;
-          if(i.cat === "secundary" && i.type === "class") return i
-        }
-      );
+      const filteredItems = this.activeItems.filter(i => {
+        if (i.hideOnLocation === true) return;
+        if (i.cat === "secundary" && i.type === "class") return i;
+      });
 
       const reducedItems = filteredItems.reduce((prevValue, i) => {
         const yearCourse = `${i.year} ${i.course}`;
@@ -272,7 +288,7 @@ export default {
       };
     },
     setActive(id) {
-
+      console.log(id);
       if (id === null) {
         EventBus.$emit("DEACTIVATEORB", { room: id, link: null });
         this.activeRoom = id;
@@ -291,7 +307,6 @@ export default {
     if (webglAvailable()) {
       this.loadOrbs = true;
       EventBus.$on("MOUSEOVERORB", data => {
-        
         // add a class so the cursor changes into a pointer
         if (data !== null) {
           this.cursorClass = "cursor";

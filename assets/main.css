@@ -438,7 +438,7 @@ only screen and (-webkit-min-device-pixel-ratio: 0.91) and (-webkit-max-device-p
 only screen and (min-resolution: 120dpi) and (min-width: 1500px),
 only screen and (-webkit-min-device-pixel-ratio: 1.1) and (min-width: 1500px) {
 	html {
-		font-size: 81.25%;
+		/* font-size: 81.25%; */
 	}
 }
 
@@ -447,7 +447,7 @@ only screen and (-webkit-min-device-pixel-ratio: 1.1) and (min-width: 1500px) {
 only screen and (min-resolution: 120dpi) and (min-width: 2000px),
 only screen and (-webkit-min-device-pixel-ratio: 1.1) and (min-width: 2000px) {
 	html {
-		font-size: 87.5%;
+		/* font-size: 87.5%; */
 	}
 }
 
@@ -456,7 +456,7 @@ only screen and (-webkit-min-device-pixel-ratio: 1.1) and (min-width: 2000px) {
 only screen and (min-resolution: 120dpi) and (min-width: 2750px),
 only screen and (-webkit-min-device-pixel-ratio: 1.1) and (min-width: 2750px) {
 	html {
-		font-size: calc(87.5% + ((100vw - 500px) / 1000));
+		/* font-size: calc(87.5% + ((100vw - 500px) / 1000)); */
 	}
 }
 

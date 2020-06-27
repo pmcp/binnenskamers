@@ -45,7 +45,7 @@
           :class="[{'link--active' : ((activeLocationId  !== null && i.location === activeLocationId) || !touched), 'link--nonActive': (activeLocationId === null && !touched)}]"
         ><span
             @mouseover="setActive(i.location)"
-            @mouseleave="setActive(null)"
+            @mouseleave="setActive(null)">
             {{ i.name }}<span
             v-if="key < (Object.keys(allRooms).length - 1)"
           > / </span></span>
@@ -60,7 +60,7 @@
         ><span
             @mouseover="setActive('g')"
             @mouseleave="setActive(null)"
-          >Algemene Info /</nuxt-link></span>
+          >Algemene Info /</span></nuxt-link>
       </div>
       <div>
         Kunsthumaniora: <nuxt-link

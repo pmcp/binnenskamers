@@ -100,7 +100,7 @@
               <span
                 @mouseover="setActive(i.room)"
                 @mouseleave="setActive(null)"
-              > {{ i.name }} <span v-if="index < (Object.keys(secundaryCourses).length-1)">/</span>
+              > {{ i.name }} <span v-if="index < (Object.keys(secundaryCourses).length-1)">/</span></span>
             </nuxt-link>
           </div>
           <div v-if="academyCourses">

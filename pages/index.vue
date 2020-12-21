@@ -1,7 +1,7 @@
 <template>
   <div class="container">
-      <button @click="openModal = !openModal" class="underlined modal__button">Bekijk hier alle info over de rondleidingen op zaterdag 27 juni en zondag 28 juni.</button>
-      
+      <!-- <button @click="openModal = !openModal" class="underlined modal__button">Bekijk hier alle info over de rondleidingen op zaterdag 27 juni en zondag 28 juni.</button>
+
     <div
       class="modal"
       v-if="openModal"
@@ -31,7 +31,7 @@
           target="_blank"
         >https://drive.google.com/drive/folders/17avHQSazHyJr_94SWOayffJH27oNHLwE?usp=sharing</a></p>
     </div>
-    </div>
+    </div> -->
     <div class="map">
       <div class="map__img" >
         <a class="img" href="/map">
@@ -48,7 +48,7 @@
       <p>Deze drie scholen op één plaats, samen met de geografische ligging zorgt voor een meervoudig kruispunt van veel culturen, leeftijden, socio-economische achtergronden en artistieke processen.</p>
       <p>Via deze site kan je binnenkijken in onze locatie,  waarin de drie scholen organisch door elkaar lopen in een uniek pedagogisch project!</p>
       <p>Ga naar <nuxt-link to="/map">het grondplan</nuxt-link>.</p>
-    </div>  
+    </div>
   </div>
 </template>
 

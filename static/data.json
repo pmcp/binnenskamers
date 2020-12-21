@@ -718,7 +718,7 @@
     {
       "year": "5",
       "hideOnLocation": true,
-      "division": "Vorming", 
+      "division": "Vorming",
       "type": "class",
       "cat": "secundary",
       "course": "5 & 6 Audiovisuele Vorming",
@@ -841,7 +841,7 @@
         }
       }
     },
-   
+
     {
       "year": "4",
       "division": "Opleiding",
@@ -965,7 +965,7 @@
         }
       }
     },
-    
+
         {
       "year": "5",
       "hideOnLocation": true,
@@ -1233,7 +1233,7 @@
     }
   }
 },
-  
+
  {
       "year": "6",
       "hideOnLocation": true,
@@ -1451,7 +1451,7 @@
       }
     },
 
- 
+
     {
       "year": "5",
       "division": "Kunsten",
@@ -1630,7 +1630,7 @@
           "size": 0.1
         },
         "position": {
-          
+
 "x":-0.509469696969697, "y":-0.2563891178895301
 
         }
@@ -1693,7 +1693,7 @@
           "size": 0.1
         },
         "position": {
-          
+
 "x":0.43939393939393945, "y":-0.08326463314097277
 
         }
@@ -1781,7 +1781,7 @@
         }
       }
     },
-    
+
     {
       "year": "6",
       "division": "Opleiding",
@@ -2645,7 +2645,7 @@
       }
     },
 
-    
+
 
     {
       "year": "",
@@ -2711,7 +2711,7 @@
       }
     },
 
-    
+
 
     {
       "year": "",
@@ -2734,7 +2734,7 @@
       }
     },
 
-     
+
 
     {
       "year": "",
@@ -2757,7 +2757,7 @@
       }
     },
 
-    
+
     {
       "year": "",
       "division": "extern",
@@ -2801,7 +2801,7 @@
       }
     },
 
-    
+
 
     {
       "year": "",
@@ -2824,7 +2824,7 @@
       }
     },
 
-    
+
 
     {
       "year": "",
@@ -2847,7 +2847,7 @@
       }
     },
 
-    
+
 
     {
       "year": "",
@@ -2893,7 +2893,7 @@
       }
     },
 
-    
+
     {
       "year": "",
       "division": "extern",
@@ -2936,7 +2936,7 @@
       }
     },
 
-    
+
     {
       "year": "",
       "division": "extern",
@@ -2958,7 +2958,7 @@
       }
     },
 
-    
+
 
 
 
@@ -3062,7 +3062,27 @@
           "x":-0.35, "y":0.09991664886474605
         }
       }
-    }                
+    },
+    {
+      "year": "volwassenen",
+      "division": "academie",
+      "cat": "academy",
+      "type": "class",
+      "course": "Instructies & tips",
+      "link": "https://vimeo.com/showcase/7905727",
+      "descr": "Videoafspeellijst met praktische tips voor de studenten van de Sint-Lukas Academie Brussel",
+      "location": "h",
+      "room": "h202",
+      "orb": {
+        "type": "academy",
+        "overrides": {
+          "size": 0.1
+        },
+        "position": {
+          "x":-0.35, "y":0.09991664886474605
+        }
+      }
+    }
   ]
 }
 

@@ -15,7 +15,7 @@
     "@tweenjs/tween.js": "^18.5.0",
     "nuxt": "^2.13.1",
     "raw-loader": "^4.0.0",
-    "three": "^0.111.0",
+    "three": "^0.125.0",
     "three-effectcomposer": "0.0.1"
   },
   "devDependencies": {
